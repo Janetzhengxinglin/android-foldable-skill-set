@@ -1,10 +1,24 @@
-# Android Foldable Skill Set
+# 安卓折叠屏适配审查 Skill Set
 
 用于 Codex 的安卓折叠屏录屏审查工具包。安装整套后，只需调用总入口，Codex 会依次整理录屏、逐页审查、汇总并交付报告。
 
 ## 安装
 
-1. 在 GitHub 点击 **Code → Download ZIP**，解压到任意工作目录。
+在 Codex 中发送以下内容，让 agent 下载并安装整套：
+
+```text
+请使用 $skill-installer 安装完整的安卓折叠屏适配审查 Skill Set，并检查依赖、完成联动检查。
+仓库：https://github.com/Janetzhengxinglin/android-foldable-skill-set
+分支：codex/main
+请一次安装 skills/ 下的三个 skill，保持同级；已有同名版本先备份。
+```
+
+安装完成后，调用总入口 `$android-foldable-adaptation-review` 即可串联页面采集、规范审查和报告交付。
+
+<details>
+<summary>手动下载安装</summary>
+
+1. [下载整套 ZIP](https://github.com/Janetzhengxinglin/android-foldable-skill-set/releases/download/v0.2.4/android-foldable-skill-set-v0.2.4.zip)，解压到任意工作目录；也可点击 **Code → Download ZIP**。
 2. 在解压目录运行：
 
    ```bash
@@ -24,6 +38,8 @@ python3 install_skills.py --target /path/to/codex-home/skills --check
 ```
 
 安装只复制本工具包的三个 skill，不安装外部程序、不改其他 skills。若 `--check` 提示缺依赖，skills 已安装；补齐依赖后可运行 `python3 check_install.py`。
+
+</details>
 
 ## 开始审查
 
