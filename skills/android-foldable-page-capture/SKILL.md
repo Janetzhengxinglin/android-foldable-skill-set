@@ -5,7 +5,7 @@ description: 从安卓折叠屏 App 录屏整理稳定页面截图，保留屏�
 
 # 安卓折叠屏录屏整理
 
-安卓 skill set 的证据整理环节。版本 0.2.8，数据格式 1。只整理材料，不判适配问题或发布报告。
+安卓 skill set 的证据整理环节。版本 0.2.9，数据格式 1。只整理材料，不判适配问题或发布报告。
 
 读取 [采集与交接](references/capture-contract.md)。批量或长流程另读 [批量执行](../android-foldable-adaptation-review/references/batch-execution.md)，集中选帧、核对重复状态，只对具体疑点补图。选帧后可用 scripts/review_sheets.py CAPTURE.json SHEET_DIR 生成清晰整页拼图和格位索引，供质量与适配合并巡检。用户提交录屏即可启动；流程、外屏／内屏、方向及设备信息只问缺失项，不要求用户填写时间点或技术参数。未知 API、dp、密度和折叠特征保持空值，不根据图片比例猜测。
 
@@ -32,3 +32,5 @@ python3 scripts/capture.py finalize CANDIDATE_DIR SELECTION.json
 采样、选帧和质量回查前读取 [图片筛选与接续](references/image-processing.md)。使用压缩候选拼图及完整分组索引分类，图片按预算分批输入；文件生成不等于已读取或审查完成。
 
 按图片处理协议执行读取前预算检查、实际输入记账与超限接续。读取批次不拆成独立任务，候选、原图、复查和报告预览共用实际上下文的预算。
+
+统一执行方法见 [图片协议](references/image-processing.md)；验收覆盖与现有三段式报告样式不变。

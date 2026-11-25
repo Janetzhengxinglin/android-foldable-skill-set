@@ -8,8 +8,10 @@ from common import load_input,require,sha,write,read
 
 def merge(captures,run_dir):
  run=Path(run_dir).resolve();run.mkdir(parents=True,exist_ok=True)
+ require(len({str(Path(p).resolve()) for p in captures})==len(captures),'重复采集来源；先核对完整素材清单')
  dest=run/'capture.json';require(not dest.exists(),'capture.json 已存在，保留旧轮次并新建目录')
- merged={'schema_version':1,'contexts':[],'pages':[],'evidence':[],'facts':{},'capture_sources':[]}
+ merged={'schema_version':1,'contexts':[],'pages':[],'evidence':[],'facts':{},'capture_sources':[],'source_recordings':[]}
+ seen_recordings=set()
  for i,p in enumerate(captures):
   p=Path(p).resolve();data=read(p)
   require(data.get('capture_review',{}).get('all_candidates_classified') is True and data['capture_review'].get('all_intervals_reviewed') is True,'原始采集未完成全量回查: '+str(p))
@@ -28,6 +30,13 @@ def merge(captures,run_dir):
                           'image_evidence_id':new(page['image_evidence_id']),
                           'facts':facts({**data.get('facts',{}),**page.get('facts',{})}),
                           'components':[{**c,'id':new(c['id']),'facts':facts(c.get('facts',{}))} for c in page.get('components',[])]})
+  for recording in data.get('source_recordings',[]):
+   f=Path(recording['path'])
+   if not f.is_absolute():f=p.parent/f
+   require(sha(f)==recording['sha256'],'录屏来源改变')
+   require(recording['sha256'] not in seen_recordings,'重复录屏；合并前核对其关联状态')
+   seen_recordings.add(recording['sha256'])
+   merged['source_recordings'].append({**recording,'path':os.path.relpath(f.resolve(),run)})
   merged['capture_sources'].append({'path':os.path.relpath(p,run),'sha256':sha(p)})
  merged['capture_review']={'all_candidates_classified':True,'all_intervals_reviewed':True,'notes':'各原始录屏已确认完整采集后合并；仍需逐图核对最终清单'}
  write(dest,merged);load_input(dest)

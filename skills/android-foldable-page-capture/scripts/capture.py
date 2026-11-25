@@ -2,8 +2,9 @@
 import argparse,hashlib,json,math,shutil,struct,subprocess,sys
 from pathlib import Path
 from image_batches import candidate_plan
+from sequential_frames import sequential_sample, extract_frame, probe as shared_probe
 
-VERSION='0.2.8'
+VERSION='0.2.9'
 
 def read(p):return json.loads(Path(p).read_text(encoding='utf-8'))
 def write(p,d):Path(p).write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
@@ -16,22 +17,10 @@ def run(args):
     return r.stdout
 
 def probe(video):
-    info=json.loads(run(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(video)]))
-    stream=next((s for s in info['streams'] if s.get('codec_type')=='video'),None)
-    require(stream is not None,'文件没有视频轨')
-    duration=float(info['format'].get('duration',stream.get('duration',0)))
-    require(duration>0,'无法确认录屏时长')
-    return {'duration_s':duration,'encoded_width_px':stream['width'],'encoded_height_px':stream['height'],
-            'has_audio':any(s.get('codec_type')=='audio' for s in info['streams'])}
+    return shared_probe(video)
 
 def frame(video,time,output):
-    require(0<=time<probe(video)['duration_s'],'时间点超出录屏范围')
-    require(not Path(output).exists(),'图片已存在，不覆盖原图')
-    run(['ffmpeg','-v','error','-ss',str(time),'-i',str(video),'-frames:v','1',str(output)])
-    require(Path(output).is_file(),'未提取到图片')
-    with Path(output).open('rb') as f:header=f.read(24)
-    require(header.startswith(b'\x89PNG\r\n\x1a\n'),'图片不是 PNG')
-    return struct.unpack('>II',header[16:24])
+    return extract_frame(video,time,output)
 
 def sample(video,out,interval,keep_all=False):
     require(interval>=0.1,'采样间隔至少 0.1 秒；更短动作可按时间补帧')
@@ -39,25 +28,18 @@ def sample(video,out,interval,keep_all=False):
     out.mkdir(parents=True);(out/'source').mkdir();(out/'candidates').mkdir()
     source=out/'source'/('recording'+Path(video).suffix.lower());shutil.copyfile(video,source)
     meta=probe(source);items=[]
-    run(['ffmpeg','-v','error','-i',str(source),'-vf',
-         'fps=fps=1/%s:start_time=0:round=up'%interval,'-frames:v',str(math.ceil(meta['duration_s']/interval)),
-         '-start_number','0',str(out/'candidates'/'sample-%05d.png')])
-    for i,path in enumerate(sorted((out/'candidates').glob('sample-*.png'))):
-        t=i*interval
-        if t>=meta['duration_s']:break
-        with path.open('rb') as f: header=f.read(24)
-        require(header.startswith(b'\x89PNG\r\n\x1a\n'), '候选不是 PNG')
-        w,h=struct.unpack('>II',header[16:24])
-        items.append({'id':'sample-%05d'%i,'time_s':t,'path':str(path.relative_to(out)),'sha256':sha(path),'visual_sha256':sha(path),'width_px':w,'height_px':h})
-    plan,representatives=candidate_plan(items,30,keep_all)
+    for row in sequential_sample(source,out/'candidates',interval):
+        path=Path(row['path'])
+        items.append({**row,'id':path.stem,'path':str(path.relative_to(out))})
+    plan,representatives=candidate_plan(items,24,keep_all)
     write(out/'candidate-groups.json',plan)
     sheet_input=out/'sheet-input';sheet_input.mkdir()
     for i,item in enumerate(representatives):
         shutil.copyfile(out/item['path'],sheet_input/('frame-%05d.png'%i))
     run(['ffmpeg','-v','error','-i',str(sheet_input/'frame-%05d.png'),
-         '-vf','scale=200:300:force_original_aspect_ratio=decrease,pad=200:300:(ow-iw)/2:(oh-ih)/2,tile=5x6:padding=8:margin=8','-vsync','0',str(out/'contact-sheet-%03d.png')])
+         '-vf','scale=200:300:force_original_aspect_ratio=decrease,pad=200:300:(ow-iw)/2:(oh-ih)/2,tile=6x4:padding=8:margin=8','-vsync','0',str(out/'contact-sheet-%03d.png')])
     write(out/'sample.json',{'schema_version':1,'capture_version':VERSION,'video':str(source.relative_to(out)),
-          'video_sha256':sha(source),'metadata':meta,'interval_s':interval,'candidates':items,'candidate_groups':'candidate-groups.json'})
+          'video_sha256':sha(source),'metadata':meta,'interval_s':interval,'decoder':'sequential-source-pts-v1','candidates':items,'candidate_groups':'candidate-groups.json'})
     print('候选帧',len(items),'张；拼图代表帧',len(representatives),'张；须展开分组分类全部候选并补查时间间隔，尚未确认页面。')
 
 def finalize(out,selection):
@@ -80,7 +62,13 @@ def finalize(out,selection):
     for p in pages:
         require(p.get('context_id') in ids and p.get('name') and p.get('selection_reason'),'页面缺状态、名称或选帧理由')
         target=out/'images'/('page-%04d.png'%len(result_pages))
-        w,h=frame(video,float(p['time_s']),target);eid='image-'+p['id']
+        candidate_id=p.get('candidate_id')
+        matches=[c for c in source['candidates'] if (c['id']==candidate_id if candidate_id else abs(c['time_s']-float(p['time_s']))<1e-6)]
+        if candidate_id:require(len(matches)==1 and abs(matches[0]['time_s']-float(p['time_s']))<1e-6,'候选与选帧时间不符')
+        if source.get('decoder')=='sequential-source-pts-v1' and matches:
+            shutil.copyfile(out/matches[0]['path'],target);w,h=struct.unpack('>II',target.read_bytes()[16:24])
+        else:w,h=frame(video,float(p['time_s']),target)
+        eid='image-'+p['id']
         evidence.append({'id':eid,'kind':'image','path':str(target.relative_to(out)),'sha256':sha(target),
                          'description':p['selection_reason'],'page_ids':[p['id']],'context_ids':[p['context_id']],
                          'width_px':w,'height_px':h,'source_time_s':p['time_s']})
