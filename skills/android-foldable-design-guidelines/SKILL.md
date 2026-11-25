@@ -5,11 +5,13 @@ description: 依据 Google 官方基础适配规范逐页审查安卓折叠屏 A
 
 # 安卓折叠屏设计规范
 
-版本 0.2.3；官方资料核查日期 2026-11-23。本次以截图适配审查为目的，只报告截图可确认且有官方依据的不符合项。
+版本 0.2.3；官方资料核查日期 2026-11-23；批量执行修订 2026-11-25。本次以截图适配审查为目的，只报告截图可确认且有官方依据的不符合项。
 
 属于安卓 skill set 的判断环节：接收同级 android-foldable-page-capture 整理的稳定截图，向 android-foldable-adaptation-review 交付 review.json。原始录屏用于选帧和核对来源，不自动变成动态功能测试。不负责 Figma／飞书排版和发布。
 
 ## 默认执行顺序
+
+批量读 [集中批量审查](../android-foldable-adaptation-review/references/batch-execution.md)。按流程连续查看全部原图并记录页面／组件观察，再批量生成正式检查项；集中完成全量原图复查和最终校验。常规引用已核查的当前 profile 与来源，按疑点查相关原文及例外。
 
 读取 [审查范围](references/audit-policy.md)、[判断方法](references/decision-protocol.md) 和 [官方设计参考](references/design-reference.md)。设计参考参与每页条件判断与排除误报，不限于报告配图。默认 profile 为 screenshot-only，见 [范围配置](references/audit-profiles.json)。
 
@@ -54,4 +56,4 @@ python3 scripts/validate_review.py /path/to/review.json
 
 逐页判断与第二轮复查遵守 [图片处理协议](../android-foldable-page-capture/references/image-processing.md)，独立使用时同样分批、记录累计输入和保存接续检查点。候选拼图不代替原图判断，读取预算不减少页面、组件或两轮复查范围。
 
-每次读图前必须执行该协议的本地 check；默认一次 1–2 张、最多 2 张，同时检查像素与尺寸。当前批完成分析并保存结果后再读下一批；失败后单张降量，连续失败或累计预算耗尽则保存进度接续，不能原样重试或减少验收范围。候选、原图、复查与报告预览共用同一累计日志。
+按图片处理协议执行读取前预算检查、实际输入记账与超限接续。读取批次不拆成独立任务，候选、原图、复查和报告预览共用实际上下文的预算。

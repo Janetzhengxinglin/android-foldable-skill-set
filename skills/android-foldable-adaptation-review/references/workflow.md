@@ -1,6 +1,6 @@
 # 执行与交接
 
-三个同级目录组成一套：android-foldable-page-capture → android-foldable-design-guidelines → android-foldable-adaptation-review。入口负责串联和输出，采集只整理，设计规范只判断。
+三个同级目录组成一套：android-foldable-page-capture → android-foldable-design-guidelines → android-foldable-adaptation-review。入口负责集中批量执行和输出，采集只整理，设计规范只判断。批量默认遵守 [集中批量审查](batch-execution.md)，先保存真实观察，再批量生成正式记录；以下脚本只接收真实完成的完整输入。
 
 本轮目录建议保存 intake.json、raw/ 各录屏采集、capture.json、review-input.json、review.json 和 report-v1/。intake 记录用户已有的流程、材料、设备／屏幕与输出目标；只问缺失信息。没有运行目录时在当前项目中建立，不把素材放入安装目录。
 
