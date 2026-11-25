@@ -41,10 +41,12 @@ def prepare(run_dir):
  write(out,data)
  print('已建立工作副本；先逐页补齐组件与事实，再执行 seed。')
 
-def seed(run_dir, profile='screenshot-only'):
+def seed(run_dir, profile='screenshot-only', review_strategy=None):
  run=Path(run_dir).resolve()
  load_input(run/'review-input.json')
- r=subprocess.run([sys.executable,'-B',str(RULES/'scripts/seed_review.py'),str(run/'review-input.json'),str(run/'review.json'),'--profile',profile])
+ command=[sys.executable,'-B',str(RULES/'scripts/seed_review.py'),str(run/'review-input.json'),str(run/'review.json'),'--profile',profile]
+ if review_strategy:command+=['--review-strategy',review_strategy]
+ r=subprocess.run(command)
  require(r.returncode==0,'生成审查记录失败')
 
 def main():
@@ -52,11 +54,13 @@ def main():
  a=s.add_parser('merge');a.add_argument('run_dir');a.add_argument('captures',nargs='+')
  for name in ['prepare','seed']:
   a=s.add_parser(name);a.add_argument('run_dir')
-  if name=='seed':a.add_argument('--profile',choices=['screenshot-only','submitted-evidence'],default='screenshot-only')
+  if name=='seed':
+   a.add_argument('--profile',choices=['screenshot-only','submitted-evidence'],default='screenshot-only')
+   a.add_argument('--review-strategy',choices=['batch','two-pass'],default=None)
  args=p.parse_args()
  try:
   if args.command=='merge':merge(args.captures,args.run_dir)
   elif args.command=='prepare':prepare(args.run_dir)
-  else:seed(args.run_dir,args.profile)
+  else:seed(args.run_dir,args.profile,args.review_strategy)
  except (ValueError,KeyError,TypeError,OSError) as e:p.error(str(e))
 if __name__=='__main__':main()

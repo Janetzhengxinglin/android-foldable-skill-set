@@ -5,6 +5,25 @@ from pathlib import Path
 from common import bundle, index, load_input, read, require, sha, tasks, presentation_groups
 
 
+def validate_completion(review, page_ids, finding_ids):
+    strategy = review.get('review_strategy', 'two-pass')
+    require(strategy in ['batch', 'two-pass'], '未知复查策略')
+    sr = review.get('self_review', {})
+    if strategy == 'batch':
+        require(review.get('scope', {}).get('profile') == 'screenshot-only', '扩展实测不可使用 batch')
+        visual = review.get('visual_review', {})
+        seen = visual.get('page_ids_reviewed', [])
+        require(isinstance(seen, list) and len(seen) == len(set(seen)) and set(seen) == set(page_ids)
+                and visual.get('notes'), '未完成全部页面的清晰视觉巡检')
+        checked = sr.get('finding_ids_rechecked', [])
+        require(isinstance(checked, list) and len(checked) == len(set(checked)) and set(checked) == set(finding_ids)
+                and sr.get('notes'), '未核对全部已确认问题及报告映射')
+    else:
+        require(sr.get('all_pages_rechecked') is True and sr.get('all_components_rechecked') is True
+                and sr.get('notes'), '未完成全量第二轮复查')
+    return strategy
+
+
 def measurement_gate(rule_id, records, subject_id, input_path, status):
     rows=[]
     for e in records:
@@ -139,9 +158,8 @@ def validate(review_path):
             require(bool(details['tested_actions']), '动态结论未记录实际动作: '+cid)
         if status=='issue': require(cid in issue_to_finding, '已确认问题未进入输出: '+cid)
     require(set(issue_to_finding)=={cid for cid,c in checks.items() if c['status']=='issue'}, '问题关联不完整')
-    sr=review.get('self_review',{})
-    require(sr.get('all_pages_rechecked') is True and sr.get('all_components_rechecked') is True and sr.get('notes'), '未完成全量第二轮复查')
-    return {'checks':len(checks),'findings':len(findings),'statuses':dict(Counter(c['status'] for c in checks.values())),
+    strategy=validate_completion(review, scope['page_ids'], findings)
+    return {'review_strategy':strategy,'checks':len(checks),'findings':len(findings),'statuses':dict(Counter(c['status'] for c in checks.values())),
             'observed_contexts':[contexts[x] for x in sorted({pages[p]['context_id'] for p in scope['page_ids']})],
             'conclusion_scope':'仅本次证据范围；不证明全 App 或 Google Play 认证通过'}
 

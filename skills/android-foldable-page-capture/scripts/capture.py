@@ -3,7 +3,7 @@ import argparse,hashlib,json,math,shutil,struct,subprocess,sys
 from pathlib import Path
 from image_batches import candidate_plan
 
-VERSION='0.2.4'
+VERSION='0.2.7'
 
 def read(p):return json.loads(Path(p).read_text(encoding='utf-8'))
 def write(p,d):Path(p).write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
@@ -39,11 +39,15 @@ def sample(video,out,interval,keep_all=False):
     out.mkdir(parents=True);(out/'source').mkdir();(out/'candidates').mkdir()
     source=out/'source'/('recording'+Path(video).suffix.lower());shutil.copyfile(video,source)
     meta=probe(source);items=[]
-    for i in range(math.ceil(meta['duration_s']/interval)):
+    run(['ffmpeg','-v','error','-i',str(source),'-vf',
+         'fps=fps=1/%s:start_time=0:round=up'%interval,'-frames:v',str(math.ceil(meta['duration_s']/interval)),
+         '-start_number','0',str(out/'candidates'/'sample-%05d.png')])
+    for i,path in enumerate(sorted((out/'candidates').glob('sample-*.png'))):
         t=i*interval
         if t>=meta['duration_s']:break
-        path=out/'candidates'/('sample-%05d.png'%i)
-        w,h=frame(source,t,path)
+        with path.open('rb') as f: header=f.read(24)
+        require(header.startswith(b'\x89PNG\r\n\x1a\n'), '候选不是 PNG')
+        w,h=struct.unpack('>II',header[16:24])
         items.append({'id':'sample-%05d'%i,'time_s':t,'path':str(path.relative_to(out)),'sha256':sha(path),'visual_sha256':sha(path),'width_px':w,'height_px':h})
     plan,representatives=candidate_plan(items,20,keep_all)
     write(out/'candidate-groups.json',plan)

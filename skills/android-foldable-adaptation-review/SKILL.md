@@ -5,7 +5,7 @@ description: 编排安卓折叠屏 App 录屏审查，联动稳定页面整理�
 
 # 安卓折叠屏适配审查
 
-安卓 skill set 总入口，版本 0.2.7、交接格式 1。用户提交录屏并发起审查即可启动。默认只检查截图可确认的 Google 基础适配显示要求，不提供 Tier 2／1 优化或设计建议。规则仅维护在设计规范 skill，不复制到本入口。
+安卓 skill set 总入口，版本 0.2.8、交接格式 1。用户提交录屏并发起审查即可启动。默认只检查截图可确认的 Google 基础适配显示要求，不提供 Tier 2／1 优化或设计建议。规则仅维护在设计规范 skill，不复制到本入口。
 
 ## 执行方式与子智能体
 
@@ -19,20 +19,20 @@ description: 编排安卓折叠屏 App 录屏审查，联动稳定页面整理�
 
 ## 批量执行与最终交接
 
-多份录屏先读 [集中批量审查](references/batch-execution.md)：集中选帧与观察、批量生成记录、全量复查、统一报告。不建立多层质量／预审／修补队列。
+多份录屏先读 [集中批量审查](references/batch-execution.md)：集中选帧与观察、批量生成记录、重点复查、统一报告。不建立多层质量／预审／修补队列。
 
 ## 三个环节
 
 1. 读取同级 android-foldable-page-capture/SKILL.md，批量抽帧，集中分类全部候选并确认清晰代表图。每份 recording 各有完整 capture.json；统一交接后按流程连续看图，不能只挑问题页面。
-2. 建立 review-input.json 工作副本，读取同级 android-foldable-design-guidelines/SKILL.md，逐页识别全部组件，再建立 review.json 并判断。默认使用 screenshot-only，仅检查截图可见显示；动态变化、外设操作、测量和接收输出不进入本次检查集合，不因收到录屏自动启用扩展测试。先集中保存真实页面／组件观察，再批量填入正式记录；完成第二轮全页面原图复查后统一运行 validate_review.py。
+2. 建立 review-input.json 工作副本，读取同级 android-foldable-design-guidelines/SKILL.md，逐页识别全部组件，再建立 review.json 并判断。默认使用 screenshot-only，仅检查截图可见显示；动态变化、外设操作、测量和接收输出不进入本次检查集合，不因收到录屏自动启用扩展测试。先集中保存真实页面／组件观察，再批量填入正式记录；默认清晰拼图全页巡检、疑点读原图；回查已确认问题和报告映射后统一运行 validate_review.py。严格双轮仅使用 two-pass。
 3. 按 [同页证据去重](references/report-deduplication.md) 区分业务页面、受审状态和报告代表图。同页同组件同一异常的滚动／重复进入状态只展示必要代表图，后台保留全部发生位置，运行 build_report.py，核对编号和全量问题页面，然后按用户指定目标发布、回读。
 
 ~~~bash
 python3 scripts/workflow.py merge RUN_DIR CAPTURE_A.json CAPTURE_B.json
 python3 scripts/workflow.py prepare RUN_DIR
-# 按原图补齐 review-input.json 的组件库存与事实后：
+# 完成清晰全页巡检，补齐 review-input.json 的组件库存与事实后：
 python3 scripts/workflow.py seed RUN_DIR
-# 完成逐项判断及全量复查后：
+# 完成逐项判断及重点复查后：
 python3 scripts/build_report.py RUN_DIR REPORT_DIR
 ~~~
 
@@ -52,6 +52,6 @@ python3 scripts/build_report.py RUN_DIR REPORT_DIR
 
 ## 图片读取与分批接续
 
-执行各阶段前读取 [图片处理协议](../android-foldable-page-capture/references/image-processing.md)，完整清单在本地交接，图片分批读取并保存累计日志和检查点。第一轮及第二轮分别保持全页面覆盖，汇总和发布预览也纳入图片预算。
+执行各阶段前读取 [图片处理协议](../android-foldable-page-capture/references/image-processing.md)，完整清单在本地交接，图片分批读取并保存累计日志和检查点。默认 batch 保持全页面巡检，原图用于疑点和问题回查；汇总及发布预览也计入预算。
 
 按图片处理协议执行读取前预算检查、实际输入记账与超限接续。读取批次不拆成独立任务，候选、原图、复查和报告预览共用实际上下文的预算。

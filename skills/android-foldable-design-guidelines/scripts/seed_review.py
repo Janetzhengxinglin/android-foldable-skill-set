@@ -8,7 +8,10 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('input'); p.add_argument('output')
     p.add_argument('--profile', choices=['screenshot-only','submitted-evidence'], default='screenshot-only')
+    p.add_argument('--review-strategy', choices=['batch','two-pass'], default=None)
     args = p.parse_args()
+    strategy = args.review_strategy or ('batch' if args.profile == 'screenshot-only' else 'two-pass')
+    if args.profile == 'submitted-evidence' and strategy != 'two-pass': p.error('扩展实测使用 two-pass')
     output = Path(args.output).resolve()
     if output.exists(): p.error('输出已存在；不覆盖已有审查')
     source = Path(args.input).resolve()
@@ -26,8 +29,10 @@ def main():
                 evaluated_basis_ids=[], coverage_details=dict(tested_actions=[], missing_actions=[], notes='尚未核对'),
                 priority=rule['priority']))
         review=dict(schema_version=1,rule_version=meta['rule_version'], input_path=os.path.relpath(source, output.parent),input_sha256=sha(source),scope=scope,
+                    review_strategy=strategy,visual_review=dict(page_ids_reviewed=[],notes=''),
                     checks=records,findings=[],inventory_review=dict(page_ids_verified=[],notes=''),
-                    self_review=dict(all_pages_rechecked=False,all_components_rechecked=False,notes=''))
+                    self_review=(dict(finding_ids_rechecked=[],notes='') if strategy == 'batch' else
+                                 dict(all_pages_rechecked=False,all_components_rechecked=False,notes='')))
         write(output, review)
         print('生成',len(records),'条待审查记录；未判断任何问题。')
     except (ValueError, KeyError, TypeError, OSError) as e:
