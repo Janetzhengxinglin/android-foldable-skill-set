@@ -46,6 +46,9 @@ def build(run_dir,output):
    rep_keys={loc['component_key'] for loc in members if loc['page_id']==group['representative_page_id']}
    require(all_keys<=rep_keys,'代表图未覆盖组内新增问题位置；须补代表图或拆组')
   return locations,groups
+ def number_key(value):
+  value=str(value)
+  return str(int(value)) if value.isdigit() else value
  def annotation_key(number,loc):
   return (str(number),loc['page_id'],loc.get('component_id'),tuple(loc.get('bbox_px',[])),loc.get('scenario_description'),loc.get('component_key'))
  examples={};all_pages={};by_check={c['id']:c for c in review['checks']};problem_evidence=[];expected=set()
@@ -79,8 +82,10 @@ def build(run_dir,output):
  # because their technical cause or a specific minimum-requirement breach is unknown.
  reported=review.get('reported_issues',[])
  reserved={str(f['id']) for f in issues}
+ used_numbers={number_key(x) for x in reserved}
+ require(len(used_numbers)==len(reserved),'问题显示编号重复')
  for item in reported:
-  number=str(item['number']);require(number not in reserved,'问题编号重复');reserved.add(number)
+  number=str(item['number']);require(number_key(number) not in used_numbers,'问题显示编号重复');reserved.add(number);used_numbers.add(number_key(number))
   locations,groups=retained_groups(item);visible={g['representative_page_id'] for g in groups}
   item['_locations']=locations
   problem_evidence.append({'number':number,'classification':'observed','locations':locations,'presentation_groups':groups})
@@ -115,8 +120,8 @@ def build(run_dir,output):
   require(note.get('id') and note['id'] not in pending_numbers,'待核实项 ID 重复或缺失')
   require(note.get('phenomenon') and note.get('judgment'),'待核实项须有现象和判断依据缺口')
   locations,groups=retained_groups(note)
-  while str(next_number).zfill(2) in reserved:next_number+=1
-  number=str(next_number).zfill(2);reserved.add(number);next_number+=1
+  while str(next_number) in used_numbers:next_number+=1
+  number=str(next_number).zfill(2);reserved.add(number);used_numbers.add(str(next_number));next_number+=1
   pending_numbers[note['id']]=number
   problem_evidence.append({'number':number,'classification':'not_verified','locations':locations,'presentation_groups':groups})
   for group in groups:

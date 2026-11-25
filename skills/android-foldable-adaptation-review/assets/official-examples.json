@@ -11,7 +11,7 @@
         "window.fit"
       ],
       "role": "general_basic_requirement_example",
-      "scope": "解释 App 填满可用显示区、无 letterboxing。图中的分栏布局不作为 Tier 3 强制要求，也不用于推导每张活动背景必须满宽。",
+      "scope": "解释 App 填满可用显示区、无整体加框，这是 Tier 3 基础要求。用于区分整页未铺满窗口与局部内容限宽；不能因同为留白就跳过整页核查，也不能据此要求每张活动背景满宽或所有页面分栏。",
       "verified_at": "2026-11-23",
       "verification": "已核对公告中 Tier 3 段落、图注和完整原图。",
       "delivery_conversion": "原始 WebP 转 PNG，像素内容、尺寸和比例保持一致。"
