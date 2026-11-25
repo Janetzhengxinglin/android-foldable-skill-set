@@ -27,3 +27,5 @@
 ## 来源范围
 
 规则库仍保留全部 10 个 Tier 3 guideline／12 个测试及相关 Core 处置；默认 6 类可见检查通过 audit-profiles.json 筛选。完整资料库不能作为“已经检查全部要求”的证明。来源读取边界和未核实模板／视频见 sources.json。
+
+内嵌文字、主体与裁切边界按 [可见对象检查](component-inspection.md) 分开核对；官方层级、项目顺序与影响判断按 [来源路由](official-source-routing.md) 区分。正常媒体裁切不能作为整卡文字检查的排除理由。

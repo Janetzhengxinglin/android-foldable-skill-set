@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "rule_version": "0.2.0",
+  "rule_version": "0.2.1",
   "verification_date": "2026-11-23",
   "scope": "仅 Tier 3 与相关 Core 基本适配；不输出 Tier 2/1 优化。",
   "rules": [
@@ -115,7 +115,7 @@
       ],
       "requirement_wording": "official_basic_requirement",
       "applies_when": "全部 App 页面；全屏与分屏分别按实际 App 窗口检查。",
-      "do_not_report": "只有已知原图／正常状态或可确认的几何参照才判断拉伸；正常等比裁切、留边以及摄影透视不报错。不能从留白推断预览比例错误。",
+      "do_not_report": "只有已知原图／正常状态或可确认的几何参照才判断拉伸；正常等比裁切、留边以及摄影透视不报错。不能从留白推断预览比例错误。 裁切例外仅针对正常构图，不能用于跳过内嵌文字和必要信息检查；主体局部取景本身不证明基础适配违规。",
       "lifecycle": "verified",
       "supporting_source_ids": [
         "S05",
@@ -260,7 +260,13 @@
       "component_kinds": [
         "text",
         "button",
-        "input"
+        "input",
+        "navigation",
+        "list",
+        "card",
+        "media",
+        "overlay",
+        "other"
       ],
       "conditions": {},
       "evidence_groups": [
@@ -276,8 +282,8 @@
         "T-Line_Length"
       ],
       "requirement_wording": "official_basic_requirement",
-      "applies_when": "所有文字页面；45–75 字符规则核对阅读文本块和支持语言，不把短标题、金额或末行强行凑到 45 字符。",
-      "do_not_report": "单行输入框随光标横向滚动正常；不因按钮或输入框全宽、填充/描边风格报错，不硬套 300dp 示例。",
+      "applies_when": "全部可见文字，包括图片、卡片、广告、导航和弹层内文字，不按原生组件类型排除。screenshot-only 只检查截字、排布和可读性；45–75字符测量只在明确委托 submitted-evidence 且有支持语言／文本证据时执行。",
+      "do_not_report": "单行输入框随光标横向滚动正常；不因按钮或输入框全宽、填充/描边风格报错，不硬套 300dp 示例。 正常视口边缘或轮播下一整卡尚未进入视口不自动判错；此例外不解释完整卡片容器内部半字。父卡与独立文字子项不重复报告同一位置。",
       "lifecycle": "verified",
       "supporting_source_ids": [
         "S26",
