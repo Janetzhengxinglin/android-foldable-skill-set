@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "examples": [
+    {
+      "id": "available-display-area",
+      "source_url": "https://developer.android.com/blog/posts/google-play-adaptive-quality-standards",
+      "image_url": "https://developer.android.com/static/blog/assets/letterbox_states_foldable_33dc54f480_Z2kPfxi.webp",
+      "asset_path": "official/letterbox_states.png",
+      "source_caption": "Full screen app content.",
+      "rule_ids": [
+        "window.fit"
+      ],
+      "role": "general_basic_requirement_example",
+      "scope": "解释 App 填满可用显示区、无 letterboxing。图中的分栏布局不作为 Tier 3 强制要求，也不用于推导每张活动背景必须满宽。",
+      "verified_at": "2026-11-23",
+      "verification": "已核对公告中 Tier 3 段落、图注和完整原图。",
+      "delivery_conversion": "原始 WebP 转 PNG，像素内容、尺寸和比例保持一致。"
+    }
+  ]
+}

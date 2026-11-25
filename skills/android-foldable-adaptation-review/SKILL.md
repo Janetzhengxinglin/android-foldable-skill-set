@@ -1,0 +1,49 @@
+---
+name: android-foldable-adaptation-review
+description: 编排安卓折叠屏 App 录屏审查，联动稳定页面整理、Google 基础适配的可见显示检查，完整汇总问题并按三段式交付 Figma 或指定文档。
+---
+
+# 安卓折叠屏适配审查
+
+安卓 skill set 总入口，版本 0.2.4、交接格式 1。用户提交录屏并发起审查即可启动。默认只检查截图可确认的 Google 基础适配显示要求，不提供 Tier 2／1 优化或设计建议。规则仅维护在设计规范 skill，不复制到本入口。
+
+## 启动
+
+运行 scripts/preflight.py，确认三个同级 skill 和 ffmpeg／ffprobe 可用，并校验官方规则。缺失时修复对应依赖，不替换成 Duo 或竞品审查。读取 [执行与交接](references/workflow.md)。
+
+只补问缺失的流程、外屏／内屏和方向、设备信息及输出位置。API、dp 等用户不知道就记录未知，不要求填写技术表格。输出目标未确定时先整理与审查，不自行选定外部文件。已有目标和授权不重复问。
+
+## 三个环节依次执行
+
+1. 读取同级 android-foldable-page-capture/SKILL.md，完成全部录屏采集和回查。每份 recording 各有完整 capture.json；合并后核对整个清单，不能先挑问题页面。
+2. 建立 review-input.json 工作副本，读取同级 android-foldable-design-guidelines/SKILL.md，逐页识别全部组件，再建立 review.json 并判断。默认使用 screenshot-only，仅检查截图可见显示；动态变化、外设操作、测量和接收输出不进入本次检查集合，不因收到录屏自动启用扩展测试。完成两轮全页面复查与 validate_review.py。
+3. 按 [同页证据去重](references/report-deduplication.md) 区分业务页面、受审状态和报告代表图。同页同组件同一异常的滚动／重复进入状态只展示必要代表图，后台保留全部发生位置，运行 build_report.py，核对编号和全量问题页面，然后按用户指定目标发布、回读。
+
+~~~bash
+python3 scripts/workflow.py merge RUN_DIR CAPTURE_A.json CAPTURE_B.json
+python3 scripts/workflow.py prepare RUN_DIR
+# 按原图补齐 review-input.json 的组件库存与事实后：
+python3 scripts/workflow.py seed RUN_DIR
+# 完成逐项判断及全量复查后：
+python3 scripts/build_report.py RUN_DIR REPORT_DIR
+~~~
+
+脚本不识别页面或判断问题，也不自动发布。补图或更改证据时保留旧轮次，生成修订输入并重新核对受影响结论，不能静默沿用旧 hash。
+
+## 输出
+
+发布前必须读取 [视觉呈现与验收](references/output-presentation.md)，落实简短说明、抽象对应图解、统一对齐、就近图外标号、适中参考尺寸和底部全量去重映射；该文件优先约束展示方式，不改变平台判定规则。
+
+读取 [Figma 三段式输出](references/figma-output.md)、[官方示例选择](references/official-examples.md)和 [排版参数](assets/report-style.json)。按示例与问题的对应关系、适用条件、是否误导和内容核实情况选图，不直接沿用脚本预置图。先按屏幕比例、内外屏和方向分画板，用画板标题区分。每张有问题的画板依次展示：Google 官方规范示例；App 问题示例；问题页面汇总。编号放在截图外，App 说明卡（含待核实项）使用浅灰底；不显示秒数或默认添加局部放大。说明只保留具体异常、影响和官方依据，同类归组不省略发生页面或组件。
+
+输出 Figma 时使用当前可用的官方 Figma 工具与相关 skill，在用户指定文件中创建可编辑标题、说明、编号和引线，按原比例置入截图。figma-plan.json 是排版数据，不是“已写入 Figma”的证明。所有展示的审查项（包括待核实项）均须有截图外编号、位置框和同号文字说明，右侧说明执行 build_figma_explanations.py 生成的代码，不临时手写；按 references/figma-output.md 验收卡片结构、字号与标注后再交付。没有已证实问题且没有待核实观察时简短给出结论及范围，不造空问题示例。
+
+用户选择飞书时使用飞书文档能力，保持相同三段式内容并回读；未选择不擅自换目标。发布失败保留本地报告，准确说明未完成的部分。
+
+共同试审中遇到误报、漏报或流程不顺，先回查原图与官方依据，在项目里记录并修订负责该环节的 skill；不能将具体 App 历史问题或素材写入 skill。实质更新后重验受影响输入输出。试审与安装可以同时进行，没有额外“正式版”审批。
+
+## 图片读取与分批接续
+
+执行各阶段前读取 [图片处理协议](../android-foldable-page-capture/references/image-processing.md)，完整清单在本地交接，图片分批读取并保存累计日志和检查点。第一轮及第二轮分别保持全页面覆盖，汇总和发布预览也纳入图片预算。
+
+每次读图前必须执行该协议的本地 check；默认一次 1–2 张、最多 2 张，同时检查像素与尺寸。当前批完成分析并保存结果后再读下一批；失败后单张降量，连续失败或累计预算耗尽则保存进度接续，不能原样重试或减少验收范围。候选、原图、复查与报告预览共用同一累计日志。

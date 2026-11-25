@@ -1,0 +1,206 @@
+[
+  {
+    "topic": "相机资源与焦点",
+    "sources": [
+      {
+        "source": "S03#T-Multi-Window_Resources",
+        "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#T-Multi-Window_Resources",
+        "normative_quotes": [
+          "T-Multi-Window_Resources Multi-Resume In the app, open the camera or use the microphone. Open another app, and make the new app the top focused app. Verify that the non-focused app has relinquished the camera or mic. Make the original app the top focused app. Verify that the app has regained access to the camera or mic."
+        ],
+        "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b"
+      },
+      {
+        "source": "S10#exclusive_resource_access",
+        "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/support-multi-window-mode#exclusive_resource_access",
+        "normative_quotes": [],
+        "snapshot_sha256": "de03448de14096722ecbb44eb28378ec08471aa6963db0f4a98491299bf5b3f0"
+      },
+      {
+        "source": "S13#exclusive_resources",
+        "url": "https://developer.android.com/media/camera/camera2/camera-preview#exclusive_resources",
+        "normative_quotes": [],
+        "snapshot_sha256": "4e1dfc048ae049c46ab62ce1fec2c6e45df07ef82abea9acc2c1ec1973441a90"
+      }
+    ],
+    "handling": "Tier 3 测试描述要求失焦后让出资源，实现文档允许无争用时继续预览。仅持续预览不单独判错；核对实际抢占、断开和恢复。"
+  },
+  {
+    "topic": "App 整体留边",
+    "sources": [
+      {
+        "source": "S03#Config_Changes",
+        "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#Config_Changes",
+        "normative_quotes": [
+          "Config_Changes T-Config_Orientation , T-Config_State App fills the available display area—the entire screen or, in multi-window mode, the app window. Content does not overflow the available display area. App is not letterboxed ; it does not run in compatibility mode . App handles configuration changes and retains or restores its state as the device goes through configuration changes such as device rotation, folding and unfolding, and window resizing in split‑screen and desktop windowing modes, for example: Scroll position of scrollable fields is maintained Text typed into text fields is retained and the keyboard state is restored Media playback resumes where it left off when the configuration change was initiated"
+        ],
+        "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b"
+      },
+      {
+        "source": "S04#Fullscreen_Display",
+        "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Fullscreen_Display",
+        "normative_quotes": [
+          "Fullscreen_Display T-Orientation_Transitions App fills the app window in both orientations and is not letterboxed because of configuration changes, including device folding and unfolding. Minor letterboxing to compensate for small variations in screen geometry is acceptable."
+        ],
+        "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064"
+      }
+    ],
+    "handling": "Core 允许补偿微小几何变化的少量留边，Tier 3 测试要求无 App letterbox/compat mode。区分 App 整体加框、媒体留边与系统区域；无法确定时待确认。"
+  },
+  {
+    "topic": "基础外接输入归属",
+    "sources": [
+      {
+        "source": "S01",
+        "url": "https://developer.android.com/blog/posts/google-play-adaptive-quality-standards",
+        "normative_quotes": [],
+        "snapshot_sha256": "c2f63a2cfc3a6068a8d94341800c21efd9db41272ad8b359f77f175fd5254343"
+      },
+      {
+        "source": "S03",
+        "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3",
+        "normative_quotes": [],
+        "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b"
+      },
+      {
+        "source": "S34",
+        "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-2",
+        "normative_quotes": [],
+        "snapshot_sha256": "72fd700edceb12c7e738fded0624a8e386756ddab16a8dc131c95554c8a7f822"
+      },
+      {
+        "source": "S43",
+        "url": "https://developer.android.com/guide/topics/large-screens/keyboard-mouse-and-trackpad-tier-2",
+        "normative_quotes": [],
+        "snapshot_sha256": "a8a275c5c5a9ff703f034e44c4e5c3ffebb27630a9f462d8664c8bf028c226eb"
+      }
+    ],
+    "handling": "详细 Tier 3 检查表优先于公告概述。保留基础文字输入、点击/滚动、笔操作/条件手写；Tier 2 的导航、快捷键、右键、hover、zoom 排除。"
+  },
+  {
+    "topic": "sw600dp 表述",
+    "sources": [
+      {
+        "source": "S15",
+        "url": "https://developer.android.com/about/versions/17/behavior-changes-17",
+        "normative_quotes": [],
+        "snapshot_sha256": "7c6b3407ec0cd019ebe12f0b6f70193183f2376f79498981bc0bafb8648f98be"
+      },
+      {
+        "source": "S19",
+        "url": "https://android-developers.googleblog.com/2026/02/prepare-your-app-for-resizability-and.html",
+        "normative_quotes": [],
+        "snapshot_sha256": "bde9daeefafbf3eb52c9d89585e9206544faf0667234adb3623daf750b4b1c47"
+      },
+      {
+        "source": "S21",
+        "url": "https://developer.android.com/guide/practices/device-compatibility-mode",
+        "normative_quotes": [],
+        "snapshot_sha256": "e89c948d71d8187e824fc84e2da1a9bb0d17a481b7094466678380f9d2b71227"
+      },
+      {
+        "source": "S63",
+        "url": "https://developer.android.com/about/versions/17/changes/ff-restrictions-ignored",
+        "normative_quotes": [],
+        "snapshot_sha256": "a0dbd96cb8c032c196084ff5f3cf78a3e5fbb2101e298321c3ba9c7301039af5"
+      }
+    ],
+    "handling": "官方 API 37 正文同时出现 >600dp 和 >=600dp；Tier 3 测试明确 sw>=600dp。保留测试范围，API 37 精确边界需平台实测，不自行推出 600dp 例外。"
+  },
+  {
+    "topic": "工程实现资料不一致",
+    "sources": [
+      {
+        "source": "S58",
+        "url": "https://github.com/android/skills/blob/main/jetpack-compose/adaptive/SKILL.md",
+        "normative_quotes": [],
+        "snapshot_sha256": "231b3c59ab9acfa6a59a6b26b92e59f9d05dd22c85eb77958c3b4066eee8b48f"
+      },
+      {
+        "source": "S18",
+        "url": "https://developer.android.com/guide/topics/resources/runtime-changes",
+        "normative_quotes": [],
+        "snapshot_sha256": "ae524eb60f17e768d08e5b79da6f0ab74f4457756baf563f7aeef37489bc89a8"
+      },
+      {
+        "source": "S23",
+        "url": "https://developer.android.com/develop/adaptive-apps/guides/canonical-layouts",
+        "normative_quotes": [],
+        "snapshot_sha256": "10560d471ef812671ebc1be4afc41dd461ab0cd7aad1f296f32d55d6ae2a1588"
+      }
+    ],
+    "handling": "官方开发 skill 禁止 configChanges 并指定 Navigation3；实现指南说明可直接处理配置变化，canonical 示例仍使用 PaneScaffold。不把代码路径选择列为可见适配违规。"
+  },
+  {
+    "topic": "发布截图像素限制",
+    "sources": [
+      {
+        "source": "S56",
+        "url": "https://support.google.com/googleplay/android-developer/answer/9866151#screenshots",
+        "normative_quotes": [],
+        "snapshot_sha256": "06b3dba8af0f0853bac9a52a169a821446417b6022eb255a816b39cabd89b95c"
+      },
+      {
+        "source": "S57",
+        "url": "https://developer.android.com/google/play/requirements/screenshots-android-cli",
+        "normative_quotes": [],
+        "snapshot_sha256": "4b4b9b768627a77288121312357c1c558290652d5f990b86b9fa48bc7502f102"
+      }
+    ],
+    "handling": "Play 帮助页折叠截图每边 960–3840px，CLI 指南给出较低捕获范围。发布用帮助页类型专属要求；不据捕获/商店尺寸判定 App 适配。"
+  },
+  {
+    "topic": "Core 行长和字号单位",
+    "sources": [
+      {
+        "source": "S04#Line_Length",
+        "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Line_Length",
+        "normative_quotes": [
+          "Line_Length T-Line_Length App ensures readability of text and text blocks by limiting line length to 45-75 characters (including spaces) for each of the app's supported languages."
+        ],
+        "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064"
+      },
+      {
+        "source": "S04#Visual_Contrast",
+        "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Visual_Contrast",
+        "normative_quotes": [
+          "Visual_Contrast T-Visual_Contrast App text and foreground content maintain the following contrast ratios with the app background: 3:1 for large text and graphics 4.5:1 for small text (less than 18 pt or less than 14 pt if text is bold) Learn more about color and contrast ."
+        ],
+        "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064"
+      },
+      {
+        "source": "S60",
+        "url": "https://developer.android.com/guide/topics/ui/accessibility/apps",
+        "normative_quotes": [],
+        "snapshot_sha256": "42eed9447a0054e81771994c1bca3226692ae17006fcd016f18afbd1261db42e"
+      }
+    ],
+    "handling": "行长不强行套短标签/末行，疑义核对文本上下文。Core 字号阈值用 pt，Android 说明用 sp；不能用缩放 PNG 像素代入。"
+  },
+  {
+    "topic": "视频画中画来源",
+    "sources": [
+      {
+        "source": "S04#Video_PiP",
+        "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Video_PiP",
+        "normative_quotes": [
+          "Video_PiP T-Video_PiP If the app plays video, app should support picture-in-picture playback."
+        ],
+        "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064"
+      },
+      {
+        "source": "S36",
+        "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/experiences/foldables",
+        "normative_quotes": [],
+        "snapshot_sha256": "951e98ed82878c72316fe64de29c629bc14ccaae3fbc61692e1412b2f6bebf7b"
+      },
+      {
+        "source": "S41",
+        "url": "https://developer.android.com/develop/ui/views/picture-in-picture",
+        "normative_quotes": [],
+        "snapshot_sha256": "fcaf0d2526f125aeb364698f648143a6c7238b00bab758ee88857b30ccde7a48"
+      }
+    ],
+    "handling": "Core 已含视频播放 App 应支持 PiP；Tier 1 的交互式 PiP 不属于本次。按功能、设备条件与 should 语气核对，不要求无视频 App 新增功能。"
+  }
+]

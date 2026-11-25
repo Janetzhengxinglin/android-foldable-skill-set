@@ -1,0 +1,2119 @@
+{
+  "categories": [
+    {
+      "id": "window",
+      "title": "窗口与内容显示",
+      "check": "App 填满实际窗口，内容不溢出，不出现明显变形、模糊或像素化。",
+      "supporting_sources": {
+        "S05": "Support different display sizes",
+        "S06": "窗口宽高分类",
+        "S21": "Letterboxing / Size compatibility mode / Test your app for compatibility issues",
+        "S22": "About screen compatibility mode",
+        "S16": "Adapt your layout; design-reference.md",
+        "S68": "Grids and units; design-reference.md",
+        "S50": "Adaptive Design Lab; design-reference.md",
+        "S51": "Adaptive UI Samples; design-reference.md",
+        "S17": "Postures and orientation; design-reference.md"
+      },
+      "applies_when": "全部 App 页面；全屏与分屏分别按实际 App 窗口检查。",
+      "required_evidence": "原始截图、窗口边界、API、密度、用户宽高比设置；兼容模式须运行信息。",
+      "do_not_report": "不因单栏或留白判错；媒体保持比例的留边不等于整个 App 加框。",
+      "supporting_sections": {
+        "S05": [],
+        "S06": [],
+        "S21": [],
+        "S22": [],
+        "S16": [],
+        "S68": [],
+        "S50": [],
+        "S51": [],
+        "S17": []
+      }
+    },
+    {
+      "id": "obstruction",
+      "title": "系统栏、键盘与折叠区域遮挡",
+      "check": "文字和操作不能被系统栏、开孔、键盘或实际铰链遮挡到无法读取或使用。",
+      "supporting_sources": {
+        "S09": "WindowInsets / safeDrawing / safeGestures / IME",
+        "S07": "FoldingFeature bounds / occlusionType / isSeparating",
+        "S08": "Fold-aware 条件与区域",
+        "S17": "Postures and orientation; design-reference.md",
+        "S20": "Window inset changes → Edge-to-edge enforcement / Stable configuration",
+        "S54": "第 6–7、9 节：窗口指标、折叠区域与测试",
+        "S66": "Android system bars design; design-reference.md",
+        "S67": "App Anatomy; design-reference.md",
+        "S49": "Android UI Kit; design-reference.md",
+        "S16": "Adapt your layout; design-reference.md"
+      },
+      "applies_when": "实际遮挡或操作冲突；已有半折素材也检查基本可用性。",
+      "required_evidence": "完整截图、键盘展开及点击/滚动记录、实际折叠区域信息。",
+      "do_not_report": "不把柔性屏平展折痕一律设为禁用条带；不要求专属半折布局；背景延伸到系统栏下本身不报错。",
+      "supporting_sections": {
+        "S09": [
+          {
+            "title": "Inset fundamentals",
+            "id": "inset-fundamentals",
+            "url": "https://developer.android.com/develop/ui/compose/system/insets#inset-fundamentals"
+          }
+        ],
+        "S07": [
+          {
+            "title": "Foldable states and postures",
+            "id": "foldable_postures",
+            "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/foldables/learn-about-foldables#foldable_postures"
+          },
+          {
+            "title": "App continuity",
+            "id": "app_continuity",
+            "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/foldables/learn-about-foldables#app_continuity"
+          }
+        ],
+        "S08": [
+          {
+            "title": "Window information",
+            "id": "window_information",
+            "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/foldables/make-your-app-fold-aware#window_information"
+          },
+          {
+            "title": "Features of foldable displays",
+            "id": "features_of_foldable_displays",
+            "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/foldables/make-your-app-fold-aware#features_of_foldable_displays"
+          },
+          {
+            "title": "Window size changes",
+            "id": "window_size_changes",
+            "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/foldables/make-your-app-fold-aware#window_size_changes"
+          }
+        ],
+        "S17": [],
+        "S20": [
+          {
+            "title": "Edge-to-edge enforcement",
+            "id": "edge-to-edge",
+            "url": "https://developer.android.com/about/versions/15/behavior-changes-15#edge-to-edge"
+          }
+        ],
+        "S54": [],
+        "S66": [],
+        "S67": [],
+        "S49": [],
+        "S16": []
+      }
+    },
+    {
+      "id": "text",
+      "title": "文字、按钮与输入框",
+      "check": "检查文字截断、按钮内部异常换行、可读性和阅读文本块行长。",
+      "supporting_sources": {
+        "S26": "Anatomy → Label / Container；Adaptive design",
+        "S27": "Label text / Adjacent label / Input text / Error text",
+        "S28": "Placement / Scrolling",
+        "S20": "复杂字形与 EditText 行高变化",
+        "S64": "Translate your designs; design-reference.md",
+        "S68": "Grids and units; design-reference.md"
+      },
+      "applies_when": "所有文字页面；45–75 字符规则核对阅读文本块和支持语言，不把短标题、金额或末行强行凑到 45 字符。",
+      "required_evidence": "原文文本、支持语言、完整文本块和尺寸；实际计数，不能凭观感。",
+      "do_not_report": "单行输入框随光标横向滚动正常；不因按钮或输入框全宽、填充/描边风格报错，不硬套 300dp 示例。",
+      "supporting_sections": {
+        "S26": [],
+        "S27": [],
+        "S28": [],
+        "S20": [
+          {
+            "title": "Edge-to-edge enforcement",
+            "id": "edge-to-edge",
+            "url": "https://developer.android.com/about/versions/15/behavior-changes-15#edge-to-edge"
+          }
+        ],
+        "S64": [],
+        "S68": []
+      }
+    },
+    {
+      "id": "components",
+      "title": "弹窗、菜单与底部面板",
+      "check": "变窄或变矮后，弹层内容与操作仍可访问、滚动或关闭。",
+      "supporting_sources": {
+        "S25": "Container / Visibility / Responsive layout / Custom positioning / Scrolling / Back",
+        "S28": "Placement / Behavior → Scrolling",
+        "S29": "Overview：basic / full-screen",
+        "S21": "Transparent activities",
+        "S16": "Adapt your layout; design-reference.md",
+        "S51": "Adaptive UI Samples; design-reference.md"
+      },
+      "applies_when": "App 内弹层；系统弹窗只检查对 App 操作的实际影响。",
+      "required_evidence": "打开、滚动、操作、关闭过程及尺寸变化前后截图。",
+      "do_not_report": "不要求底部面板换成侧面板，不因全宽、初始高度超过 50% 或未用新版外观单独报基础适配问题。",
+      "supporting_sections": {
+        "S25": [],
+        "S28": [],
+        "S29": [],
+        "S21": [],
+        "S16": [],
+        "S51": []
+      }
+    },
+    {
+      "id": "continuity",
+      "title": "折叠、旋转与操作进度",
+      "check": "尺寸和方向变化后，功能、页面、输入、滚动与播放位置保持正确；连续组合切换也能使用。",
+      "supporting_sources": {
+        "S11": "User expectations and system behavior / Options for preserving UI state",
+        "S18": "Activity recreation / User expectations / Android 17 / size-based config changes",
+        "S19": "Preserve state with configuration changes"
+      },
+      "applies_when": "各页面及输入、滚动、播放和待完成任务；Core 官方测试要求每页旋转及折叠/展开至少三次。",
+      "required_evidence": "同一任务连续录屏，保留前、中、后状态和次数。",
+      "do_not_report": "单张截图不能证明状态保持；不要求主动清空任务后的临时输入永远保留；不从录屏推断代码根因。",
+      "supporting_sections": {
+        "S11": [
+          {
+            "title": "User expectations and system behavior",
+            "id": "expectations",
+            "url": "https://developer.android.com/topic/libraries/architecture/saving-states#expectations"
+          },
+          {
+            "title": "User-initiated UI state dismissal",
+            "id": "ui-dismissal-user",
+            "url": "https://developer.android.com/topic/libraries/architecture/saving-states#ui-dismissal-user"
+          },
+          {
+            "title": "System-initiated UI state dismissal",
+            "id": "ui-dismissal-system",
+            "url": "https://developer.android.com/topic/libraries/architecture/saving-states#ui-dismissal-system"
+          },
+          {
+            "title": "Options for preserving UI state",
+            "id": "options",
+            "url": "https://developer.android.com/topic/libraries/architecture/saving-states#options"
+          }
+        ],
+        "S18": [],
+        "S19": []
+      }
+    },
+    {
+      "id": "multiwindow",
+      "title": "分屏与焦点切换",
+      "check": "分屏各尺寸可操作；可见但未聚焦时继续更新；资源冲突后正确处理和恢复。",
+      "supporting_sources": {
+        "S10": "Multi-resume / Exclusive resource access / Test your app in multi-window mode",
+        "S13": "Exclusive resources"
+      },
+      "applies_when": "分屏；相机/麦克风项仅在 App 使用这些资源时。",
+      "required_evidence": "双窗口连续录屏、焦点变化、资源争用与恢复。",
+      "do_not_report": "不要求多实例、拖放或桌面式菜单；无争用时继续相机预览不单独证明违规。",
+      "supporting_sections": {
+        "S10": [
+          {
+            "title": "Support user-initiated split-screen",
+            "id": "support-split",
+            "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/support-multi-window-mode#support-split"
+          },
+          {
+            "title": "Multi-resume",
+            "id": "multi-resume",
+            "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/support-multi-window-mode#multi-resume"
+          },
+          {
+            "title": "Exclusive resource access",
+            "id": "exclusive_resource_access",
+            "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/support-multi-window-mode#exclusive_resource_access"
+          },
+          {
+            "title": "Window metrics",
+            "id": "window_metrics",
+            "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/support-multi-window-mode#window_metrics"
+          }
+        ],
+        "S13": [
+          {
+            "title": "Camera orientation",
+            "id": "camera_orientation",
+            "url": "https://developer.android.com/media/camera/camera2/camera-preview#camera_orientation"
+          },
+          {
+            "title": "Aspect ratio",
+            "id": "aspect_ratio",
+            "url": "https://developer.android.com/media/camera/camera2/camera-preview#aspect_ratio"
+          },
+          {
+            "title": "CameraX",
+            "id": "camerax",
+            "url": "https://developer.android.com/media/camera/camera2/camera-preview#camerax"
+          },
+          {
+            "title": "Window metrics",
+            "id": "window_metrics",
+            "url": "https://developer.android.com/media/camera/camera2/camera-preview#window_metrics"
+          },
+          {
+            "title": "180 degree rotation",
+            "id": "180_degree_rotation",
+            "url": "https://developer.android.com/media/camera/camera2/camera-preview#180_degree_rotation"
+          },
+          {
+            "title": "Exclusive resources",
+            "id": "exclusive_resources",
+            "url": "https://developer.android.com/media/camera/camera2/camera-preview#exclusive_resources"
+          }
+        ]
+      }
+    },
+    {
+      "id": "camera",
+      "title": "App 内拍摄或扫描",
+      "check": "相机预览在横竖屏、折叠/展开和分屏中方向与比例正确。",
+      "supporting_sources": {
+        "S13": "Camera orientation / Aspect ratio / CameraX / Window metrics / 180 degree rotation",
+        "S19": "Ensure camera compatibility",
+        "S17": "Postures and orientation; design-reference.md",
+        "S51": "Adaptive UI Samples; design-reference.md"
+      },
+      "applies_when": "App 内拍摄、扫码、身份验证或视频通话，包括内嵌第三方 SDK。",
+      "required_evidence": "从 App 启动预览的过程；同一对象切换前后方向与比例。",
+      "do_not_report": "调用独立系统相机时不审查系统相机布局；正常保持比例的裁切/留边不自动报错；不要求后置自拍或双屏预览。",
+      "supporting_sections": {
+        "S13": [
+          {
+            "title": "Camera orientation",
+            "id": "camera_orientation",
+            "url": "https://developer.android.com/media/camera/camera2/camera-preview#camera_orientation"
+          },
+          {
+            "title": "Aspect ratio",
+            "id": "aspect_ratio",
+            "url": "https://developer.android.com/media/camera/camera2/camera-preview#aspect_ratio"
+          },
+          {
+            "title": "CameraX",
+            "id": "camerax",
+            "url": "https://developer.android.com/media/camera/camera2/camera-preview#camerax"
+          },
+          {
+            "title": "Window metrics",
+            "id": "window_metrics",
+            "url": "https://developer.android.com/media/camera/camera2/camera-preview#window_metrics"
+          },
+          {
+            "title": "180 degree rotation",
+            "id": "180_degree_rotation",
+            "url": "https://developer.android.com/media/camera/camera2/camera-preview#180_degree_rotation"
+          },
+          {
+            "title": "Exclusive resources",
+            "id": "exclusive_resources",
+            "url": "https://developer.android.com/media/camera/camera2/camera-preview#exclusive_resources"
+          }
+        ],
+        "S19": [],
+        "S17": [],
+        "S51": []
+      }
+    },
+    {
+      "id": "projection",
+      "title": "App 内录屏或屏幕共享",
+      "check": "旋转、折叠/展开和分屏后，共享/录制输出尺寸与比例正确。",
+      "supporting_sources": {
+        "S14": "Three display representations / Media projection size / Customization / Resource recovery"
+      },
+      "applies_when": "App 自身发起录屏、共享或投屏；被系统录制不等于 App 实现该功能。",
+      "required_evidence": "App 发起过程和接收端/录制结果同步证据；注明整屏还是单窗口。",
+      "do_not_report": "不审查系统录屏控件和授权弹窗的设计；App 本机截图不能证明接收端比例。",
+      "supporting_sections": {
+        "S14": [
+          {
+            "title": "Three display representations",
+            "id": "three_display_representations",
+            "url": "https://developer.android.com/media/grow/media-projection#three_display_representations"
+          },
+          {
+            "title": "Media projection size",
+            "id": "media_projection_size",
+            "url": "https://developer.android.com/media/grow/media-projection#media_projection_size"
+          },
+          {
+            "title": "Initial size",
+            "id": "initial_size",
+            "url": "https://developer.android.com/media/grow/media-projection#initial_size"
+          },
+          {
+            "title": "Size changes",
+            "id": "size_changes",
+            "url": "https://developer.android.com/media/grow/media-projection#size_changes"
+          },
+          {
+            "title": "Customization",
+            "id": "customization",
+            "url": "https://developer.android.com/media/grow/media-projection#customization"
+          },
+          {
+            "title": "Resource recovery",
+            "id": "resource_recovery",
+            "url": "https://developer.android.com/media/grow/media-projection#resource_recovery"
+          }
+        ]
+      }
+    },
+    {
+      "id": "keyboard",
+      "title": "外接键盘输入",
+      "check": "输入框能用外接键盘；接入或断开后能切换实体/软件键盘，不重启 App。",
+      "supporting_sources": {
+        "S12": "Keyboard / Text input；区分基础输入与高级导航",
+        "S18": "Android 17 键盘配置变化"
+      },
+      "applies_when": "所有可编辑输入框；设备允许外接键盘。",
+      "required_evidence": "连接、断开、输入与 App 未重启的连续证据。",
+      "do_not_report": "不要求整套 Tab/方向键导航、快捷键、空格控制媒体、Enter 发送或 Esc 退出等 Tier 2 功能。",
+      "supporting_sections": {
+        "S12": [
+          {
+            "title": "Keyboard",
+            "id": "keyboard",
+            "url": "https://developer.android.com/develop/ui/compose/touch-input/input-compatibility-on-large-screens#keyboard"
+          },
+          {
+            "title": "Stylus",
+            "id": "stylus",
+            "url": "https://developer.android.com/develop/ui/compose/touch-input/input-compatibility-on-large-screens#stylus"
+          },
+          {
+            "title": "Mouse and touchpad support",
+            "id": "mouse_and_touchpad",
+            "url": "https://developer.android.com/develop/ui/compose/touch-input/input-compatibility-on-large-screens#mouse_and_touchpad"
+          }
+        ],
+        "S18": []
+      }
+    },
+    {
+      "id": "mouse",
+      "title": "鼠标与触控板基本操作",
+      "check": "可点击元素可点击；列表、选择器等可用滚轮或触控板滚动。",
+      "supporting_sources": {
+        "S12": "Mouse and trackpad → basic interactions",
+        "S44": "Primary click 与精确指针目标条件"
+      },
+      "applies_when": "全部可点击/滚动页面；支持这些外设的设备。",
+      "required_evidence": "分别测试鼠标和触控板的点击、滚动。",
+      "do_not_report": "不要求右键、悬停、缩放或拖放等 Tier 2/1 增强功能。",
+      "supporting_sections": {
+        "S12": [
+          {
+            "title": "Keyboard",
+            "id": "keyboard",
+            "url": "https://developer.android.com/develop/ui/compose/touch-input/input-compatibility-on-large-screens#keyboard"
+          },
+          {
+            "title": "Stylus",
+            "id": "stylus",
+            "url": "https://developer.android.com/develop/ui/compose/touch-input/input-compatibility-on-large-screens#stylus"
+          },
+          {
+            "title": "Mouse and touchpad support",
+            "id": "mouse_and_touchpad",
+            "url": "https://developer.android.com/develop/ui/compose/touch-input/input-compatibility-on-large-screens#mouse_and_touchpad"
+          }
+        ],
+        "S44": []
+      }
+    },
+    {
+      "id": "stylus",
+      "title": "触控笔基本操作与手写输入",
+      "check": "笔可选择、操作、滚动；满足版本条件时可在输入框手写/编辑，不弹软件键盘。",
+      "supporting_sources": {
+        "S12": "Stylus"
+      },
+      "applies_when": "基本操作在支持笔的设备；手写文本在 Android 14/API 34+；ChromeOS WebView 条件单独保留，不扩为折叠手机通用要求。",
+      "required_evidence": "真实笔操作和手写/编辑过程，注明设备能力与 API。",
+      "do_not_report": "不要求绘画、橡皮擦、压力/倾斜感应、低延迟、掌压防误触或跨 App 拖放等 Tier 1 功能。",
+      "supporting_sections": {
+        "S12": [
+          {
+            "title": "Keyboard",
+            "id": "keyboard",
+            "url": "https://developer.android.com/develop/ui/compose/touch-input/input-compatibility-on-large-screens#keyboard"
+          },
+          {
+            "title": "Stylus",
+            "id": "stylus",
+            "url": "https://developer.android.com/develop/ui/compose/touch-input/input-compatibility-on-large-screens#stylus"
+          },
+          {
+            "title": "Mouse and touchpad support",
+            "id": "mouse_and_touchpad",
+            "url": "https://developer.android.com/develop/ui/compose/touch-input/input-compatibility-on-large-screens#mouse_and_touchpad"
+          }
+        ]
+      }
+    },
+    {
+      "id": "navigation",
+      "title": "返回与重新进入 App",
+      "check": "系统返回可用；从最近任务、休眠/锁屏恢复时保留相应状态。",
+      "supporting_sources": {
+        "S11": "User expectations and system behavior",
+        "S61": "default/custom back / Opt out / Test predictive back",
+        "S23": "List-detail 的选中项与返回行为"
+      },
+      "applies_when": "全部页面、弹层和流程；按实际离开方式区分。",
+      "required_evidence": "返回、关闭弹层、最近任务恢复的过程；注明离开方式和间隔。",
+      "do_not_report": "不禁用所有 App 返回箭头；不要求底部导航换导航轨；动画缺失不能仅从推荐文档判 Tier 3 违规。",
+      "supporting_sections": {
+        "S11": [
+          {
+            "title": "User expectations and system behavior",
+            "id": "expectations",
+            "url": "https://developer.android.com/topic/libraries/architecture/saving-states#expectations"
+          },
+          {
+            "title": "User-initiated UI state dismissal",
+            "id": "ui-dismissal-user",
+            "url": "https://developer.android.com/topic/libraries/architecture/saving-states#ui-dismissal-user"
+          },
+          {
+            "title": "System-initiated UI state dismissal",
+            "id": "ui-dismissal-system",
+            "url": "https://developer.android.com/topic/libraries/architecture/saving-states#ui-dismissal-system"
+          },
+          {
+            "title": "Options for preserving UI state",
+            "id": "options",
+            "url": "https://developer.android.com/topic/libraries/architecture/saving-states#options"
+          }
+        ],
+        "S61": [],
+        "S23": []
+      }
+    },
+    {
+      "id": "accessibility",
+      "title": "主题、触控目标与可访问性",
+      "check": "浅色/深色内容可读；触控目标至少 48dp；对比度和语义符合 Core。",
+      "supporting_sources": {
+        "S32": "Target sizes：图标与实际触控范围",
+        "S60": "Increase text visibility / Use large simple controls / Describe each UI element",
+        "S62": "Themes and styles / Web content / Configuration changes",
+        "S69": "Android color for mobile design; design-reference.md",
+        "S65": "Accessibility design; design-reference.md",
+        "S49": "Android UI Kit; design-reference.md"
+      },
+      "applies_when": "App 和内嵌网页；按触控/精确指针及文字字号/粗细区分。",
+      "required_evidence": "主题前后、原始颜色/字号、触控边界/密度、TalkBack 或语义树。",
+      "do_not_report": "不凭图标大小判触控范围不足；文本自动朗读、纯装饰不强制 contentDescription；截图不能证明语义。",
+      "supporting_sections": {
+        "S32": [],
+        "S60": [],
+        "S62": [],
+        "S69": [],
+        "S65": [],
+        "S49": []
+      }
+    },
+    {
+      "id": "playback",
+      "title": "已有音视频的播放与恢复",
+      "check": "尺寸/焦点变化时保持播放状态；按 Core 核对适用的音频焦点、背景播放和视频画中画。",
+      "supporting_sources": {
+        "S10": "Multi-resume 与焦点",
+        "S41": "Handle UI during PiP / Continuing video playback / Additional considerations"
+      },
+      "applies_when": "已有对应音视频功能且设备支持相应模式；Core 的 should 原样保留，不改写成所有 App 的 must。",
+      "required_evidence": "有声音的播放、音频焦点请求、恢复、适用 PiP 操作证据及系统条件。",
+      "do_not_report": "不要求 Tier 1 交互式 PiP、设备切换器或专属半折控制区；无音视频功能的 App 不要求新增。",
+      "supporting_sections": {
+        "S10": [
+          {
+            "title": "Support user-initiated split-screen",
+            "id": "support-split",
+            "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/support-multi-window-mode#support-split"
+          },
+          {
+            "title": "Multi-resume",
+            "id": "multi-resume",
+            "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/support-multi-window-mode#multi-resume"
+          },
+          {
+            "title": "Exclusive resource access",
+            "id": "exclusive_resource_access",
+            "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/support-multi-window-mode#exclusive_resource_access"
+          },
+          {
+            "title": "Window metrics",
+            "id": "window_metrics",
+            "url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/support-multi-window-mode#window_metrics"
+          }
+        ],
+        "S41": []
+      }
+    }
+  ],
+  "core_dispositions": [
+    {
+      "official_id": "Consistent_UX",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Consistent_UX",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Consistent_UX T-Consistent_UX , T-SD_Card App provides a consistent user experience for all app use cases on all form factors.",
+      "links": [
+        {
+          "text": "T-Consistent_UX",
+          "href": "#T-Consistent_UX"
+        },
+        {
+          "text": "T-SD_Card",
+          "href": "#T-SD_Card"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "App_Switcher",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#App_Switcher",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "App_Switcher T-App_Switcher , T-SD_Card App goes into the background when focus switches to another app. App returns to the foreground when reactivated from the Recents app switcher.",
+      "links": [
+        {
+          "text": "T-App_Switcher",
+          "href": "#T-App_Switcher"
+        },
+        {
+          "text": "T-SD_Card",
+          "href": "#T-SD_Card"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "navigation",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Sleep_Resume",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Sleep_Resume",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Sleep_Resume T-Sleep_Resume , T-SD_Card When the app is the foreground app, it pauses when the device goes to sleep and resumes when the device wakes up.",
+      "links": [
+        {
+          "text": "T-Sleep_Resume",
+          "href": "#T-Sleep_Resume"
+        },
+        {
+          "text": "T-SD_Card",
+          "href": "#T-SD_Card"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "navigation",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Lock_Resume",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Lock_Resume",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Lock_Resume T-Lock_Resume , T-SD_Card When the app is the foreground app, it pauses when the device is locked and resumes when the device is unlocked.",
+      "links": [
+        {
+          "text": "T-Lock_Resume",
+          "href": "#T-Lock_Resume"
+        },
+        {
+          "text": "T-SD_Card",
+          "href": "#T-SD_Card"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "navigation",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Display_State_Parity",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Display_State_Parity",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Display_State_Parity T-Orientation_Transitions Display orientations and fold states expose essentially the same features and actions and preserve functional parity.",
+      "links": [
+        {
+          "text": "T-Orientation_Transitions",
+          "href": "#T-Orientation_Transitions"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "continuity",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Fullscreen_Display",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Fullscreen_Display",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Fullscreen_Display T-Orientation_Transitions App fills the app window in both orientations and is not letterboxed because of configuration changes, including device folding and unfolding. Minor letterboxing to compensate for small variations in screen geometry is acceptable.",
+      "links": [
+        {
+          "text": "T-Orientation_Transitions",
+          "href": "#T-Orientation_Transitions"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "window",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Orientation_Transitions",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Orientation_Transitions",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Orientation_Transitions T-Orientation_Transitions App handles rapid transitions between display orientations and device folding and unfolding with no display rendering problems and without losing state.",
+      "links": [
+        {
+          "text": "T-Orientation_Transitions",
+          "href": "#T-Orientation_Transitions"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "continuity",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Graphic_Quality",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Graphic_Quality",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Graphic_Quality T-Graphic_Quality App displays graphics, text, images, and other UI elements without noticeable distortion, blurring, or pixelation. App uses vector drawables where possible App uses high-quality graphics for all targeted screen sizes and form factors No aliasing at the edges of menus, buttons, and other UI elements",
+      "links": [
+        {
+          "text": "T-Graphic_Quality",
+          "href": "#T-Graphic_Quality"
+        },
+        {
+          "text": "vector drawables",
+          "href": "/guide/topics/graphics/vector-drawable-resources"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "text",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Line_Length",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Line_Length",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Line_Length T-Line_Length App ensures readability of text and text blocks by limiting line length to 45-75 characters (including spaces) for each of the app's supported languages.",
+      "links": [
+        {
+          "text": "T-Line_Length",
+          "href": "#T-Line_Length"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "text",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Theme_Support",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Theme_Support",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Theme_Support T-Theme_Support The app's content, and all web content accessed by the app, support both light and dark themes .",
+      "links": [
+        {
+          "text": "T-Theme_Support",
+          "href": "#T-Theme_Support"
+        },
+        {
+          "text": "dark themes",
+          "href": "/guide/topics/ui/look-and-feel/darktheme"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "accessibility",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Back_Button_Nav",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Back_Button_Nav",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Back_Button_Nav T-Back_Nav App supports standard back button navigation and does not make use of any custom, onscreen back button prompts.",
+      "links": [
+        {
+          "text": "T-Back_Nav",
+          "href": "#T-Back_Nav"
+        },
+        {
+          "text": "back button navigation",
+          "href": "/design/patterns/navigation"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "navigation",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Back_Gesture_Nav",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Back_Gesture_Nav",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Back_Gesture_Nav T-Back_Nav App supports gesture navigation for going back and going to the home screen.",
+      "links": [
+        {
+          "text": "T-Back_Nav",
+          "href": "#T-Back_Nav"
+        },
+        {
+          "text": "gesture navigation",
+          "href": "/training/gestures/gesturenav"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "navigation",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "State_Preservation",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#State_Preservation",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "State_Preservation T-State_Preservation , T-Back_Nav The app preserves user or app state when leaving the foreground and prevents accidental data loss due to back navigation and other state changes. When returning to the foreground, the app restores the preserved state and any pending stateful transactions. Examples include changes to editable fields, game progress, menus, videos, and other sections of the app. When the app is resumed from the Recents app switcher, the app returns the user to the exact state in which the app was last used. When the app is resumed after the device wakes from the sleep (locked) state, the app returns the user to the exact state in which the app was last used. When the app is relaunched from Home or All Apps , it should do one of the following, depending on how much time has passed since the app was last used: If the app was last used a short time ago (minutes), restore the app state as closely as possible to its previous state. If more time has passed since the app was last used, try to restore the app as closely as possible to its previous state or start the app from its home screen or some other default state.",
+      "links": [
+        {
+          "text": "T-State_Preservation",
+          "href": "#T-State_Preservation"
+        },
+        {
+          "text": "T-Back_Nav",
+          "href": "#T-Back_Nav"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "navigation",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Notification_Quality",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Notification_Quality",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Notification_Quality T-Notification_Quality Notifications provide relevant information related to your app. Don't use notifications for cross-promotion or advertising of another product, as this is strictly prohibited by the Play Store. Notification channels are defined according to best practices, rather than serving all notifications from one channel. Select the correct notification priority . Stack multiple notifications into a single notification group when possible. Set timeouts for notifications where appropriate. Notifications are persistent only if related to ongoing events, such as music playback or a phone call. For more information, see the Functionality section .",
+      "links": [
+        {
+          "text": "T-Notification_Quality",
+          "href": "#T-Notification_Quality"
+        },
+        {
+          "text": "Notifications",
+          "href": "/design/ui/mobile/guides/home-screen/notifications"
+        },
+        {
+          "text": "Notification channels",
+          "href": "/training/notify-user/channels"
+        },
+        {
+          "text": "the correct notification priority",
+          "href": "https://android-developers.googleblog.com/2018/12/notifications-from-twitter-app.html"
+        },
+        {
+          "text": "a single notification group",
+          "href": "/training/notify-user/group"
+        },
+        {
+          "text": "timeouts",
+          "href": "/reference/kotlin/androidx/core/app/NotificationCompat.Builder#setTimeoutAfter(long)"
+        },
+        {
+          "text": "Functionality section",
+          "href": "/docs/quality-guidelines/core-app-quality#fn"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Conversation_Quality",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Conversation_Quality",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Conversation_Quality T-Notification_Quality For messaging apps, social apps and conversations: Use the MessagingStyle notifications for conversations. Support the direct reply action . Support conversation shortcuts , and implement best practices for getting the best direct share ranking . Support bubbles .",
+      "links": [
+        {
+          "text": "T-Notification_Quality",
+          "href": "#T-Notification_Quality"
+        },
+        {
+          "text": "MessagingStyle",
+          "href": "/reference/kotlin/androidx/core/app/NotificationCompat.MessagingStyle"
+        },
+        {
+          "text": "direct reply action",
+          "href": "/training/notify-user/build-notification#reply-action"
+        },
+        {
+          "text": "conversation shortcuts",
+          "href": "/guide/topics/ui/conversations#shortcuts"
+        },
+        {
+          "text": "best direct share ranking",
+          "href": "/develop/ui/compose/sharing/direct-share-targets#get-best-ranking"
+        },
+        {
+          "text": "bubbles",
+          "href": "/guide/topics/ui/bubbles"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Touch_Target_Size",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Touch_Target_Size",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Touch_Target_Size T-Touch_Target_Size Touch targets are at least 48 dp. See the Material Design Target sizes guidelines.",
+      "links": [
+        {
+          "text": "T-Touch_Target_Size",
+          "href": "#T-Touch_Target_Size"
+        },
+        {
+          "text": "Target sizes",
+          "href": "https://m3.material.io/foundations/designing/structure#dab862b1-e042-4c40-b680-b484b9f077f6"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "accessibility",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Visual_Contrast",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Visual_Contrast",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Visual_Contrast T-Visual_Contrast App text and foreground content maintain the following contrast ratios with the app background: 3:1 for large text and graphics 4.5:1 for small text (less than 18 pt or less than 14 pt if text is bold) Learn more about color and contrast .",
+      "links": [
+        {
+          "text": "T-Visual_Contrast",
+          "href": "#T-Visual_Contrast"
+        },
+        {
+          "text": "color and contrast",
+          "href": "https://m3.material.io/foundations/designing/color-contrast"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "accessibility",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Content_Description",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Content_Description",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Content_Description T-Content_Description Describe each UI element ,\n         except for TextView , using contentDescription .",
+      "links": [
+        {
+          "text": "T-Content_Description",
+          "href": "#T-Content_Description"
+        },
+        {
+          "text": "Describe each UI element",
+          "href": "/guide/topics/ui/accessibility/apps#describe-ui-element"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "accessibility",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Audio_Playback_Start",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Audio_Playback_Start",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Audio_Playback_Start T-Audio_Playback_Start When the user initiates audio playback, the app should do one of the following within one second: Start playing the audio Provide a visual indicator that the audio data is being prepared",
+      "links": [
+        {
+          "text": "T-Audio_Playback_Start",
+          "href": "#T-Audio_Playback_Start"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Audio_Focus_Request",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Audio_Focus_Request",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Audio_Focus_Request T-Audio_Focus_Request App should request audio focus when audio starts playing and abandon audio focus when playback stops.",
+      "links": [
+        {
+          "text": "T-Audio_Focus_Request",
+          "href": "#T-Audio_Focus_Request"
+        },
+        {
+          "text": "audio focus",
+          "href": "/guide/topics/media-apps/audio-focus"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Audio_Focus_Change",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Audio_Focus_Change",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Audio_Focus_Change T-Audio_Focus_Change App should handle other apps' requests for audio focus . For example, an app might reduce playback volume when another app plays speech.",
+      "links": [
+        {
+          "text": "T-Audio_Focus_Change",
+          "href": "#T-Audio_Focus_Change"
+        },
+        {
+          "text": "handle other apps' requests for audio focus",
+          "href": "/guide/topics/media-apps/audio-focus#audio-focus-change"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "playback",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Audio_Playback_Background",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Audio_Playback_Background",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Audio_Playback_Background T-Audio_Playback_Background App should support background playback . App must use a foreground service to prevent the system from killing the app process once the app is no longer visible. The app must also display a persistent, non‑dismissible notification in the status bar or on the lock screen to inform the user that the app is running. Users should be able to control playback using the notification or lock screen controls or the controls on a connected accessory.",
+      "links": [
+        {
+          "text": "T-Audio_Playback_Background",
+          "href": "#T-Audio_Playback_Background"
+        },
+        {
+          "text": "background playback",
+          "href": "/media/platform/mediaplayer/background"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "playback",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Audio_Notification_Style",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Audio_Notification_Style",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Audio_Notification_Style T-Audio_Notification_Style When the app plays audio in the background, app must create a notification styled with MediaStyle .",
+      "links": [
+        {
+          "text": "T-Audio_Notification_Style",
+          "href": "#T-Audio_Notification_Style"
+        },
+        {
+          "text": "notification styled with MediaStyle",
+          "href": "https://android-developers.googleblog.com/2020/08/playing-nicely-with-media-controls.html"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Audio_Playback_Resume",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Audio_Playback_Resume",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Audio_Playback_Resume T-Audio_Playback_Resume If the app is in the background and audio is paused, audio resumes when the app returns to the foreground, or the app must indicate to the user that playback is in a paused state.",
+      "links": [
+        {
+          "text": "T-Audio_Playback_Resume",
+          "href": "#T-Audio_Playback_Resume"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Video_PiP",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Video_PiP",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Video_PiP T-Video_PiP If the app plays video, app should support picture-in-picture playback.",
+      "links": [
+        {
+          "text": "T-Video_PiP",
+          "href": "#T-Video_PiP"
+        },
+        {
+          "text": "picture-in-picture",
+          "href": "/guide/topics/ui/picture-in-picture"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "playback",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "Video_Encoding",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Video_Encoding",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Video_Encoding T-Video_Encoding If the app encodes video, app should do so using the HEVC video compression standard .",
+      "links": [
+        {
+          "text": "T-Video_Encoding",
+          "href": "#T-Video_Encoding"
+        },
+        {
+          "text": "HEVC video compression standard",
+          "href": "https://en.wikipedia.org/wiki/High_Efficiency_Video_Coding"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Video_Playback_Background",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Video_Playback_Background",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Video_Playback_Background T-Video_Playback_Background App supports background playback of video when the app is not the topmost app, including when the app window is: Minimized Behind other windows or system UI (for example, notification shade or home/lock screen) Off the visible desktop screen",
+      "links": [
+        {
+          "text": "T-Video_Playback_Background",
+          "href": "#T-Video_Playback_Background"
+        }
+      ],
+      "disposition": "included",
+      "category_id": "playback",
+      "reason": "本次相关基本要求，按条件核对。"
+    },
+    {
+      "official_id": "System_Sharesheet",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#System_Sharesheet",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "System_Sharesheet T-System_Sharesheet App should use the Android Sharesheet when sharing content. App can suggest targets that are unavailable to custom solutions.",
+      "links": [
+        {
+          "text": "T-System_Sharesheet",
+          "href": "#T-System_Sharesheet"
+        },
+        {
+          "text": "Android Sharesheet",
+          "href": "/develop/ui/compose/sharing/send"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Background_Service_Optimization",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Background_Service_Optimization",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Background_Service_Optimization T-Background_Service_Optimization App avoids running unnecessarily long services in the background to ensure the smooth running of the user's device. Note: The system applies various restrictions on background services . The following are poor uses of background services: Maintaining a network connection for notifications Maintaining a Bluetooth connection Keeping the GPS powered on For more information, see Background tasks overview .",
+      "links": [
+        {
+          "text": "T-Background_Service_Optimization",
+          "href": "#T-Background_Service_Optimization"
+        },
+        {
+          "text": "restrictions on background services",
+          "href": "/about/versions/oreo/background#services"
+        },
+        {
+          "text": "Background tasks overview",
+          "href": "/guide/background#categories_of_background_tasks"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "App_Startup_Time",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#App_Startup_Time",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "App_Startup_Time T-App_Startup_Time App loads quickly or provides onscreen feedback to the user (a progress indicator or similar cue) if the app takes longer than two seconds to load.",
+      "links": [
+        {
+          "text": "T-App_Startup_Time",
+          "href": "#T-App_Startup_Time"
+        },
+        {
+          "text": "App loads quickly",
+          "href": "https://medium.com/androiddevelopers/testing-app-startup-performance-36169c27ee55"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Rendering_Performance",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Rendering_Performance",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Rendering_Performance T-Rendering_Performance App renders frames every 16 (or fewer) milliseconds to display at least 60 frames per second. For help with rendering issues, see Slow rendering .",
+      "links": [
+        {
+          "text": "T-Rendering_Performance",
+          "href": "#T-Rendering_Performance"
+        },
+        {
+          "text": "Slow rendering",
+          "href": "/topic/performance/issues/render"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "StrictMode_Compliance",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#StrictMode_Compliance",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "StrictMode_Compliance T-StrictMode_Compliance With StrictMode enabled (see the StrictMode testing section), no red flashes (performance warnings from StrictMode ) are visible when testing the app.",
+      "links": [
+        {
+          "text": "T-StrictMode_Compliance",
+          "href": "#T-StrictMode_Compliance"
+        },
+        {
+          "text": "StrictMode",
+          "href": "/reference/kotlin/android/os/StrictMode"
+        },
+        {
+          "text": "StrictMode",
+          "href": "#strictmode"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Stability_ANR",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Stability_ANR",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Stability_ANR T-Stability_ANR App does not crash or block the UI thread causing ANR (Android Not Responding) errors. Use the Google Play pre-launch report to identify potential stability issues. After deployment, monitor the Android Vitals page in the Google Play console.",
+      "links": [
+        {
+          "text": "T-Stability_ANR",
+          "href": "#T-Stability_ANR"
+        },
+        {
+          "text": "crash",
+          "href": "/topic/performance/issues/crash"
+        },
+        {
+          "text": "ANR (Android Not Responding)",
+          "href": "/topic/performance/issues/anr"
+        },
+        {
+          "text": "pre-launch report",
+          "href": "https://support.google.com/googleplay/android-developer/answer/9842757"
+        },
+        {
+          "text": "Android Vitals",
+          "href": "/google/play/vitals"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Android_Platform_Compatibility",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Android_Platform_Compatibility",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Android_Platform_Compatibility T-Android_Platform_Compatibility App runs on the latest public version of the Android platform without crashing or severely impacting core functionality.",
+      "links": [
+        {
+          "text": "T-Android_Platform_Compatibility",
+          "href": "#T-Android_Platform_Compatibility"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Target_SDK_Version",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Target_SDK_Version",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Target_SDK_Version T-Target_SDK_Version App targets the latest Android SDK needed to align with Google Play requirements by setting the targetSdk value in the app's module build.gradle file.",
+      "links": [
+        {
+          "text": "T-Target_SDK_Version",
+          "href": "#T-Target_SDK_Version"
+        },
+        {
+          "text": "latest Android SDK",
+          "href": "/distribute/best-practices/develop/target-sdk"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Compile_SDK_Version",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Compile_SDK_Version",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Compile_SDK_Version T-Target_SDK_Version App is built with the latest Android SDK by setting the compileSdk value in the app's module build.gradle file.",
+      "links": [
+        {
+          "text": "T-Target_SDK_Version",
+          "href": "#T-Target_SDK_Version"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "SDK_Maintenance",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#SDK_Maintenance",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "SDK_Maintenance T-SDK_Maintenance , T-Non_SDK_Interfaces Any Google or third-party SDKs used are up to date. Any improvements to these SDKs related to stability, compatibility, or security should be available to users in a timely manner. For Google SDKs, use SDKs powered by Google Play services when available. These SDKs are backward compatible, receive automatic updates, reduce your app package size, and make efficient use of on-device resources. You are accountable for the entire app codebase, inclusive of any third-party SDKs used.",
+      "links": [
+        {
+          "text": "T-SDK_Maintenance",
+          "href": "#T-SDK_Maintenance"
+        },
+        {
+          "text": "T-Non_SDK_Interfaces",
+          "href": "#T-Non_SDK_Interfaces"
+        },
+        {
+          "text": "Google Play services",
+          "href": "https://developers.google.com/android"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Non_SDK_Interfaces",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Non_SDK_Interfaces",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Non_SDK_Interfaces T-Non_SDK_Interfaces App does not use non-SDK interfaces .",
+      "links": [
+        {
+          "text": "T-Non_SDK_Interfaces",
+          "href": "#T-Non_SDK_Interfaces"
+        },
+        {
+          "text": "non-SDK interfaces",
+          "href": "/distribute/best-practices/develop/restrictions-non-sdk-interfaces"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Production_Build_Quality",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Production_Build_Quality",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Production_Build_Quality T-Production_Build_Quality No debug libraries are included in the production app. Debug libraries included in the app can cause performance as well as security issues.",
+      "links": [
+        {
+          "text": "T-Production_Build_Quality",
+          "href": "#T-Production_Build_Quality"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Power_Management",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Power_Management",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Power_Management T-Power_Management App properly supports power management features Doze and App Standby . Apps can request a power maintenance exemption. See Support for other use cases in Optimize for Doze and App Standby .",
+      "links": [
+        {
+          "text": "T-Power_Management",
+          "href": "#T-Power_Management"
+        },
+        {
+          "text": "Doze and App Standby",
+          "href": "/training/monitoring-device-state/doze-standby"
+        },
+        {
+          "text": "Support for other use cases",
+          "href": "/training/monitoring-device-state/doze-standby#support_for_other_use_cases"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Minimize_Permissions",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Minimize_Permissions",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Minimize_Permissions T-Minimize_Permissions App requests only the absolute minimum permissions needed to support the current use case. For some permissions, such as location, app uses a coarse specification in place of fine if possible. See Minimize your permission requests .",
+      "links": [
+        {
+          "text": "T-Minimize_Permissions",
+          "href": "#T-Minimize_Permissions"
+        },
+        {
+          "text": "Minimize your permission requests",
+          "href": "/training/permissions/evaluating"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Sensitive_Permissions",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Sensitive_Permissions",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Sensitive_Permissions T-Sensitive_Permissions App requests permission to access sensitive data (such as SMS or Call Log permission groups or location ) or services that cost money (such as Dialer or SMS) only when directly related to the app's core use cases. Implications related to these permissions must be prominently disclosed to the user. Depending on how your app uses the permissions, an alternative way of fulfilling your app's use case might be possible without relying on access to sensitive information. For example, instead of requesting permissions related to a user's contacts, use an implicit intent to request access.",
+      "links": [
+        {
+          "text": "T-Sensitive_Permissions",
+          "href": "#T-Sensitive_Permissions"
+        },
+        {
+          "text": "SMS or Call Log permission groups",
+          "href": "https://support.google.com/googleplay/android-developer/answer/10208820"
+        },
+        {
+          "text": "location",
+          "href": "/training/permissions/requesting#location"
+        },
+        {
+          "text": "alternative way",
+          "href": "/training/permissions/evaluating"
+        },
+        {
+          "text": "implicit intent",
+          "href": "/guide/components/intents-common#Contacts"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Runtime_Permissions",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Runtime_Permissions",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Runtime_Permissions T-Runtime_Permissions App requests runtime permissions when the functionality is requested, rather than during app startup.",
+      "links": [
+        {
+          "text": "T-Runtime_Permissions",
+          "href": "#T-Runtime_Permissions"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Permission_Rationale",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Permission_Rationale",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Permission_Rationale T-Permission_Rationale App clearly explains why permissions are needed .",
+      "links": [
+        {
+          "text": "T-Permission_Rationale",
+          "href": "#T-Permission_Rationale"
+        },
+        {
+          "text": "why permissions are needed",
+          "href": "/training/permissions/requesting#explain"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Graceful_Degradation",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Graceful_Degradation",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Graceful_Degradation T-Graceful_Degradation App gracefully degrades when users deny or revoke a permission. App shouldn't prevent user access altogether.",
+      "links": [
+        {
+          "text": "T-Graceful_Degradation",
+          "href": "#T-Graceful_Degradation"
+        },
+        {
+          "text": "gracefully degrades",
+          "href": "/training/permissions/requesting#handle-denial"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Sensitive_Data_Storage",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Sensitive_Data_Storage",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Sensitive_Data_Storage T-Sensitive_Data_Storage , T-Sensitive_Data_Handling All sensitive data is stored in the app's internal storage .",
+      "links": [
+        {
+          "text": "T-Sensitive_Data_Storage",
+          "href": "#T-Sensitive_Data_Storage"
+        },
+        {
+          "text": "T-Sensitive_Data_Handling",
+          "href": "#T-Sensitive_Data_Handling"
+        },
+        {
+          "text": "stored in the app's internal storage",
+          "href": "/topic/security/best-practices#internal-storage"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Sensitive_Data_Logging",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Sensitive_Data_Logging",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Sensitive_Data_Logging T-Sensitive_Data_Logging No personal or sensitive user data is logged to the system log or an app-specific log.",
+      "links": [
+        {
+          "text": "T-Sensitive_Data_Logging",
+          "href": "#T-Sensitive_Data_Logging"
+        },
+        {
+          "text": "No personal or sensitive user data",
+          "href": "/privacy-and-security/security-tips#user-data"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Hardware_IDs",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Hardware_IDs",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Hardware_IDs T-Hardware_IDs App does not use any non-resettable hardware IDs , such as the IMEI, for identification purposes.",
+      "links": [
+        {
+          "text": "T-Hardware_IDs",
+          "href": "#T-Hardware_IDs"
+        },
+        {
+          "text": "non-resettable hardware IDs",
+          "href": "/training/articles/user-data-ids"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "App_Data_Backup",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#App_Data_Backup",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "App_Data_Backup T-App_Data_Backup App preserves user data, settings, and app state across cloud backups and device-to-device (D2D) transfers. Implement Auto Backup and configure android:dataExtractionRules to ensure seamless data restoration when setting up a new device or reinstalling the app.",
+      "links": [
+        {
+          "text": "T-App_Data_Backup",
+          "href": "#T-App_Data_Backup"
+        },
+        {
+          "text": "Auto Backup",
+          "href": "/identity/data/autobackup"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "App_Logins_Restoration",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#App_Logins_Restoration",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "App_Logins_Restoration T-App_Logins_Restoration App automatically restores user accounts and sign-in state when a user sets up a new device. Implement Restore Credentials using Credential Manager to re-authenticate users automatically without forcing manual login or account recovery flows.",
+      "links": [
+        {
+          "text": "T-App_Logins_Restoration",
+          "href": "#T-App_Logins_Restoration"
+        },
+        {
+          "text": "Restore Credentials",
+          "href": "/identity/sign-in/restore-credentials"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Autofill_Hints",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Autofill_Hints",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Autofill_Hints T-Autofill_Hints App provides hints to autofill account credentials and other sensitive information, such as credit card info, physical address, and phone number.",
+      "links": [
+        {
+          "text": "T-Autofill_Hints",
+          "href": "#T-Autofill_Hints"
+        },
+        {
+          "text": "hints to autofill",
+          "href": "/guide/topics/text/autofill-optimize#hints"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Credential_Manager",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Credential_Manager",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Credential_Manager T-Credential_Manager App integrates Credential Manager for Android for a seamless sign-in experience that unifies support for passkeys, federated identity, and passwords.",
+      "links": [
+        {
+          "text": "T-Credential_Manager",
+          "href": "#T-Credential_Manager"
+        },
+        {
+          "text": "Credential Manager for Android",
+          "href": "/training/sign-in/passkeys"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Biometric_Authentication",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Biometric_Authentication",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Biometric_Authentication T-Biometric_Authentication App supports biometric authentication to protect financial transactions or sensitive information, such as important user documents.",
+      "links": [
+        {
+          "text": "T-Biometric_Authentication",
+          "href": "#T-Biometric_Authentication"
+        },
+        {
+          "text": "biometric authentication",
+          "href": "/training/sign-in/biometric-auth"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Component_Export",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Component_Export",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Component_Export T-Component_Export App sets the android:exported attribute explicitly for all activities , services , broadcast receivers, and especially content providers . Only application components that share data with other apps , or components that should be invoked by other apps , are exported .",
+      "links": [
+        {
+          "text": "T-Component_Export",
+          "href": "#T-Component_Export"
+        },
+        {
+          "text": "activities",
+          "href": "/guide/topics/manifest/activity-element#exported"
+        },
+        {
+          "text": "services",
+          "href": "/guide/topics/manifest/service-element#exported"
+        },
+        {
+          "text": "broadcast receivers,",
+          "href": "/guide/topics/manifest/receiver-element#exported"
+        },
+        {
+          "text": "content providers",
+          "href": "/guide/topics/manifest/provider-element#exported"
+        },
+        {
+          "text": "exported",
+          "href": "/guide/topics/manifest/service-element#exported"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Component_Permissions",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Component_Permissions",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Component_Permissions T-Component_Permissions All intents and broadcasts follow best practices: Use explicit intents if the destination application is well defined. Use intents to defer permissions to a different app that already has the permission. Share data securely across apps . Intents that contain a payload are verified before use . If you need to pass an intent to another app, so that the receiving app can invoke and expect a callback in the calling app, don't include a nested intent in the extras. Use a PendingIntent . When setting up pending intents, explicitly set the immutable flag , where applicable.",
+      "links": [
+        {
+          "text": "T-Component_Permissions",
+          "href": "#T-Component_Permissions"
+        },
+        {
+          "text": "Use explicit intents",
+          "href": "/guide/components/intents-filters#Types"
+        },
+        {
+          "text": "Use intents to defer permissions to a different app that already has the permission.",
+          "href": "/topic/security/best-practices#permissions-intents"
+        },
+        {
+          "text": "Share data securely across apps",
+          "href": "/topic/security/best-practices#permissions-share-data"
+        },
+        {
+          "text": "verified before use",
+          "href": "/privacy-and-security/security-tips#input-validation"
+        },
+        {
+          "text": "PendingIntent",
+          "href": "/reference/kotlin/android/app/PendingIntent"
+        },
+        {
+          "text": "immutable flag",
+          "href": "/reference/kotlin/android/app/PendingIntent#flag_immutable"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Component_Protection",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Component_Protection",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Component_Protection T-Component_Protection All components that share content between apps use android:protectionLevel=\"signature\" for custom permissions . This includes activities , services , broadcast receivers , and especially content providers . Apps shouldn't rely on accessing a list of installed packages.",
+      "links": [
+        {
+          "text": "T-Component_Protection",
+          "href": "#T-Component_Protection"
+        },
+        {
+          "text": "android:protectionLevel=\"signature\"",
+          "href": "/guide/topics/manifest/permission-element#plevel"
+        },
+        {
+          "text": "custom permissions",
+          "href": "/guide/topics/permissions/defining"
+        },
+        {
+          "text": "activities",
+          "href": "/guide/topics/manifest/activity-element#prmsn"
+        },
+        {
+          "text": "services",
+          "href": "/guide/topics/manifest/service-element#prmsn"
+        },
+        {
+          "text": "broadcast receivers",
+          "href": "/guide/topics/manifest/receiver-element#prmsn"
+        },
+        {
+          "text": "content providers",
+          "href": "/guide/topics/manifest/provider-element#prmsn"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Network_Security_Traffic",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Network_Security_Traffic",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Network_Security_Traffic T-Network_Security_Traffic All network traffic is sent over SSL .",
+      "links": [
+        {
+          "text": "T-Network_Security_Traffic",
+          "href": "#T-Network_Security_Traffic"
+        },
+        {
+          "text": "SSL",
+          "href": "/training/articles/security-ssl"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Network_Security_Configuration",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Network_Security_Configuration",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Network_Security_Configuration T-Network_Security_Configuration App declares a network security configuration .",
+      "links": [
+        {
+          "text": "T-Network_Security_Configuration",
+          "href": "#T-Network_Security_Configuration"
+        },
+        {
+          "text": "network security configuration",
+          "href": "/training/articles/security-config"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Security_Provider_Initialization",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Security_Provider_Initialization",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Security_Provider_Initialization T-Security_Provider_Initialization If the app uses Google Play services, the security provider is initialized at application startup .",
+      "links": [
+        {
+          "text": "T-Security_Provider_Initialization",
+          "href": "#T-Security_Provider_Initialization"
+        },
+        {
+          "text": "security provider is initialized at application startup",
+          "href": "/training/articles/security-gms-provider"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "WebView_Asset_Loader",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#WebView_Asset_Loader",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "WebView_Asset_Loader T-WebView_Asset_Loader , T-WebView_Navigation Don't use setAllowUniversalAccessFromFileURLs() for accessing local content. Instead, use WebViewAssetLoader .",
+      "links": [
+        {
+          "text": "T-WebView_Asset_Loader",
+          "href": "#T-WebView_Asset_Loader"
+        },
+        {
+          "text": "T-WebView_Navigation",
+          "href": "#T-WebView_Navigation"
+        },
+        {
+          "text": "setAllowUniversalAccessFromFileURLs()",
+          "href": "/reference/kotlin/android/webkit/WebSettings#setallowuniversalaccessfromfileurls"
+        },
+        {
+          "text": "WebViewAssetLoader",
+          "href": "/reference/kotlin/androidx/webkit/WebViewAssetLoader"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "WebView_JavaScript",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#WebView_JavaScript",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "WebView_JavaScript T-WebView_JavaScript , T-WebView_Navigation Web views don't use addJavaScriptInterface() with untrusted content. On Android 6.0 (API level 23 and higher), use HTML message channels instead.",
+      "links": [
+        {
+          "text": "T-WebView_JavaScript",
+          "href": "#T-WebView_JavaScript"
+        },
+        {
+          "text": "T-WebView_Navigation",
+          "href": "#T-WebView_Navigation"
+        },
+        {
+          "text": "Web views",
+          "href": "/privacy-and-security/security-tips#webview"
+        },
+        {
+          "text": "addJavaScriptInterface()",
+          "href": "/reference/kotlin/android/webkit/WebView#addjavascriptinterface"
+        },
+        {
+          "text": "HTML message channels",
+          "href": "/privacy-and-security/security-best-practices#message-channels"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "App_Bundles",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#App_Bundles",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "App_Bundles T-App_Bundles App does not dynamically load code from outside the app's APK. Use Android App Bundles , which include Play Feature Delivery and Play Asset Delivery . As of August 2021, the use of Android App Bundles is mandatory for all new apps in the Google Play Store.",
+      "links": [
+        {
+          "text": "T-App_Bundles",
+          "href": "#T-App_Bundles"
+        },
+        {
+          "text": "dynamically load",
+          "href": "/privacy-and-security/security-tips#dynamic-code"
+        },
+        {
+          "text": "Android App Bundles",
+          "href": "/guide/app-bundle"
+        },
+        {
+          "text": "Play Feature Delivery",
+          "href": "/guide/app-bundle/play-feature-delivery"
+        },
+        {
+          "text": "Play Asset Delivery",
+          "href": "/guide/app-bundle/asset-delivery"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Cryptographic_Algorithms",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Cryptographic_Algorithms",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Cryptographic_Algorithms T-Cryptographic_Algorithms App uses strong, platform-provided cryptographic algorithms and a random number generator . Also, the app does not implement custom algorithms.",
+      "links": [
+        {
+          "text": "T-Cryptographic_Algorithms",
+          "href": "#T-Cryptographic_Algorithms"
+        },
+        {
+          "text": "cryptographic algorithms and a random number generator",
+          "href": "/privacy-and-security/security-tips#cryptography"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Play_Content_Policies",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Play_Content_Policies",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Play_Content_Policies T-Play_Content_Policies App strictly adheres to the terms of the Google Play Developer Content Policy , does not offer inappropriate content, and does not use the intellectual property or brand of others.",
+      "links": [
+        {
+          "text": "T-Play_Content_Policies",
+          "href": "#T-Play_Content_Policies"
+        },
+        {
+          "text": "Google Play Developer Content Policy",
+          "href": "https://play.google.com/about/developer-content-policy.html"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Play_Content_Rating",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Play_Content_Rating",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Play_Content_Rating T-Play_Content_Policies App maturity level is set appropriately based on the Content Rating Guidelines .",
+      "links": [
+        {
+          "text": "T-Play_Content_Policies",
+          "href": "#T-Play_Content_Policies"
+        },
+        {
+          "text": "Content Rating Guidelines",
+          "href": "https://support.google.com/googleplay/android-developer/bin/answer.py&answer=188189"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Play_Feature_Graphic",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Play_Feature_Graphic",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Play_Feature_Graphic T-Play_Feature_Graphic , T-Play_Graphic_Assets App feature graphic follows the guidelines outlined in this support article . Make sure that: App listing includes a high-quality feature graphic The feature graphic does not contain device images, screenshots, or small text that's illegible when scaled down and displayed on the smallest screen size that your app is targeting The feature graphic does not resemble an advertisement",
+      "links": [
+        {
+          "text": "T-Play_Feature_Graphic",
+          "href": "#T-Play_Feature_Graphic"
+        },
+        {
+          "text": "T-Play_Graphic_Assets",
+          "href": "#T-Play_Graphic_Assets"
+        },
+        {
+          "text": "support article",
+          "href": "https://support.google.com/googleplay/android-developer/answer/9866151?visit_id=637408759199927231-2278064029&rd=1#feature_graphic_requirements"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Play_Device_References",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Play_Device_References",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Play_Device_References T-Play_Graphic_Assets App screenshots and videos don't show or reference non-Android devices.",
+      "links": [
+        {
+          "text": "T-Play_Graphic_Assets",
+          "href": "#T-Play_Graphic_Assets"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Play_Misleading_Content",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Play_Misleading_Content",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Play_Misleading_Content T-Play_Graphic_Assets App screenshots or videos don't represent the content and experience of your app in a misleading way.",
+      "links": [
+        {
+          "text": "T-Play_Graphic_Assets",
+          "href": "#T-Play_Graphic_Assets"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    },
+    {
+      "official_id": "Play_User_Reviews",
+      "source_id": "S04",
+      "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Play_User_Reviews",
+      "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "quote": "Play_User_Reviews T-Play_Content_Policies Common user-reported bugs in the Reviews tab of the Google Play page are addressed if the bugs are reproducible and occur on many different devices. If a bug occurs on only a few devices, you should still address it if those devices are particularly popular or new.",
+      "links": [
+        {
+          "text": "T-Play_Content_Policies",
+          "href": "#T-Play_Content_Policies"
+        }
+      ],
+      "disposition": "outside_design_adaptation_scope",
+      "category_id": null,
+      "reason": "通用功能、通知、工程性能/稳定性、SDK/构建、能耗、安全隐私或商店发布专项；不做全量 App 质量认证。尺寸变化导致崩溃/卡死按 Tier 3 基本可用性记录。"
+    }
+  ],
+  "tier3_guideline_ids": [
+    "Camera_Preview",
+    "Config_Changes",
+    "Config_Combinations",
+    "Keyboard_Input",
+    "Media_Projection",
+    "Mouse_Trackpad_Basic",
+    "Multi-Resume",
+    "Multi-Window_Functionality",
+    "Stylus_Basic",
+    "Stylus_Text_Input"
+  ],
+  "tier3_test_ids": [
+    "T-Camera_Preview",
+    "T-Config_Combinations",
+    "T-Config_Orientation",
+    "T-Config_State",
+    "T-Keyboard_Input",
+    "T-Media_Projection",
+    "T-Mouse_Trackpad_Basic",
+    "T-Multi-Window_Focus",
+    "T-Multi-Window_Functionality",
+    "T-Multi-Window_Resources",
+    "T-Stylus_Basic",
+    "T-Stylus_Text_Input"
+  ],
+  "core_guideline_ids": [
+    "App_Switcher",
+    "Audio_Focus_Change",
+    "Audio_Playback_Background",
+    "Back_Button_Nav",
+    "Back_Gesture_Nav",
+    "Content_Description",
+    "Display_State_Parity",
+    "Fullscreen_Display",
+    "Graphic_Quality",
+    "Line_Length",
+    "Lock_Resume",
+    "Orientation_Transitions",
+    "Sleep_Resume",
+    "State_Preservation",
+    "Theme_Support",
+    "Touch_Target_Size",
+    "Video_PiP",
+    "Video_Playback_Background",
+    "Visual_Contrast"
+  ],
+  "core_test_ids": [
+    "T-App_Switcher",
+    "T-Audio_Focus_Change",
+    "T-Audio_Playback_Background",
+    "T-Back_Nav",
+    "T-Content_Description",
+    "T-Graphic_Quality",
+    "T-Line_Length",
+    "T-Lock_Resume",
+    "T-Orientation_Transitions",
+    "T-Sleep_Resume",
+    "T-State_Preservation",
+    "T-Theme_Support",
+    "T-Touch_Target_Size",
+    "T-Video_PiP",
+    "T-Video_Playback_Background",
+    "T-Visual_Contrast"
+  ]
+}

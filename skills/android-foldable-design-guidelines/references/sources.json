@@ -1,0 +1,1576 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "S01",
+      "title": "Google Play 更新公告",
+      "requested_url": "https://developer.android.com/blog/posts/google-play-adaptive-quality-standards",
+      "resolved_url": "https://developer.android.com/blog/posts/google-play-adaptive-quality-standards",
+      "retrieved_at": "2026-11-20T08:11:23.275450+00:00",
+      "sha256": "c2f63a2cfc3a6068a8d94341800c21efd9db41272ad8b359f77f175fd5254343",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "publishing_or_policy_context",
+      "mapped_categories": [],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S01.html"
+    },
+    {
+      "id": "S02",
+      "title": "Adaptive app quality",
+      "requested_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality",
+      "resolved_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality",
+      "retrieved_at": "2026-11-20T08:11:23.275967+00:00",
+      "sha256": "09099474e5e87080ed904ffb5b963067af16e69529372c1e4c914f2939fdb2b6",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S02.html"
+    },
+    {
+      "id": "S03",
+      "title": "Tier 3 — Adaptive ready",
+      "requested_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3",
+      "resolved_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3",
+      "retrieved_at": "2026-11-20T08:11:23.276115+00:00",
+      "sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "minimum_requirement_source",
+      "mapped_categories": [
+        "window",
+        "obstruction",
+        "components",
+        "continuity",
+        "multiwindow",
+        "camera",
+        "projection",
+        "keyboard",
+        "mouse",
+        "stylus",
+        "playback"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S03.html"
+    },
+    {
+      "id": "S04",
+      "title": "Core app quality",
+      "requested_url": "https://developer.android.com/docs/quality-guidelines/core-app-quality",
+      "resolved_url": "https://developer.android.com/docs/quality-guidelines/core-app-quality",
+      "retrieved_at": "2026-11-20T08:11:23.276212+00:00",
+      "sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "minimum_requirement_source",
+      "mapped_categories": [
+        "window",
+        "obstruction",
+        "text",
+        "components",
+        "continuity",
+        "navigation",
+        "accessibility",
+        "playback"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S04.html"
+    },
+    {
+      "id": "S05",
+      "title": "Support different display sizes",
+      "requested_url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/support-different-display-sizes",
+      "resolved_url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/support-different-display-sizes",
+      "retrieved_at": "2026-11-20T08:11:23.276300+00:00",
+      "sha256": "17dde937db7c2db7ba8bccee25399e8eb5f9e474e5eb9fdb20dd9e0354afc704",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "window"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S05.html"
+    },
+    {
+      "id": "S06",
+      "title": "Window size classes",
+      "requested_url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/window-size-classes",
+      "resolved_url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes",
+      "retrieved_at": "2026-11-20T08:11:23.276405+00:00",
+      "sha256": "8d6bfb5d2a1e23073d4896b37c2eb8b030b4a8f7a62effb9c456574ac8d39a19",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "window"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S06.html"
+    },
+    {
+      "id": "S07",
+      "title": "Learn about foldables",
+      "requested_url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/foldables/learn-about-foldables",
+      "resolved_url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/foldables/learn-about-foldables",
+      "retrieved_at": "2026-11-20T08:11:23.276502+00:00",
+      "sha256": "7babdf0a60e45e33d6f030655296321ed93599b273c4d9ae9ab9556fec3f7aa7",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "obstruction"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S07.html"
+    },
+    {
+      "id": "S08",
+      "title": "Make your app fold aware",
+      "requested_url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/foldables/make-your-app-fold-aware",
+      "resolved_url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/foldables/make-your-app-fold-aware",
+      "retrieved_at": "2026-11-20T08:11:23.276606+00:00",
+      "sha256": "865f34e9678ab5b7bc16207e2bc0f148cf7aa70c79e28e9c0195008652076031",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "obstruction"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S08.html"
+    },
+    {
+      "id": "S09",
+      "title": "Window insets",
+      "requested_url": "https://developer.android.com/develop/ui/compose/system/insets",
+      "resolved_url": "https://developer.android.com/develop/ui/compose/system/insets",
+      "retrieved_at": "2026-11-20T08:11:24.853419+00:00",
+      "sha256": "bc33074b5ded17e047e52ca0d6e2f3708432e1b651e4f909a9303ff6ab7f2457",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "obstruction"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S09.html"
+    },
+    {
+      "id": "S10",
+      "title": "Support multi-window mode",
+      "requested_url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/support-multi-window-mode",
+      "resolved_url": "https://developer.android.com/develop/ui/compose/layouts/adaptive/support-multi-window-mode",
+      "retrieved_at": "2026-11-20T08:11:25.048656+00:00",
+      "sha256": "de03448de14096722ecbb44eb28378ec08471aa6963db0f4a98491299bf5b3f0",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "multiwindow",
+        "playback"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S10.html"
+    },
+    {
+      "id": "S11",
+      "title": "Save UI states / Handle configuration changes",
+      "requested_url": "https://developer.android.com/topic/libraries/architecture/saving-states",
+      "resolved_url": "https://developer.android.com/topic/libraries/architecture/saving-states",
+      "retrieved_at": "2026-11-20T08:11:25.283913+00:00",
+      "sha256": "9522c7aa400de93f02cde77538daa1fd3b66a9fed72ad308283f5acc94d7dcb8",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "continuity",
+        "navigation"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S11.html"
+    },
+    {
+      "id": "S12",
+      "title": "Input compatibility on large screens",
+      "requested_url": "https://developer.android.com/develop/ui/compose/touch-input/input-compatibility-on-large-screens",
+      "resolved_url": "https://developer.android.com/develop/ui/compose/touch-input/input-compatibility-on-large-screens",
+      "retrieved_at": "2026-11-20T08:11:25.442202+00:00",
+      "sha256": "e2dad5903f3ba71262a716b165f213d97fc593c3acade69c98a7196974fa58c9",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "keyboard",
+        "mouse",
+        "stylus"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S12.html"
+    },
+    {
+      "id": "S13",
+      "title": "Camera preview",
+      "requested_url": "https://developer.android.com/media/camera/camera2/camera-preview",
+      "resolved_url": "https://developer.android.com/media/camera/camera2/camera-preview",
+      "retrieved_at": "2026-11-20T08:11:25.722326+00:00",
+      "sha256": "4e1dfc048ae049c46ab62ce1fec2c6e45df07ef82abea9acc2c1ec1973441a90",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "multiwindow",
+        "camera"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S13.html"
+    },
+    {
+      "id": "S14",
+      "title": "Media projection",
+      "requested_url": "https://developer.android.com/media/grow/media-projection",
+      "resolved_url": "https://developer.android.com/media/grow/media-projection",
+      "retrieved_at": "2026-11-20T08:11:25.876457+00:00",
+      "sha256": "96ebfda69792929dfb77dee186cabde27a0e7f501074cbe830690274d3603461",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "projection"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S14.html"
+    },
+    {
+      "id": "S15",
+      "title": "Android 17 behavior changes",
+      "requested_url": "https://developer.android.com/about/versions/17/behavior-changes-17",
+      "resolved_url": "https://developer.android.com/about/versions/17/behavior-changes-17",
+      "retrieved_at": "2026-11-20T08:11:26.086720+00:00",
+      "sha256": "7c6b3407ec0cd019ebe12f0b6f70193183f2376f79498981bc0bafb8648f98be",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S16",
+      "title": "Adapt your layout",
+      "requested_url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/adapt-layout",
+      "resolved_url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/adapt-layout",
+      "retrieved_at": "2026-11-23",
+      "sha256": "0ce8c4b9e5ecb80a7a3a85524692361bedc9bcce7ab8531041e1057119cd8495",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；实际用途见 design-reference.md。下级链接阅读范围逐项记录。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "window",
+        "components",
+        "obstruction"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S16.html"
+    },
+    {
+      "id": "S17",
+      "title": "Postures and orientation",
+      "requested_url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/postures-and-orientation",
+      "resolved_url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/postures-and-orientation",
+      "retrieved_at": "2026-11-23",
+      "sha256": "2f0b0bb85fc878fcbd8023fb483e07bbaef9a76aa524206a47f9c4bd97b3961f",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；实际用途见 design-reference.md。下级链接阅读范围逐项记录。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "window",
+        "obstruction",
+        "camera"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S17.html"
+    },
+    {
+      "id": "S18",
+      "title": "Handle configuration changes",
+      "requested_url": "https://developer.android.com/guide/topics/resources/runtime-changes",
+      "resolved_url": "https://developer.android.com/guide/topics/resources/runtime-changes",
+      "retrieved_at": "2026-11-20T08:11:26.888363+00:00",
+      "sha256": "ae524eb60f17e768d08e5b79da6f0ab74f4457756baf563f7aeef37489bc89a8",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "continuity",
+        "keyboard"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S18.html"
+    },
+    {
+      "id": "S19",
+      "title": "Android 17 方向与可调整大小说明",
+      "requested_url": "https://android-developers.googleblog.com/2026/02/prepare-your-app-for-resizability-and.html",
+      "resolved_url": "https://android-developers.googleblog.com/2026/02/prepare-your-app-for-resizability-and.html",
+      "retrieved_at": "2026-11-20T08:11:26.947752+00:00",
+      "sha256": "bde9daeefafbf3eb52c9d89585e9206544faf0667234adb3623daf750b4b1c47",
+      "reading_status": "rendered_body_read",
+      "reading_note": "浏览器完整渲染正文已读；原始 HTML 无正文。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "continuity",
+        "camera"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S19.html"
+    },
+    {
+      "id": "S20",
+      "title": "Android 15 edge-to-edge 条件",
+      "requested_url": "https://developer.android.com/about/versions/15/behavior-changes-15#edge-to-edge",
+      "resolved_url": "https://developer.android.com/about/versions/15/behavior-changes-15#edge-to-edge",
+      "retrieved_at": "2026-11-20T08:11:27.242945+00:00",
+      "sha256": "91b2efdbb62135495ae7f35fdff296c4d7d0fcc5bd3e28bddef839bcbe913186",
+      "reading_status": "relevant_sections_read",
+      "reading_note": "完整读取 Window inset changes 至下一主节，包括 Edge-to-edge、Stable configuration 和文字排版变化；其余平台行为不属本次范围。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "obstruction",
+        "text"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S20.html"
+    },
+    {
+      "id": "S21",
+      "title": "Letterboxing",
+      "requested_url": "https://developer.android.com/guide/practices/enhanced-letterboxing",
+      "resolved_url": "https://developer.android.com/guide/practices/device-compatibility-mode",
+      "retrieved_at": "2026-11-20T08:11:27.710345+00:00",
+      "sha256": "e89c948d71d8187e824fc84e2da1a9bb0d17a481b7094466678380f9d2b71227",
+      "reading_status": "full_explanatory_prose_read",
+      "reading_note": "说明文字已读；示例代码未做运行正确性审核。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S21.html"
+    },
+    {
+      "id": "S22",
+      "title": "Compatibility mode",
+      "requested_url": "https://developer.android.com/guide/topics/manifest/supports-screens-element#compat-mode",
+      "resolved_url": "https://developer.android.com/guide/topics/manifest/supports-screens-element#compat-mode",
+      "retrieved_at": "2026-11-20T08:11:28.032566+00:00",
+      "sha256": "012feb865135687227d8cdc98a62c67c59ea60b55542ac1856d51e911e0cde21",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "window"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S22.html"
+    },
+    {
+      "id": "S23",
+      "title": "Canonical layouts",
+      "requested_url": "https://developer.android.com/develop/adaptive-apps/guides/canonical-layouts",
+      "resolved_url": "https://developer.android.com/develop/adaptive-apps/guides/canonical-layouts",
+      "retrieved_at": "2026-11-20T08:11:28.171703+00:00",
+      "sha256": "10560d471ef812671ebc1be4afc41dd461ab0cd7aad1f296f32d55d6ae2a1588",
+      "reading_status": "full_explanatory_prose_read",
+      "reading_note": "说明文字已读；示例代码未做运行正确性审核。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "navigation"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S23.html"
+    },
+    {
+      "id": "S24",
+      "title": "Material 布局入口",
+      "requested_url": "https://m3.material.io/foundations",
+      "resolved_url": "https://m3.material.io/foundations",
+      "retrieved_at": "2026-11-20T08:11:28.299955+00:00",
+      "sha256": "c86d2f19522731657cc6977c8b3f8aad38b784f8467282a818f7b315073360a1",
+      "reading_status": "rendered_body_read",
+      "reading_note": "浏览器完整渲染正文已读；原始 HTML 无正文。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S25",
+      "title": "Bottom sheets",
+      "requested_url": "https://m3.material.io/components/bottom-sheets/guidelines",
+      "resolved_url": "https://m3.material.io/components/bottom-sheets/guidelines",
+      "retrieved_at": "2026-11-20T08:11:28.520741+00:00",
+      "sha256": "804fedfee2c28a00384ed63008d0f0acaaecef18b1a85a8219f1ff1ce8236eec",
+      "reading_status": "rendered_body_read",
+      "reading_note": "浏览器完整渲染正文已读；原始 HTML 无正文。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S25.html"
+    },
+    {
+      "id": "S26",
+      "title": "Buttons",
+      "requested_url": "https://m3.material.io/components/buttons/guidelines",
+      "resolved_url": "https://m3.material.io/components/buttons/guidelines",
+      "retrieved_at": "2026-11-20T08:11:28.579916+00:00",
+      "sha256": "4b676e65f01477b507d426b474dcfadc6664b70a56a8e5f9e155209ba7504040",
+      "reading_status": "rendered_body_read",
+      "reading_note": "浏览器完整渲染正文已读；原始 HTML 无正文。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "text"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S26.html"
+    },
+    {
+      "id": "S27",
+      "title": "Text fields",
+      "requested_url": "https://m3.material.io/components/text-fields/guidelines",
+      "resolved_url": "https://m3.material.io/components/text-fields/guidelines",
+      "retrieved_at": "2026-11-20T08:11:28.943014+00:00",
+      "sha256": "4eb66135cbe2836c96eb5437a5e6673d4e1f41c022d157cb89d55611f7e0461b",
+      "reading_status": "rendered_body_read",
+      "reading_note": "浏览器完整渲染正文已读；原始 HTML 无正文。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "text"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S27.html"
+    },
+    {
+      "id": "S28",
+      "title": "Menus",
+      "requested_url": "https://m3.material.io/components/menus/guidelines",
+      "resolved_url": "https://m3.material.io/components/menus/guidelines",
+      "retrieved_at": "2026-11-20T08:11:29.271558+00:00",
+      "sha256": "cbe9d5d34a2b6ee6f94a30b48475f0f9e5e160873238ec785b8f8f66c5a6183a",
+      "reading_status": "rendered_body_read",
+      "reading_note": "浏览器完整渲染正文已读；原始 HTML 无正文。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "text",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S28.html"
+    },
+    {
+      "id": "S29",
+      "title": "Dialogs",
+      "requested_url": "https://m3.material.io/components/dialogs/overview",
+      "resolved_url": "https://m3.material.io/components/dialogs/overview",
+      "retrieved_at": "2026-11-20T08:11:29.276072+00:00",
+      "sha256": "4b45e1f11f82dfaba128c30db07b6e7a1e6bd3aac5247a00b36add80062adaa4",
+      "reading_status": "rendered_body_read",
+      "reading_note": "浏览器完整渲染正文已读；原始 HTML 无正文。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S29.html"
+    },
+    {
+      "id": "S30",
+      "title": "Navigation rail",
+      "requested_url": "https://m3.material.io/components/navigation-rail/overview",
+      "resolved_url": "https://m3.material.io/components/navigation-rail/overview",
+      "retrieved_at": "2026-11-20T08:11:29.352789+00:00",
+      "sha256": "e23ce66a6215640458e8456b19e3a7af67d3c2538cb92f0ce07435a11a7c4ba9",
+      "reading_status": "rendered_body_read",
+      "reading_note": "浏览器完整渲染正文已读；原始 HTML 无正文。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S31",
+      "title": "Navigation drawer",
+      "requested_url": "https://m3.material.io/components/navigation-drawer/overview",
+      "resolved_url": "https://m3.material.io/components/navigation-drawer/overview",
+      "retrieved_at": "2026-11-20T08:11:29.389340+00:00",
+      "sha256": "d85cf4170239f9016d4138b95f8f24db9926c2f7db2cb280d59afe04afc7cf76",
+      "reading_status": "rendered_body_read",
+      "reading_note": "浏览器完整渲染正文已读；原始 HTML 无正文。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S32",
+      "title": "Target sizes",
+      "requested_url": "https://m3.material.io/foundations/designing/structure",
+      "resolved_url": "https://m3.material.io/foundations/designing/structure",
+      "retrieved_at": "2026-11-20T08:11:29.440433+00:00",
+      "sha256": "a3a21971438e00758153ac08a2cba33e3cdd03156a1215b78439e4c6abc82a70",
+      "reading_status": "rendered_body_read",
+      "reading_note": "浏览器完整渲染正文已读；原始 HTML 无正文。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "accessibility"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S32.html"
+    },
+    {
+      "id": "S33",
+      "title": "Android accessibility",
+      "requested_url": "https://developer.android.com/guide/topics/ui/accessibility",
+      "resolved_url": "https://developer.android.com/guide/topics/ui/accessibility",
+      "retrieved_at": "2026-11-20T08:11:29.612758+00:00",
+      "sha256": "a46e3530b7ea79feda8272817cd6784e1701f101103e4ff7cd491997d7dc80a9",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S34",
+      "title": "Tier 2 — Adaptive optimized",
+      "requested_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-2",
+      "resolved_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-2",
+      "retrieved_at": "2026-11-20T08:11:29.717679+00:00",
+      "sha256": "72fd700edceb12c7e738fded0624a8e386756ddab16a8dc131c95554c8a7f822",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "higher_tier_or_implementation_excluded",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S35",
+      "title": "Tier 1 — Adaptive differentiated",
+      "requested_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-1",
+      "resolved_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-1",
+      "retrieved_at": "2026-11-20T08:11:30.085056+00:00",
+      "sha256": "4a20f7bc77ec49b645e9aa6a4620c20c05e64572ff729de7498d14fc69847c13",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "higher_tier_or_implementation_excluded",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S36",
+      "title": "Foldables 专项",
+      "requested_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/experiences/foldables",
+      "resolved_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/experiences/foldables",
+      "retrieved_at": "2026-11-20T08:11:30.236263+00:00",
+      "sha256": "951e98ed82878c72316fe64de29c629bc14ccaae3fbc61692e1412b2f6bebf7b",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "higher_tier_or_implementation_excluded",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S37",
+      "title": "Desktop 专项",
+      "requested_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/experiences/desktop",
+      "resolved_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/experiences/desktop",
+      "retrieved_at": "2026-11-20T08:11:30.244384+00:00",
+      "sha256": "8bb6c86888a3516a8651628b5bcc4e76af620815d84528f08567a2f5e9d698cd",
+      "reading_status": "full_explanatory_prose_read",
+      "reading_note": "说明文字已读；示例代码未做运行正确性审核。",
+      "role": "higher_tier_or_implementation_excluded",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S38",
+      "title": "Camera / Audio 专项",
+      "requested_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/experiences/camera-audio",
+      "resolved_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/experiences/camera-audio",
+      "retrieved_at": "2026-11-20T08:11:30.260464+00:00",
+      "sha256": "9a3cdc0864bbeaf6b51abc303820290e7a537467369a6bb859092802c31e26f2",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "higher_tier_or_implementation_excluded",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S39",
+      "title": "Stylus 专项",
+      "requested_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/experiences/stylus",
+      "resolved_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/experiences/stylus",
+      "retrieved_at": "2026-11-20T08:11:30.519171+00:00",
+      "sha256": "c70cd1a8ab44f734ac38d171ec9daebd81f9faaf679517ab3d7739b20e6c9c54",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "higher_tier_or_implementation_excluded",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S40",
+      "title": "Support foldable display modes",
+      "requested_url": "https://developer.android.com/develop/adaptive-apps/guides/foldables/support-foldable-display-modes",
+      "resolved_url": "https://developer.android.com/develop/adaptive-apps/guides/foldables/support-foldable-display-modes",
+      "retrieved_at": "2026-11-20T08:11:30.895322+00:00",
+      "sha256": "af1e93a4d5c7e125aab96bef4acca0552218681d3e564e86b3a8eecf97724be0",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "higher_tier_or_implementation_excluded",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S41",
+      "title": "Picture-in-picture",
+      "requested_url": "https://developer.android.com/guide/topics/ui/picture-in-picture",
+      "resolved_url": "https://developer.android.com/develop/ui/views/picture-in-picture",
+      "retrieved_at": "2026-11-20T08:11:31.047915+00:00",
+      "sha256": "fcaf0d2526f125aeb364698f648143a6c7238b00bab758ee88857b30ccde7a48",
+      "reading_status": "full_explanatory_prose_read",
+      "reading_note": "说明文字已读；示例代码未做运行正确性审核。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "playback"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S41.html"
+    },
+    {
+      "id": "S42",
+      "title": "Drag and drop",
+      "requested_url": "https://developer.android.com/guide/topics/ui/drag-drop",
+      "resolved_url": "https://developer.android.com/develop/ui/views/touch-and-input/drag-drop",
+      "retrieved_at": "2026-11-20T08:11:31.220730+00:00",
+      "sha256": "971ed0f849d911242bcccee33d03b95e89116fe6a6848e9653793706e25cd521",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "higher_tier_or_implementation_excluded",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S43",
+      "title": "Keyboard, mouse, trackpad Tier 2",
+      "requested_url": "https://developer.android.com/guide/topics/large-screens/keyboard-mouse-and-trackpad-tier-2",
+      "resolved_url": "https://developer.android.com/guide/topics/large-screens/keyboard-mouse-and-trackpad-tier-2",
+      "retrieved_at": "2026-11-20T08:11:31.503039+00:00",
+      "sha256": "a8a275c5c5a9ff703f034e44c4e5c3ffebb27630a9f462d8664c8bf028c226eb",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "higher_tier_or_implementation_excluded",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S44",
+      "title": "Pointer interactions",
+      "requested_url": "https://developer.android.com/design/ui/desktop/guides/interaction/pointer-interactions",
+      "resolved_url": "https://developer.android.com/design/ui/desktop/guides/interaction/pointer-interactions",
+      "retrieved_at": "2026-11-20T08:11:31.695101+00:00",
+      "sha256": "92afffe75bda784a22ce4b362027098488e82b46fc69a8a2a31dbec2eafaa78c",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "mouse"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S44.html"
+    },
+    {
+      "id": "S45",
+      "title": "Compose focus",
+      "requested_url": "https://developer.android.com/develop/ui/compose/touch-input/focus",
+      "resolved_url": "https://developer.android.com/develop/ui/compose/touch-input/focus",
+      "retrieved_at": "2026-11-20T08:11:31.887365+00:00",
+      "sha256": "1a8035e1524e83f1a6b577216eb76855080ad27e7ae74082fbe65d48eeafe5b5",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S46",
+      "title": "Adaptive apps 资源入口",
+      "requested_url": "https://developer.android.com/develop/adaptive-apps",
+      "resolved_url": "https://developer.android.com/develop/adaptive-apps",
+      "retrieved_at": "2026-11-23",
+      "sha256": "8da685eb37172701950f8fc636f2b2bc697613a7e5cf235d3b532801209772b9",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；实际用途见 design-reference.md。下级链接阅读范围逐项记录。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S46.html"
+    },
+    {
+      "id": "S47",
+      "title": "Large screens 入口",
+      "requested_url": "https://developer.android.com/guide/topics/large-screens",
+      "resolved_url": "https://developer.android.com/guide/topics/large-screens",
+      "retrieved_at": "2026-11-20T08:11:31.964389+00:00",
+      "sha256": "ebe2632380f70874be2124121b7f0a0eef901f598612f2d70219fe7f95e53273",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S48",
+      "title": "UI Gallery",
+      "requested_url": "https://developer.android.com/design/ui/gallery",
+      "resolved_url": "https://developer.android.com/design/ui/gallery",
+      "retrieved_at": "2026-11-23",
+      "sha256": "8ba90f02473cd50163d93288d8bee7419419d07a2a7ca0f3aa25b0025f00ffdf",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；实际用途见 design-reference.md。下级链接阅读范围逐项记录。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S48.html"
+    },
+    {
+      "id": "S49",
+      "title": "Android UI Kit",
+      "requested_url": "https://www.figma.com/community/file/1478523627015571873/android-ui-kit",
+      "retrieved_at": "2026-11-23",
+      "reading_status": "internal_content_partially_read",
+      "reading_note": "内部 Guide 正文已读；Keyboards、Permissions、Camera 定义和相关图示已读，相关页面结构已核对。所有内部组件变体未逐项核对。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "window",
+        "obstruction",
+        "components"
+      ],
+      "packaged_for_review": true
+    },
+    {
+      "id": "S50",
+      "title": "Adaptive Design Lab",
+      "requested_url": "https://www.figma.com/community/file/1504631597454929506/design-an-adaptive-android-layout",
+      "retrieved_at": "2026-11-23",
+      "reading_status": "internal_content_partially_read",
+      "reading_note": "窗口尺寸、布局组成、移动及桌面组件行为、分组与容器说明、练习介绍和列表详情练习步骤已读；Completed 页五组完成图已查看。其他练习步骤和内部组件变体未全部核对。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "window",
+        "obstruction",
+        "components"
+      ],
+      "packaged_for_review": true
+    },
+    {
+      "id": "S51",
+      "title": "Adaptive UI Samples",
+      "requested_url": "https://www.figma.com/community/file/1539759053650269019/android-adaptive-ui-samples",
+      "retrieved_at": "2026-11-23",
+      "reading_status": "internal_content_partially_read",
+      "reading_note": "内部介绍、五类业务页面结构及全部五类 Examples 图已核对；Reading 示例选择与辅助面板说明已读。全部内部组件变体未逐项核对。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "window",
+        "obstruction",
+        "components"
+      ],
+      "packaged_for_review": true
+    },
+    {
+      "id": "S52",
+      "title": "Build Android UIs for any screen size",
+      "requested_url": "https://www.youtube.com/watch/ir3LztqbeRI",
+      "resolved_url": "https://www.youtube.com/watch/ir3LztqbeRI",
+      "retrieved_at": "2026-11-20T08:11:33.350024+00:00",
+      "sha256": "a09fcb91cdccf1b118aa7bf12fd5603b892f6ed515869bd769e0761131f3a2d3",
+      "reading_status": "full_transcript_read",
+      "reading_note": "完整中文字幕 0:08–34:21 已读；未逐帧核对演示，旧版解释材料不覆盖当前规则。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S53",
+      "title": "Form Factors 官方视频合集",
+      "requested_url": "https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9jBnpl83LH6oZc7nFIVSRq",
+      "resolved_url": "https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9jBnpl83LH6oZc7nFIVSRq",
+      "retrieved_at": "2026-11-20T08:11:33.404083+00:00",
+      "sha256": "07cda3c323cc2ec3bf3bb48a11241edfb1dc8f4eabaf25e3688d36992062f704",
+      "reading_status": "playlist_directory_read",
+      "reading_note": "26 集课程目录已核对；全部单集/演示未阅读，不作为本次判错依据。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S54",
+      "title": "WindowManager 折叠／双屏 Codelab",
+      "requested_url": "https://developer.android.com/codelabs/android-window-manager-dual-screen-foldables",
+      "resolved_url": "https://developer.android.com/codelabs/android-window-manager-dual-screen-foldables",
+      "retrieved_at": "2026-11-20T08:11:33.653249+00:00",
+      "sha256": "1252881e3470f064c217d5b8264fb1871ba8a3928c34e54718c07eaa6b85b797",
+      "reading_status": "full_explanatory_prose_read",
+      "reading_note": "说明文字已读；示例代码未做运行正确性审核。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "obstruction"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S54.html"
+    },
+    {
+      "id": "S55",
+      "title": "折叠屏相机 Codelab",
+      "requested_url": "https://developer.android.com/codelabs/android-camera-foldables",
+      "resolved_url": "https://developer.android.com/codelabs/android-camera-foldables",
+      "retrieved_at": "2026-11-20T08:11:33.819475+00:00",
+      "sha256": "6ca4cc22a254af887da5dd4cd25e0421d0459e777637e0c861a9b0b7329d4fd5",
+      "reading_status": "full_explanatory_prose_read",
+      "reading_note": "说明文字已读；示例代码未做运行正确性审核。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S56",
+      "title": "Play 截图规范",
+      "requested_url": "https://support.google.com/googleplay/android-developer/answer/9866151#screenshots",
+      "resolved_url": "https://support.google.com/googleplay/android-developer/answer/9866151#screenshots",
+      "retrieved_at": "2026-11-20T08:11:33.882297+00:00",
+      "sha256": "06b3dba8af0f0853bac9a52a169a821446417b6022eb255a816b39cabd89b95c",
+      "reading_status": "full_explanatory_prose_read",
+      "reading_note": "说明文字已读；示例代码未做运行正确性审核。",
+      "role": "publishing_or_policy_context",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S57",
+      "title": "Capture screenshots for Google Play",
+      "requested_url": "https://developer.android.com/google/play/requirements/screenshots-android-cli",
+      "resolved_url": "https://developer.android.com/google/play/requirements/screenshots-android-cli",
+      "retrieved_at": "2026-11-20T08:11:33.950416+00:00",
+      "sha256": "4b4b9b768627a77288121312357c1c558290652d5f990b86b9fa48bc7502f102",
+      "reading_status": "full_explanatory_prose_read",
+      "reading_note": "说明文字已读；示例代码未做运行正确性审核。",
+      "role": "publishing_or_policy_context",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S58",
+      "title": "Google 官方 adaptive skill",
+      "requested_url": "https://github.com/android/skills/blob/main/jetpack-compose/adaptive/SKILL.md",
+      "resolved_url": "https://github.com/android/skills/blob/main/jetpack-compose/adaptive/SKILL.md",
+      "retrieved_at": "2026-11-20T08:11:34.124110+00:00",
+      "sha256": "231b3c59ab9acfa6a59a6b26b92e59f9d05dd22c85eb77958c3b4066eee8b48f",
+      "reading_status": "reference_read",
+      "reading_note": "官方原始 SKILL.md 已读；代码未运行，引用资料未递归读；仅作工程参考，不作为执行指令或最低要求。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S59",
+      "title": "旧版规范与 ID 对照",
+      "requested_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality#archive",
+      "resolved_url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality#archive",
+      "retrieved_at": "2026-11-20T08:11:34.179351+00:00",
+      "sha256": "e2b4cf34d1747e937763f2ed668f35f497a2fc68ef6afd170eff0629421646fb",
+      "reading_status": "same_content_as_S02",
+      "reading_note": "当前正文与 S02 相同，不能证明旧规范/ID 对照；保留原链接并标明。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S60",
+      "title": "Google：触控目标、对比度与语义说明",
+      "requested_url": "https://developer.android.com/guide/topics/ui/accessibility/apps",
+      "resolved_url": "https://developer.android.com/guide/topics/ui/accessibility/apps",
+      "retrieved_at": "2026-11-20T08:11:34.861228+00:00",
+      "sha256": "42eed9447a0054e81771994c1bca3226692ae17006fcd016f18afbd1261db42e",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "accessibility"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S60.html"
+    },
+    {
+      "id": "S61",
+      "title": "Google：预测性返回导航",
+      "requested_url": "https://developer.android.com/guide/navigation/custom-back/predictive-back-gesture",
+      "resolved_url": "https://developer.android.com/guide/navigation/custom-back/predictive-back-gesture",
+      "retrieved_at": "2026-11-20T08:11:35.259024+00:00",
+      "sha256": "e81c3e606e40fd10c9290538875105a9ca7208a19580b2d9d06e8da856558ca6",
+      "reading_status": "full_explanatory_prose_read",
+      "reading_note": "说明文字已读；示例代码未做运行正确性审核。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "navigation"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S61.html"
+    },
+    {
+      "id": "S62",
+      "title": "Google：深色主题",
+      "requested_url": "https://developer.android.com/develop/ui/views/theming/darktheme",
+      "resolved_url": "https://developer.android.com/develop/ui/views/theming/darktheme",
+      "retrieved_at": "2026-11-20T08:11:35.461457+00:00",
+      "sha256": "e5a4f7600d7a21e5747cfceb1081d1e4f4bf3dad78eae9433b85ab3d6998541f",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "accessibility"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S62.html"
+    },
+    {
+      "id": "S63",
+      "title": "Android 17：方向与大小限制的条件和例外",
+      "requested_url": "https://developer.android.com/about/versions/17/changes/ff-restrictions-ignored",
+      "resolved_url": "https://developer.android.com/about/versions/17/changes/ff-restrictions-ignored",
+      "retrieved_at": "2026-11-20",
+      "sha256": "a0dbd96cb8c032c196084ff5f3cf78a3e5fbb2101e298321c3ba9c7301039af5",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；下级链接不代表全部递归阅读。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [],
+      "packaged_for_review": false
+    },
+    {
+      "id": "S64",
+      "title": "Translate your designs",
+      "requested_url": "https://developer.android.com/design/ui/mobile/guides/foundations/translate-designs",
+      "resolved_url": "https://developer.android.com/design/ui/mobile/guides/foundations/translate-designs",
+      "retrieved_at": "2026-11-23",
+      "sha256": "a05589c249784f2e83c6b0c6ba5236396ebf3d3b4b2b475f1197af2265c49dc8",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；实际用途见 design-reference.md。下级链接阅读范围逐项记录。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "text",
+        "components",
+        "navigation",
+        "accessibility"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S64.html"
+    },
+    {
+      "id": "S65",
+      "title": "Accessibility design",
+      "requested_url": "https://developer.android.com/design/ui/mobile/guides/foundations/accessibility",
+      "resolved_url": "https://developer.android.com/design/ui/mobile/guides/foundations/accessibility",
+      "retrieved_at": "2026-11-23",
+      "sha256": "aa95649e03dcb7d647985016f39125014a5f725954ac82a07d604a9e73c2d138",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；实际用途见 design-reference.md。下级链接阅读范围逐项记录。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "accessibility"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S65.html"
+    },
+    {
+      "id": "S66",
+      "title": "Android system bars design",
+      "requested_url": "https://developer.android.com/design/ui/mobile/guides/foundations/system-bars",
+      "resolved_url": "https://developer.android.com/design/ui/mobile/guides/foundations/system-bars",
+      "retrieved_at": "2026-11-23",
+      "sha256": "3a87223a62560ba5f7de89d5a3049d89242899c5f82a520490434fcdf9ba14f8",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；实际用途见 design-reference.md。下级链接阅读范围逐项记录。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "obstruction"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S66.html"
+    },
+    {
+      "id": "S67",
+      "title": "App Anatomy",
+      "requested_url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/app-anatomy",
+      "resolved_url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/app-anatomy",
+      "retrieved_at": "2026-11-23",
+      "sha256": "467f95c04abd19d27a16c5212e8119832a061ab74cf7593caab56d210f43f58f",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；实际用途见 design-reference.md。下级链接阅读范围逐项记录。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "obstruction",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S67.html"
+    },
+    {
+      "id": "S68",
+      "title": "Grids and units",
+      "requested_url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/grids-and-units",
+      "resolved_url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/grids-and-units",
+      "retrieved_at": "2026-11-23",
+      "sha256": "0e2e9cd313c8ebdb7c8e1554a7e31011bf7572c4f8c548ba993b27d5df9b9abf",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；实际用途见 design-reference.md。下级链接阅读范围逐项记录。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "window",
+        "text",
+        "camera"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S68.html"
+    },
+    {
+      "id": "S69",
+      "title": "Android color for mobile design",
+      "requested_url": "https://developer.android.com/design/ui/mobile/guides/styles/color",
+      "resolved_url": "https://developer.android.com/design/ui/mobile/guides/styles/color",
+      "retrieved_at": "2026-11-23",
+      "sha256": "6096aac589527d585a40b57ec2a702b33feb61fc74ae7c0fe1003b5135a5b3fa",
+      "reading_status": "full_body_read",
+      "reading_note": "正文已读；实际用途见 design-reference.md。下级链接阅读范围逐项记录。",
+      "role": "conditions_or_explanation",
+      "mapped_categories": [
+        "accessibility"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/S69.html"
+    },
+    {
+      "id": "G01",
+      "title": "social-pawparazzi",
+      "requested_url": "https://developer.android.com/design/ui/gallery/social/pawparazzi",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/social/pawparazzi",
+      "retrieved_at": "2026-11-23",
+      "sha256": "81a033c0f641f9bcdf85e91514ae024c83452106b94f1b2b64c150c697b935d6",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G01.html"
+    },
+    {
+      "id": "G02",
+      "title": "reading-multi-task",
+      "requested_url": "https://developer.android.com/design/ui/gallery/reading/multi-task",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/reading/multi-task",
+      "retrieved_at": "2026-11-23",
+      "sha256": "a065a0aced239505a76ae2ccba7eb1e9f08d4953ea94638fba4012289292cb6a",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G02.html"
+    },
+    {
+      "id": "G03",
+      "title": "media-discovery",
+      "requested_url": "https://developer.android.com/design/ui/gallery/media/discovery",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/media/discovery",
+      "retrieved_at": "2026-11-23",
+      "sha256": "c9452f308d56df6d54b107005a24e3994aaa9dbded5fbdc2a50c861856cbbac9",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G03.html"
+    },
+    {
+      "id": "G04",
+      "title": "social-conversations",
+      "requested_url": "https://developer.android.com/design/ui/gallery/social/conversations",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/social/conversations",
+      "retrieved_at": "2026-11-23",
+      "sha256": "72c2bfa0730f6e2739e36340881b7835a9fd669dc20007488e67c26a549dc3f6",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G04.html"
+    },
+    {
+      "id": "G05",
+      "title": "shopping-multi-task",
+      "requested_url": "https://developer.android.com/design/ui/gallery/shopping/multi-task",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/shopping/multi-task",
+      "retrieved_at": "2026-11-23",
+      "sha256": "61910c271c558c9592db4ad1f54ae3791173f983729b4f5da3543f1ea5112950",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G05.html"
+    },
+    {
+      "id": "G06",
+      "title": "media-spotify",
+      "requested_url": "https://developer.android.com/design/ui/gallery/media/spotify",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/media/spotify",
+      "retrieved_at": "2026-11-23",
+      "sha256": "cabe91abf4047b979266e7dddd868eeffa4d50a3a63a0360187da66683897244",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G06.html"
+    },
+    {
+      "id": "G07",
+      "title": "social-drag-and-drop",
+      "requested_url": "https://developer.android.com/design/ui/gallery/social/drag-and-drop",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/social/drag-and-drop",
+      "retrieved_at": "2026-11-23",
+      "sha256": "256c159f31ab516cded2460e222d430c16c707fedf3f46781e3cc235676db5e8",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G07.html"
+    },
+    {
+      "id": "G08",
+      "title": "social-multi-tasking",
+      "requested_url": "https://developer.android.com/design/ui/gallery/social/multi-tasking",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/social/multi-tasking",
+      "retrieved_at": "2026-11-23",
+      "sha256": "d8802c7f23baa15c876e164d506a18ae96d1354a6a6263b603aeebbc6c12c347",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G08.html"
+    },
+    {
+      "id": "G09",
+      "title": "productivity-multitask",
+      "requested_url": "https://developer.android.com/design/ui/gallery/productivity/multitask",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/productivity/multitask",
+      "retrieved_at": "2026-11-23",
+      "sha256": "1c228d86dd5154d03d60106782a54b68353faa383d2a4c7a84d55e4e53430d5f",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G09.html"
+    },
+    {
+      "id": "G10",
+      "title": "shopping-ebay",
+      "requested_url": "https://developer.android.com/design/ui/gallery/shopping/ebay",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/shopping/ebay",
+      "retrieved_at": "2026-11-23",
+      "sha256": "5b3c5154e1a7c16fbc5e12d92f5f0cee6265ff910b6e6573a7b0df377678a137",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G10.html"
+    },
+    {
+      "id": "G11",
+      "title": "social-tools",
+      "requested_url": "https://developer.android.com/design/ui/gallery/social/tools",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/social/tools",
+      "retrieved_at": "2026-11-23",
+      "sha256": "825421d85d80bcf1b56f610642843a34f0356ac0475fceeab689c815beca9894",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G11.html"
+    },
+    {
+      "id": "G12",
+      "title": "social-comments",
+      "requested_url": "https://developer.android.com/design/ui/gallery/social/comments",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/social/comments",
+      "retrieved_at": "2026-11-23",
+      "sha256": "51bc919a4d922a271467e9fd0c20bd4bdac8d54b49153214ccb163dae48e3ff2",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G12.html"
+    },
+    {
+      "id": "G13",
+      "title": "social-posts",
+      "requested_url": "https://developer.android.com/design/ui/gallery/social/posts",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/social/posts",
+      "retrieved_at": "2026-11-23",
+      "sha256": "05027693d85e608c8ab0b64c93b1b0cdf5d66fc50d2f1e38a8890cc670d6869d",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G13.html"
+    },
+    {
+      "id": "G14",
+      "title": "creativity-configurable",
+      "requested_url": "https://developer.android.com/design/ui/gallery/creativity/configurable",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/creativity/configurable",
+      "retrieved_at": "2026-11-23",
+      "sha256": "f5c2c3e06b3922b1e05bbb9613393be9738caa632779053377d750f532f0e4d6",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G14.html"
+    },
+    {
+      "id": "G15",
+      "title": "social-video-browsing",
+      "requested_url": "https://developer.android.com/design/ui/gallery/social/video-browsing",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/social/video-browsing",
+      "retrieved_at": "2026-11-23",
+      "sha256": "6b93019ca3ec393454240aaa6dddbcfc1dc296b69eefd672fd119f47486e0730",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G15.html"
+    },
+    {
+      "id": "G16",
+      "title": "creativity-utility",
+      "requested_url": "https://developer.android.com/design/ui/gallery/creativity/utility",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/creativity/utility",
+      "retrieved_at": "2026-11-23",
+      "sha256": "67585fa3680b7a9fa59cfa0630029d0d5ad0aa83c242146d56fe2bc7eadaa1a9",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G16.html"
+    },
+    {
+      "id": "G17",
+      "title": "shopping-product-filter",
+      "requested_url": "https://developer.android.com/design/ui/gallery/shopping/product-filter",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/shopping/product-filter",
+      "retrieved_at": "2026-11-23",
+      "sha256": "c1bb9a78059d3082a48d30c03e2f8e17e3b84937620cb27439e5941b3f0bb6ef",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G17.html"
+    },
+    {
+      "id": "G18",
+      "title": "social-dual-screen",
+      "requested_url": "https://developer.android.com/design/ui/gallery/social/dual-screen",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/social/dual-screen",
+      "retrieved_at": "2026-11-23",
+      "sha256": "1688dd2a786311ab2b6ba667ba6fa9b1310b69620db598f5a3962c353cfbe63c",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G18.html"
+    },
+    {
+      "id": "G19",
+      "title": "social-duo",
+      "requested_url": "https://developer.android.com/design/ui/gallery/social/duo",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/social/duo",
+      "retrieved_at": "2026-11-23",
+      "sha256": "ce5efdb2f711a8c700b466e1336ae171b67e55694f0fc36f439e2a331dd5fb90",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G19.html"
+    },
+    {
+      "id": "G20",
+      "title": "creativity-multi-task",
+      "requested_url": "https://developer.android.com/design/ui/gallery/creativity/multi-task",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/creativity/multi-task",
+      "retrieved_at": "2026-11-23",
+      "sha256": "4521e5bde922d6c6488377852abe24f1f2a55cb92aad5c912d3de0e85001a143",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G20.html"
+    },
+    {
+      "id": "G21",
+      "title": "shopping-catalogs",
+      "requested_url": "https://developer.android.com/design/ui/gallery/shopping/catalogs",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/shopping/catalogs",
+      "retrieved_at": "2026-11-23",
+      "sha256": "01f6714e83f879f48f18c8632f57b4fee544a5b45f34bf0d1cb294db022f06d5",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G21.html"
+    },
+    {
+      "id": "G22",
+      "title": "reading-complementary",
+      "requested_url": "https://developer.android.com/design/ui/gallery/reading/complementary",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/reading/complementary",
+      "retrieved_at": "2026-11-23",
+      "sha256": "8baa279f2a2be23daab72913337329bd5feff93110c9a96c27a891617ac7a387",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G22.html"
+    },
+    {
+      "id": "G23",
+      "title": "productivity-tools",
+      "requested_url": "https://developer.android.com/design/ui/gallery/productivity/tools",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/productivity/tools",
+      "retrieved_at": "2026-11-23",
+      "sha256": "8e08e3ef0454fb31d19c9b267e475cb585e8743e75216e313231c97d175cef3b",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G23.html"
+    },
+    {
+      "id": "G24",
+      "title": "games-continuity",
+      "requested_url": "https://developer.android.com/design/ui/gallery/games/continuity",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/games/continuity",
+      "retrieved_at": "2026-11-23",
+      "sha256": "e09c7e0c1165c315a8e8a33a32d9a526227f905ec562ded1c5dfe35f067249ed",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G24.html"
+    },
+    {
+      "id": "G25",
+      "title": "media-multitask",
+      "requested_url": "https://developer.android.com/design/ui/gallery/media/multitask",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/media/multitask",
+      "retrieved_at": "2026-11-23",
+      "sha256": "cc609e6443be94b2e7f804f7650c27ea03a64955a9f6a3c1d5554cdd481c1997",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G25.html"
+    },
+    {
+      "id": "G26",
+      "title": "creativity-stylus",
+      "requested_url": "https://developer.android.com/design/ui/gallery/creativity/stylus",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/creativity/stylus",
+      "retrieved_at": "2026-11-23",
+      "sha256": "83ae3325de93f84b70c164fc9eaafbcf31bd9a8926400763bbcfc66b905a32a0",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G26.html"
+    },
+    {
+      "id": "G27",
+      "title": "productivity-wps",
+      "requested_url": "https://developer.android.com/design/ui/gallery/productivity/wps",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/productivity/wps",
+      "retrieved_at": "2026-11-23",
+      "sha256": "30a4448ba60fb8e3b228c91c8afb9375d43b8716e1df0f44d3cee6f11cc7ec18",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G27.html"
+    },
+    {
+      "id": "G28",
+      "title": "reading-readera",
+      "requested_url": "https://developer.android.com/design/ui/gallery/reading/readera",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/reading/readera",
+      "retrieved_at": "2026-11-23",
+      "sha256": "deb54accd325a5c4639e7e7ee867d4df237299f49e7a792731a7a2479f2136b6",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G28.html"
+    },
+    {
+      "id": "G29",
+      "title": "shopping-product-details",
+      "requested_url": "https://developer.android.com/design/ui/gallery/shopping/product-details",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/shopping/product-details",
+      "retrieved_at": "2026-11-23",
+      "sha256": "d1abe724792f2e4ef9ba6a1fb6d572902740aa5a924eadddf9cc41f8026804ad",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G29.html"
+    },
+    {
+      "id": "G30",
+      "title": "media-detail",
+      "requested_url": "https://developer.android.com/design/ui/gallery/media/detail",
+      "resolved_url": "https://developer.android.com/design/ui/gallery/media/detail",
+      "retrieved_at": "2026-11-23",
+      "sha256": "738620a1d7e70ca95ffaac6952e511fb358368550d96e708dbb2062aa939e65a",
+      "reading_status": "full_body_read",
+      "reading_note": "案例正文已读；推荐布局仅作条件解释，不作为基础要求。网页图示未全部逐张核对。",
+      "role": "example_not_failure_basis",
+      "mapped_categories": [
+        "window",
+        "components"
+      ],
+      "packaged_for_review": true,
+      "snapshot_path": "references/source-snapshots/G30.html"
+    }
+  ]
+}

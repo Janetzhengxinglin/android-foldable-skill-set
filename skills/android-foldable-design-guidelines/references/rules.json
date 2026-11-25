@@ -1,0 +1,1457 @@
+{
+  "schema_version": 1,
+  "rule_version": "0.2.0",
+  "verification_date": "2026-11-23",
+  "scope": "仅 Tier 3 与相关 Core 基本适配；不输出 Tier 2/1 优化。",
+  "rules": [
+    {
+      "id": "window.fit",
+      "category_id": "window",
+      "title": "填满实际窗口，内容不越界",
+      "priority": 1,
+      "subject_type": "page",
+      "component_kinds": [],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "image"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Config_Changes",
+        "S03.T-Config_Orientation",
+        "S04.Fullscreen_Display"
+      ],
+      "test_ids": [
+        "T-Config_Orientation"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "全部 App 页面；全屏与分屏分别按实际 App 窗口检查。",
+      "do_not_report": "不因单栏或留白判错；媒体保持比例的留边不等于整个 App 加框。 App 填满窗口不代表每个内容容器必须撑满；文字、表单、按钮可以有最大宽度。按实际窗口宽度及可用高度判断，分屏不使用整屏尺寸。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S05",
+        "S06",
+        "S21",
+        "S22",
+        "S16",
+        "S68",
+        "S50",
+        "S51"
+      ],
+      "profiles": [
+        "screenshot-only",
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "window.compatibility",
+      "category_id": "window",
+      "title": "App 未运行于加框或兼容模式",
+      "priority": 1,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "image"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Config_Changes",
+        "S03.T-Config_Orientation"
+      ],
+      "test_ids": [
+        "T-Config_Orientation"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "全部 App 页面；全屏与分屏分别按实际 App 窗口检查。",
+      "do_not_report": "不因单栏或留白判错；媒体保持比例的留边不等于整个 App 加框。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S05",
+        "S06",
+        "S21",
+        "S22",
+        "S16",
+        "S17"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "window.graphics",
+      "category_id": "window",
+      "title": "图形与文字无明显变形、模糊或像素化",
+      "priority": 2,
+      "subject_type": "component",
+      "component_kinds": [
+        "text",
+        "button",
+        "input",
+        "navigation",
+        "list",
+        "card",
+        "media",
+        "overlay",
+        "other"
+      ],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "image"
+        ]
+      ],
+      "basis_ids": [
+        "S04.Graphic_Quality",
+        "S04.T-Graphic_Quality"
+      ],
+      "test_ids": [
+        "T-Graphic_Quality"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "全部 App 页面；全屏与分屏分别按实际 App 窗口检查。",
+      "do_not_report": "只有已知原图／正常状态或可确认的几何参照才判断拉伸；正常等比裁切、留边以及摄影透视不报错。不能从留白推断预览比例错误。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S05",
+        "S06",
+        "S21",
+        "S22"
+      ],
+      "profiles": [
+        "screenshot-only",
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "obstruction.visible",
+      "category_id": "obstruction",
+      "title": "文字和控件不被实际系统区域或铰链遮挡",
+      "priority": 1,
+      "subject_type": "page",
+      "component_kinds": [],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "image"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Config_Changes",
+        "S03.T-Config_Orientation"
+      ],
+      "test_ids": [
+        "T-Config_Orientation"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "实际遮挡或操作冲突；已有半折素材也检查基本可用性。",
+      "do_not_report": "不把柔性屏平展折痕一律设为禁用条带；不要求专属半折布局；背景延伸到系统栏下本身不报错。 背景与滚动内容延伸到系统栏下方可以正常。系统栏、手势和三键导航的保护区因实际系统条件不同，不能照搬模板固定边距。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S09",
+        "S07",
+        "S08",
+        "S17",
+        "S20",
+        "S54",
+        "S66",
+        "S67",
+        "S49"
+      ],
+      "profiles": [
+        "screenshot-only",
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "obstruction.hinge",
+      "category_id": "obstruction",
+      "title": "实际折叠特征不遮挡内容与操作",
+      "priority": 1,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {
+        "fold_feature": true
+      },
+      "evidence_groups": [
+        [
+          "image"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Config_Changes",
+        "S03.T-Config_Orientation"
+      ],
+      "test_ids": [
+        "T-Config_Orientation"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "实际遮挡或操作冲突；已有半折素材也检查基本可用性。",
+      "do_not_report": "不把柔性屏平展折痕一律设为禁用条带；不要求专属半折布局；背景延伸到系统栏下本身不报错。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S09",
+        "S07",
+        "S08",
+        "S17",
+        "S20",
+        "S54"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "obstruction.ime",
+      "category_id": "obstruction",
+      "title": "键盘展开后输入与操作仍能完成",
+      "priority": 1,
+      "subject_type": "component",
+      "component_kinds": [
+        "input"
+      ],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "interaction_record",
+          "transition_clip"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Config_Changes",
+        "S03.T-Config_Orientation"
+      ],
+      "test_ids": [
+        "T-Config_Orientation"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "实际遮挡或操作冲突；已有半折素材也检查基本可用性。",
+      "do_not_report": "不把柔性屏平展折痕一律设为禁用条带；不要求专属半折布局；背景延伸到系统栏下本身不报错。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S09",
+        "S07",
+        "S08",
+        "S17",
+        "S20",
+        "S54",
+        "S16",
+        "S66",
+        "S49"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "text.composition",
+      "category_id": "text",
+      "title": "无截字、不当换行或文字间距造成的不可读",
+      "priority": 2,
+      "subject_type": "component",
+      "component_kinds": [
+        "text",
+        "button",
+        "input"
+      ],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "image"
+        ]
+      ],
+      "basis_ids": [
+        "S04.Line_Length",
+        "S04.T-Line_Length"
+      ],
+      "test_ids": [
+        "T-Line_Length"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "所有文字页面；45–75 字符规则核对阅读文本块和支持语言，不把短标题、金额或末行强行凑到 45 字符。",
+      "do_not_report": "单行输入框随光标横向滚动正常；不因按钮或输入框全宽、填充/描边风格报错，不硬套 300dp 示例。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S26",
+        "S27",
+        "S28",
+        "S20",
+        "S64",
+        "S68"
+      ],
+      "profiles": [
+        "screenshot-only",
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "text.line_length",
+      "category_id": "text",
+      "title": "阅读文本块每行字符数符合官方要求",
+      "priority": 2,
+      "subject_type": "component",
+      "component_kinds": [
+        "text"
+      ],
+      "conditions": {
+        "reading_text_block": true
+      },
+      "evidence_groups": [
+        [
+          "image"
+        ],
+        [
+          "measurement"
+        ]
+      ],
+      "basis_ids": [
+        "S04.Line_Length",
+        "S04.T-Line_Length"
+      ],
+      "test_ids": [
+        "T-Line_Length"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "所有文字页面；45–75 字符规则核对阅读文本块和支持语言，不把短标题、金额或末行强行凑到 45 字符。",
+      "do_not_report": "单行输入框随光标横向滚动正常；不因按钮或输入框全宽、填充/描边风格报错，不硬套 300dp 示例。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S26",
+        "S27",
+        "S28",
+        "S20"
+      ],
+      "numeric_requirement": {
+        "min_characters": 45,
+        "max_characters": 75,
+        "includes_spaces": true,
+        "short_labels_and_last_line_not_forced_to_minimum": true
+      },
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "components.visible",
+      "category_id": "components",
+      "title": "弹层内容和控件在截图中完整可见",
+      "priority": 1,
+      "subject_type": "component",
+      "component_kinds": [
+        "overlay"
+      ],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "image"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Config_Changes",
+        "S03.T-Multi-Window_Functionality"
+      ],
+      "test_ids": [
+        "T-Multi-Window_Functionality"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "App 内弹层；系统弹窗只检查对 App 操作的实际影响。",
+      "do_not_report": "截图不证明能滚动、操作或关闭；视口边缘正常露出可滚动内容不自动算裁切。不要求底部面板换成侧面板或新版外观。 底部面板转为侧面板或其他弹层、正常背景遮罩不构成问题。须排除可滚动视口边缘例外。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S25",
+        "S28",
+        "S29",
+        "S21",
+        "S16",
+        "S51"
+      ],
+      "profiles": [
+        "screenshot-only",
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "components.operate",
+      "category_id": "components",
+      "title": "弹层内容可访问，能操作及关闭",
+      "priority": 1,
+      "subject_type": "component",
+      "component_kinds": [
+        "overlay"
+      ],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "interaction_record",
+          "transition_clip"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Config_Changes",
+        "S03.Multi-Window_Functionality",
+        "S03.T-Multi-Window_Functionality",
+        "S04.Back_Gesture_Nav",
+        "S04.T-Back_Nav"
+      ],
+      "test_ids": [
+        "T-Multi-Window_Functionality",
+        "T-Back_Nav"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "App 内弹层；系统弹窗只检查对 App 操作的实际影响。",
+      "do_not_report": "不要求底部面板换成侧面板，不因全宽、初始高度超过 50% 或未用新版外观单独报基础适配问题。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S25",
+        "S28",
+        "S29",
+        "S21",
+        "S16",
+        "S51"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "continuity.parity",
+      "category_id": "continuity",
+      "title": "不同方向和折叠状态保留相同功能与操作",
+      "priority": 1,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "transition_clip"
+        ]
+      ],
+      "basis_ids": [
+        "S04.Display_State_Parity",
+        "S04.T-Orientation_Transitions"
+      ],
+      "test_ids": [
+        "T-Orientation_Transitions"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "各页面及输入、滚动、播放和待完成任务；Core 官方测试要求每页旋转及折叠/展开至少三次。",
+      "do_not_report": "单张截图不能证明状态保持；不要求主动清空任务后的临时输入永远保留；不从录屏推断代码根因。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S11",
+        "S18",
+        "S19"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "continuity.state",
+      "category_id": "continuity",
+      "title": "旋转、折叠和缩放后保留输入、滚动与播放进度",
+      "priority": 1,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "transition_clip"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Config_Changes",
+        "S03.T-Config_State"
+      ],
+      "test_ids": [
+        "T-Config_State"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "各页面及输入、滚动、播放和待完成任务；Core 官方测试要求每页旋转及折叠/展开至少三次。",
+      "do_not_report": "单张截图不能证明状态保持；不要求主动清空任务后的临时输入永远保留；不从录屏推断代码根因。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S11",
+        "S18",
+        "S19"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "continuity.combinations",
+      "category_id": "continuity",
+      "title": "连续组合切换后可用且无状态丢失",
+      "priority": 1,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "transition_clip"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Config_Combinations",
+        "S03.T-Config_Combinations",
+        "S04.Orientation_Transitions",
+        "S04.T-Orientation_Transitions"
+      ],
+      "test_ids": [
+        "T-Config_Combinations",
+        "T-Orientation_Transitions"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "各页面及输入、滚动、播放和待完成任务；Core 官方测试要求每页旋转及折叠/展开至少三次。",
+      "do_not_report": "单张截图不能证明状态保持；不要求主动清空任务后的临时输入永远保留；不从录屏推断代码根因。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S11",
+        "S18",
+        "S19"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "multiwindow.operation",
+      "category_id": "multiwindow",
+      "title": "分屏及窗口尺寸变化后功能可用",
+      "priority": 1,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "transition_clip"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Multi-Window_Functionality",
+        "S03.T-Multi-Window_Functionality"
+      ],
+      "test_ids": [
+        "T-Multi-Window_Functionality"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "分屏；相机/麦克风项仅在 App 使用这些资源时。",
+      "do_not_report": "不要求多实例、拖放或桌面式菜单；无争用时继续相机预览不单独证明违规。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S10",
+        "S13"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "multiwindow.focus",
+      "category_id": "multiwindow",
+      "title": "可见但未聚焦时内容继续更新",
+      "priority": 1,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {
+        "continuous_updates": true
+      },
+      "evidence_groups": [
+        [
+          "transition_clip"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Multi-Resume",
+        "S03.T-Multi-Window_Focus"
+      ],
+      "test_ids": [
+        "T-Multi-Window_Focus"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "分屏；相机/麦克风项仅在 App 使用这些资源时。",
+      "do_not_report": "不要求多实例、拖放或桌面式菜单；无争用时继续相机预览不单独证明违规。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S10",
+        "S13"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "multiwindow.resources",
+      "category_id": "multiwindow",
+      "title": "失去相机或麦克风资源后正确处理并恢复",
+      "priority": 1,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {
+        "exclusive_resources": true
+      },
+      "evidence_groups": [
+        [
+          "transition_clip"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Multi-Resume",
+        "S03.T-Multi-Window_Resources"
+      ],
+      "test_ids": [
+        "T-Multi-Window_Resources"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "分屏；相机/麦克风项仅在 App 使用这些资源时。",
+      "do_not_report": "不要求多实例、拖放或桌面式菜单；无争用时继续相机预览不单独证明违规。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S10",
+        "S13"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "camera.preview",
+      "category_id": "camera",
+      "title": "App 相机预览在切换后的方向和比例正确",
+      "priority": 1,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {
+        "in_app_camera": true
+      },
+      "evidence_groups": [
+        [
+          "transition_clip"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Camera_Preview",
+        "S03.T-Camera_Preview"
+      ],
+      "test_ids": [
+        "T-Camera_Preview"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "App 内拍摄、扫码、身份验证或视频通话，包括内嵌第三方 SDK。",
+      "do_not_report": "调用独立系统相机时不审查系统相机布局；正常保持比例的裁切/留边不自动报错；不要求后置自拍或双屏预览。 正常裁切、等比留边、不同媒体容器不直接构成拉伸。屏幕比例不能代替原始媒体比例。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S13",
+        "S19",
+        "S17",
+        "S51"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "projection.output",
+      "category_id": "projection",
+      "title": "扩展测试：对照被采集区域与输出，检查方向和是否等比显示",
+      "priority": 1,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {
+        "in_app_projection": true
+      },
+      "evidence_groups": [
+        [
+          "transition_clip"
+        ],
+        [
+          "receiver_output"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Media_Projection",
+        "S03.T-Media_Projection"
+      ],
+      "test_ids": [
+        "T-Media_Projection"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "仅在另行委托 App 自身录制／共享测试，并提供同一时点源画面、采集区域及接收或录制结果时。",
+      "do_not_report": "这不是用户提交的审查录屏。只比较被采集内容区域，按实际采集范围和方向核对；输出可以等比缩放或留边，不要求填满接收端屏幕。不从 App 本机截图推断接收端比例或裁切故障。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S14"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "keyboard.input",
+      "category_id": "keyboard",
+      "title": "外接键盘可输入，接入断开不需重启 App",
+      "priority": 1,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {
+        "text_input": true,
+        "external_keyboard_supported": true
+      },
+      "evidence_groups": [
+        [
+          "interaction_record",
+          "transition_clip"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Keyboard_Input",
+        "S03.T-Keyboard_Input"
+      ],
+      "test_ids": [
+        "T-Keyboard_Input"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "所有可编辑输入框；设备允许外接键盘。",
+      "do_not_report": "不要求整套 Tab/方向键导航、快捷键、空格控制媒体、Enter 发送或 Esc 退出等 Tier 2 功能。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S12",
+        "S18"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "mouse.click",
+      "category_id": "mouse",
+      "title": "鼠标与触控板可点击控件",
+      "priority": 1,
+      "subject_type": "component",
+      "component_kinds": [
+        "text",
+        "button",
+        "input",
+        "navigation",
+        "list",
+        "card",
+        "media",
+        "overlay",
+        "other"
+      ],
+      "conditions": {
+        "clickable": true,
+        "pointer_supported": true
+      },
+      "evidence_groups": [
+        [
+          "interaction_record",
+          "transition_clip"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Mouse_Trackpad_Basic",
+        "S03.T-Mouse_Trackpad_Basic"
+      ],
+      "test_ids": [
+        "T-Mouse_Trackpad_Basic"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "全部可点击/滚动页面；支持这些外设的设备。",
+      "do_not_report": "不要求右键、悬停、缩放或拖放等 Tier 2/1 增强功能。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S12",
+        "S44"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "mouse.select",
+      "category_id": "mouse",
+      "title": "鼠标与触控板可选择元素或文字",
+      "priority": 1,
+      "subject_type": "component",
+      "component_kinds": [
+        "text",
+        "button",
+        "input",
+        "navigation",
+        "list",
+        "card",
+        "media",
+        "overlay",
+        "other"
+      ],
+      "conditions": {
+        "selectable": true,
+        "pointer_supported": true
+      },
+      "evidence_groups": [
+        [
+          "interaction_record",
+          "transition_clip"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Mouse_Trackpad_Basic",
+        "S03.T-Mouse_Trackpad_Basic"
+      ],
+      "test_ids": [
+        "T-Mouse_Trackpad_Basic"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "全部可点击/滚动页面；支持这些外设的设备。",
+      "do_not_report": "不要求右键、悬停、缩放或拖放等 Tier 2/1 增强功能。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S12",
+        "S44"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "mouse.scroll",
+      "category_id": "mouse",
+      "title": "鼠标与触控板可按内容方向滚动",
+      "priority": 1,
+      "subject_type": "component",
+      "component_kinds": [
+        "text",
+        "button",
+        "input",
+        "navigation",
+        "list",
+        "card",
+        "media",
+        "overlay",
+        "other"
+      ],
+      "conditions": {
+        "scrollable": true,
+        "pointer_supported": true
+      },
+      "evidence_groups": [
+        [
+          "interaction_record",
+          "transition_clip"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Mouse_Trackpad_Basic",
+        "S03.T-Mouse_Trackpad_Basic"
+      ],
+      "test_ids": [
+        "T-Mouse_Trackpad_Basic"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "全部可点击/滚动页面；支持这些外设的设备。",
+      "do_not_report": "不要求右键、悬停、缩放或拖放等 Tier 2/1 增强功能。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S12",
+        "S44"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "stylus.basic",
+      "category_id": "stylus",
+      "title": "触控笔可选择、操作与滚动",
+      "priority": 1,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {
+        "stylus_supported": true
+      },
+      "evidence_groups": [
+        [
+          "interaction_record",
+          "transition_clip"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Stylus_Basic",
+        "S03.T-Stylus_Basic"
+      ],
+      "test_ids": [
+        "T-Stylus_Basic"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "基本操作在支持笔的设备；手写文本在 Android 14/API 34+；ChromeOS WebView 条件单独保留，不扩为折叠手机通用要求。",
+      "do_not_report": "不要求绘画、橡皮擦、压力/倾斜感应、低延迟、掌压防误触或跨 App 拖放等 Tier 1 功能。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S12"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "stylus.handwriting",
+      "category_id": "stylus",
+      "title": "适用系统中触控笔可手写及编辑文本",
+      "priority": 1,
+      "subject_type": "component",
+      "component_kinds": [
+        "input"
+      ],
+      "conditions": {
+        "stylus_supported": true,
+        "handwriting_supported_by_platform": true
+      },
+      "evidence_groups": [
+        [
+          "interaction_record",
+          "transition_clip"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S03.Stylus_Text_Input",
+        "S03.T-Stylus_Text_Input"
+      ],
+      "test_ids": [
+        "T-Stylus_Text_Input"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "基本操作在支持笔的设备；手写文本在 Android 14/API 34+；ChromeOS WebView 条件单独保留，不扩为折叠手机通用要求。",
+      "do_not_report": "不要求绘画、橡皮擦、压力/倾斜感应、低延迟、掌压防误触或跨 App 拖放等 Tier 1 功能。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S12"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "navigation.back",
+      "category_id": "navigation",
+      "title": "系统返回按钮和返回手势按预期工作",
+      "priority": 2,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "interaction_record",
+          "transition_clip"
+        ]
+      ],
+      "basis_ids": [
+        "S04.Back_Button_Nav",
+        "S04.Back_Gesture_Nav",
+        "S04.T-Back_Nav"
+      ],
+      "test_ids": [
+        "T-Back_Nav"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "全部页面、弹层和流程；按实际离开方式区分。",
+      "do_not_report": "不禁用所有 App 返回箭头；不要求底部导航换导航轨；动画缺失不能仅从推荐文档判 Tier 3 违规。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S11",
+        "S61",
+        "S23"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "navigation.recents",
+      "category_id": "navigation",
+      "title": "从最近任务回到离开时的页面与状态",
+      "priority": 2,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "transition_clip"
+        ]
+      ],
+      "basis_ids": [
+        "S04.State_Preservation",
+        "S04.App_Switcher",
+        "S04.T-App_Switcher"
+      ],
+      "test_ids": [
+        "T-App_Switcher"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "全部页面、弹层和流程；按实际离开方式区分。",
+      "do_not_report": "不禁用所有 App 返回箭头；不要求底部导航换导航轨；动画缺失不能仅从推荐文档判 Tier 3 违规。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S11",
+        "S61",
+        "S23"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "navigation.sleep_lock",
+      "category_id": "navigation",
+      "title": "休眠或锁屏恢复后保留相应状态",
+      "priority": 2,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "transition_clip"
+        ]
+      ],
+      "basis_ids": [
+        "S04.State_Preservation",
+        "S04.Sleep_Resume",
+        "S04.Lock_Resume",
+        "S04.T-Sleep_Resume",
+        "S04.T-Lock_Resume"
+      ],
+      "test_ids": [
+        "T-Sleep_Resume",
+        "T-Lock_Resume"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "全部页面、弹层和流程；按实际离开方式区分。",
+      "do_not_report": "不禁用所有 App 返回箭头；不要求底部导航换导航轨；动画缺失不能仅从推荐文档判 Tier 3 违规。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S11",
+        "S61",
+        "S23"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "navigation.relaunch",
+      "category_id": "navigation",
+      "title": "从桌面重新进入时按离开方式与时长恢复状态",
+      "priority": 2,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "transition_clip"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S04.State_Preservation",
+        "S04.T-State_Preservation"
+      ],
+      "test_ids": [
+        "T-State_Preservation"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "全部页面、弹层和流程；按实际离开方式区分。",
+      "do_not_report": "不禁用所有 App 返回箭头；不要求底部导航换导航轨；动画缺失不能仅从推荐文档判 Tier 3 违规。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S11",
+        "S61",
+        "S23"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "accessibility.themes",
+      "category_id": "accessibility",
+      "title": "已展示主题中，文字与图形清晰可辨",
+      "priority": 2,
+      "subject_type": "page",
+      "component_kinds": [],
+      "conditions": {},
+      "evidence_groups": [
+        [
+          "image"
+        ]
+      ],
+      "basis_ids": [
+        "S04.Theme_Support",
+        "S04.T-Theme_Support"
+      ],
+      "test_ids": [
+        "T-Theme_Support"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "已提供的浅色或深色主题截图；只检查当前可读性，不由缺少另一主题截图推断 App 不支持该主题。",
+      "do_not_report": "不凭图标大小判触控范围不足；文本自动朗读、纯装饰不强制 contentDescription；截图不能证明语义。 品牌字体、自有设计系统、静态或动态配色均不能单独作为不符合项；数值阈值、热区、语义须另行实测。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S32",
+        "S60",
+        "S62",
+        "S69",
+        "S65",
+        "S49"
+      ],
+      "profiles": [
+        "screenshot-only",
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "accessibility.target",
+      "category_id": "accessibility",
+      "title": "实际触控目标至少 48dp",
+      "priority": 2,
+      "subject_type": "component",
+      "component_kinds": [
+        "text",
+        "button",
+        "input",
+        "navigation",
+        "list",
+        "card",
+        "media",
+        "overlay",
+        "other"
+      ],
+      "conditions": {
+        "touch_target": true
+      },
+      "evidence_groups": [
+        [
+          "measurement"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S04.Touch_Target_Size",
+        "S04.T-Touch_Target_Size"
+      ],
+      "test_ids": [
+        "T-Touch_Target_Size"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "App 和内嵌网页；按触控/精确指针及文字字号/粗细区分。",
+      "do_not_report": "不凭图标大小判触控范围不足；文本自动朗读、纯装饰不强制 contentDescription；截图不能证明语义。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S32",
+        "S60",
+        "S62"
+      ],
+      "numeric_requirement": {
+        "min_width_dp": 48,
+        "min_height_dp": 48,
+        "actual_hit_area": true
+      },
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "accessibility.contrast",
+      "category_id": "accessibility",
+      "title": "内容对比度符合适用字号与对象要求",
+      "priority": 2,
+      "subject_type": "component",
+      "component_kinds": [
+        "text",
+        "button",
+        "input",
+        "navigation",
+        "list",
+        "card",
+        "media",
+        "overlay",
+        "other"
+      ],
+      "conditions": {
+        "meaningful_visual": true
+      },
+      "evidence_groups": [
+        [
+          "measurement"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S04.Visual_Contrast",
+        "S04.T-Visual_Contrast"
+      ],
+      "test_ids": [
+        "T-Visual_Contrast"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "App 和内嵌网页；按触控/精确指针及文字字号/粗细区分。",
+      "do_not_report": "不凭图标大小判触控范围不足；文本自动朗读、纯装饰不强制 contentDescription；截图不能证明语义。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S32",
+        "S60",
+        "S62"
+      ],
+      "numeric_requirement": {
+        "large_text_and_graphics_min": 3,
+        "small_text_min": 4.5,
+        "classification_requires_original_size_units": true
+      },
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "accessibility.semantics",
+      "category_id": "accessibility",
+      "title": "需要朗读的非文本控件有可理解的语义",
+      "priority": 2,
+      "subject_type": "component",
+      "component_kinds": [
+        "text",
+        "button",
+        "input",
+        "navigation",
+        "list",
+        "card",
+        "media",
+        "overlay",
+        "other"
+      ],
+      "conditions": {
+        "semantic_label_required": true
+      },
+      "evidence_groups": [
+        [
+          "semantics_record"
+        ]
+      ],
+      "basis_ids": [
+        "S04.Content_Description",
+        "S04.T-Content_Description"
+      ],
+      "test_ids": [
+        "T-Content_Description"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "App 和内嵌网页；按触控/精确指针及文字字号/粗细区分。",
+      "do_not_report": "不凭图标大小判触控范围不足；文本自动朗读、纯装饰不强制 contentDescription；截图不能证明语义。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S32",
+        "S60",
+        "S62"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "playback.focus",
+      "category_id": "playback",
+      "title": "音频焦点改变时按 Core 要求响应",
+      "priority": 2,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {
+        "audio_playback": true
+      },
+      "evidence_groups": [
+        [
+          "transition_clip"
+        ],
+        [
+          "audio_record"
+        ]
+      ],
+      "basis_ids": [
+        "S04.Audio_Focus_Change",
+        "S04.T-Audio_Focus_Change"
+      ],
+      "test_ids": [
+        "T-Audio_Focus_Change"
+      ],
+      "requirement_wording": "should",
+      "applies_when": "已有对应音视频功能且设备支持相应模式；Core 的 should 原样保留，不改写成所有 App 的 must。",
+      "do_not_report": "不要求 Tier 1 交互式 PiP、设备切换器或专属半折控制区；无音视频功能的 App 不要求新增。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S10",
+        "S41"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "playback.audio_background",
+      "category_id": "playback",
+      "title": "后台音频保持播放并有可用通知控制",
+      "priority": 2,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {
+        "audio_playback": true
+      },
+      "evidence_groups": [
+        [
+          "transition_clip"
+        ],
+        [
+          "audio_record"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S04.Audio_Playback_Background",
+        "S04.T-Audio_Playback_Background"
+      ],
+      "test_ids": [
+        "T-Audio_Playback_Background"
+      ],
+      "requirement_wording": "should",
+      "applies_when": "已有对应音视频功能且设备支持相应模式；Core 的 should 原样保留，不改写成所有 App 的 must。",
+      "do_not_report": "不要求 Tier 1 交互式 PiP、设备切换器或专属半折控制区；无音视频功能的 App 不要求新增。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S10",
+        "S41"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "playback.video_pip",
+      "category_id": "playback",
+      "title": "已有视频功能按 Core should 检查基本画中画",
+      "priority": 2,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {
+        "video_playback": true,
+        "pip_supported": true
+      },
+      "evidence_groups": [
+        [
+          "interaction_record",
+          "transition_clip"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S04.Video_PiP",
+        "S04.T-Video_PiP"
+      ],
+      "test_ids": [
+        "T-Video_PiP"
+      ],
+      "requirement_wording": "should",
+      "applies_when": "已有对应音视频功能且设备支持相应模式；Core 的 should 原样保留，不改写成所有 App 的 must。",
+      "do_not_report": "不要求 Tier 1 交互式 PiP、设备切换器或专属半折控制区；无音视频功能的 App 不要求新增。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S10",
+        "S41"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    },
+    {
+      "id": "playback.video_background",
+      "category_id": "playback",
+      "title": "视频窗口失去前台后保持播放",
+      "priority": 2,
+      "subject_type": "scenario",
+      "component_kinds": [],
+      "conditions": {
+        "video_playback": true
+      },
+      "evidence_groups": [
+        [
+          "transition_clip"
+        ],
+        [
+          "runtime_context"
+        ]
+      ],
+      "basis_ids": [
+        "S04.Video_Playback_Background",
+        "S04.T-Video_Playback_Background"
+      ],
+      "test_ids": [
+        "T-Video_Playback_Background"
+      ],
+      "requirement_wording": "official_basic_requirement",
+      "applies_when": "已有对应音视频功能且设备支持相应模式；Core 的 should 原样保留，不改写成所有 App 的 must。",
+      "do_not_report": "不要求 Tier 1 交互式 PiP、设备切换器或专属半折控制区；无音视频功能的 App 不要求新增。",
+      "lifecycle": "verified",
+      "supporting_source_ids": [
+        "S10",
+        "S41"
+      ],
+      "profiles": [
+        "submitted-evidence"
+      ]
+    }
+  ]
+}

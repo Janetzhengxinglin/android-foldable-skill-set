@@ -1,0 +1,21 @@
+{
+  "note": "浏览器渲染正文的逐字摘录，不是完整页面快照。其他浏览器页面的完整文本见本次工具阅读记录。",
+  "excerpts": {
+    "S25": {
+      "heading": "Responsive layout → Medium and expanded breakpoints",
+      "quote": "For larger screens with medium and expanded breakpoints, bottom sheets have a default max-width to prevent undesired layouts and awkward spacing. However, this can be overridden if needed."
+    },
+    "S27": {
+      "heading": "Input text",
+      "quote": "In single-line fields, as the cursor reaches the right field edge, text longer than the input line automatically scrolls left."
+    },
+    "S28": {
+      "heading": "Placement",
+      "quote": "If a menu is in a position to be cut off, it should automatically reposition to appear to the left, right, or above the element that generates it."
+    },
+    "S32": {
+      "heading": "Touch and pointer target sizes",
+      "quote": "Touch targets are the parts of the screen that respond to user input, extending beyond the visual bounds of an element."
+    }
+  }
+}

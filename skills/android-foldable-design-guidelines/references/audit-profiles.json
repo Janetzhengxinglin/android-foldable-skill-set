@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "default_profile": "screenshot-only",
+  "profiles": {
+    "screenshot-only": {
+      "title": "截图适配审查",
+      "rule_ids": [
+        "window.fit",
+        "window.graphics",
+        "obstruction.visible",
+        "text.composition",
+        "components.visible",
+        "accessibility.themes"
+      ],
+      "scope": "逐页审查已展示的窗口、文字、图形、遮挡、弹层和主题可读性；不判断真实操作或动态行为。"
+    },
+    "submitted-evidence": {
+      "title": "另行委托的扩展测试",
+      "rule_ids": null,
+      "scope": "只有用户明确要求并提供对应实测或测量证据时启用；不因提交录屏自动启用。"
+    }
+  }
+}

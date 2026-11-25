@@ -1,0 +1,956 @@
+{
+  "S03.Config_Changes": {
+    "official_id": "Config_Changes",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#Config_Changes",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "Config_Changes T-Config_Orientation , T-Config_State App fills the available display area—the entire screen or, in multi-window mode, the app window. Content does not overflow the available display area. App is not letterboxed ; it does not run in compatibility mode . App handles configuration changes and retains or restores its state as the device goes through configuration changes such as device rotation, folding and unfolding, and window resizing in split‑screen and desktop windowing modes, for example: Scroll position of scrollable fields is maintained Text typed into text fields is retained and the keyboard state is restored Media playback resumes where it left off when the configuration change was initiated",
+    "links": [
+      {
+        "text": "T-Config_Orientation",
+        "href": "#T-Config_Orientation"
+      },
+      {
+        "text": "T-Config_State",
+        "href": "#T-Config_State"
+      },
+      {
+        "text": "letterboxed",
+        "href": "/guide/practices/enhanced-letterboxing"
+      },
+      {
+        "text": "compatibility mode",
+        "href": "/guide/topics/manifest/supports-screens-element#compat-mode"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S03.T-Config_Orientation": {
+    "official_id": "T-Config_Orientation",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#T-Config_Orientation",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "T-Config_Orientation Config_Changes Verify that the app is not letterboxed and is not running in compatibility mode in portrait orientation, landscape orientation, multi-window mode, or when a large screen foldable device is unfolded in portrait or landscape orientation. Verify that all content fits within the available display space. Resize the app window in multi-window mode, including split-screen and desktop windowing modes. On desktop devices, minimize and restore the app window, maximize and restore the app window. Verify that the app assumes the proper orientation and maintains state in all window sizes. Note: Test on a large screen device (sw >= 600 dp), including both 1:1 and 4:3 foldable emulators ( Foldable (1:1 inner display) and Foldable (4:3 inner display) ), running Android 12 (API level 31) or higher to ensure the device supports the following: All device orientations regardless of orientation restrictions set with the android:screenOrientation app manifest element Multi-window mode, even for apps that have specified android:resizeableActivity=\"false\" in the app manifest",
+    "links": [
+      {
+        "text": "Config_Changes",
+        "href": "#Config_Changes"
+      },
+      {
+        "text": "letterboxed",
+        "href": "/guide/practices/enhanced-letterboxing"
+      },
+      {
+        "text": "compatibility mode",
+        "href": "/guide/topics/manifest/supports-screens-element#compat-mode"
+      },
+      {
+        "text": "android:screenOrientation",
+        "href": "/guide/topics/manifest/activity-element#screen"
+      },
+      {
+        "text": "android:resizeableActivity=\"false\"",
+        "href": "/guide/topics/manifest/application-element#resizeableActivity"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.Fullscreen_Display": {
+    "official_id": "Fullscreen_Display",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Fullscreen_Display",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Fullscreen_Display T-Orientation_Transitions App fills the app window in both orientations and is not letterboxed because of configuration changes, including device folding and unfolding. Minor letterboxing to compensate for small variations in screen geometry is acceptable.",
+    "links": [
+      {
+        "text": "T-Orientation_Transitions",
+        "href": "#T-Orientation_Transitions"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.Graphic_Quality": {
+    "official_id": "Graphic_Quality",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Graphic_Quality",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Graphic_Quality T-Graphic_Quality App displays graphics, text, images, and other UI elements without noticeable distortion, blurring, or pixelation. App uses vector drawables where possible App uses high-quality graphics for all targeted screen sizes and form factors No aliasing at the edges of menus, buttons, and other UI elements",
+    "links": [
+      {
+        "text": "T-Graphic_Quality",
+        "href": "#T-Graphic_Quality"
+      },
+      {
+        "text": "vector drawables",
+        "href": "/guide/topics/graphics/vector-drawable-resources"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.T-Graphic_Quality": {
+    "official_id": "T-Graphic_Quality",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-Graphic_Quality",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-Graphic_Quality Graphic_Quality Use all features of your app. Verify that all visuals, including graphics, text, images, and other UI elements are free of distortion, blurring, or pixelation.",
+    "links": [
+      {
+        "text": "Graphic_Quality",
+        "href": "#Graphic_Quality"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.Touch_Target_Size": {
+    "official_id": "Touch_Target_Size",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Touch_Target_Size",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Touch_Target_Size T-Touch_Target_Size Touch targets are at least 48 dp. See the Material Design Target sizes guidelines.",
+    "links": [
+      {
+        "text": "T-Touch_Target_Size",
+        "href": "#T-Touch_Target_Size"
+      },
+      {
+        "text": "Target sizes",
+        "href": "https://m3.material.io/foundations/designing/structure#dab862b1-e042-4c40-b680-b484b9f077f6"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.T-Touch_Target_Size": {
+    "official_id": "T-Touch_Target_Size",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-Touch_Target_Size",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-Touch_Target_Size Touch_Target_Size Verify that touch targets maintain a consistent, accessible size and position for all display sizes and configurations. For information on accessibility, see the Accessibility Scanner .",
+    "links": [
+      {
+        "text": "Touch_Target_Size",
+        "href": "#Touch_Target_Size"
+      },
+      {
+        "text": "Accessibility Scanner",
+        "href": "https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.Line_Length": {
+    "official_id": "Line_Length",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Line_Length",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Line_Length T-Line_Length App ensures readability of text and text blocks by limiting line length to 45-75 characters (including spaces) for each of the app's supported languages.",
+    "links": [
+      {
+        "text": "T-Line_Length",
+        "href": "#T-Line_Length"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.T-Line_Length": {
+    "official_id": "T-Line_Length",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-Line_Length",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-Line_Length Line_Length Review all text blocks in the app. Verify that text and text block line length is limited to 45-75 characters (including spaces) for readability. Verify the following: Composition is acceptable in all supported form factors No cut-off letters or words No improper word wraps within buttons or icons Sufficient spacing between text and surrounding elements",
+    "links": [
+      {
+        "text": "Line_Length",
+        "href": "#Line_Length"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S03.Multi-Window_Functionality": {
+    "official_id": "Multi-Window_Functionality",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#Multi-Window_Functionality",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "Multi-Window_Functionality T-Multi-Window_Functionality App is fully functional in multi-window mode. See Support multi-window mode . Note: Unity apps should be on Unity Long Term Support (LTS) version 2019 or later. See Multi-window mode verification .",
+    "links": [
+      {
+        "text": "T-Multi-Window_Functionality",
+        "href": "#T-Multi-Window_Functionality"
+      },
+      {
+        "text": "Support multi-window mode",
+        "href": "/develop/ui/compose/layouts/adaptive/support-multi-window-mode"
+      },
+      {
+        "text": "Multi-window mode verification",
+        "href": "/develop/ui/compose/layouts/adaptive/support-multi-window-mode#testing"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S03.T-Multi-Window_Functionality": {
+    "official_id": "T-Multi-Window_Functionality",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#T-Multi-Window_Functionality",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "T-Multi-Window_Functionality Multi-Window_Functionality Open the app in multi-window mode . Check whether the app is fully functional in all window sizes, device orientations, and foldable device states. Resize the app window in each orientation. For foldable devices, fold and unfold the device in each orientation. Unity apps Open an app other than your Unity app. Go to the Recents screen. Select the app icon and put the app in split-screen mode. Open your Unity app, which should launch in split-screen mode beside or below the first app. Go to the Home screen to hide the pair of apps. Go to the Recents screen. Select the split-screen app pair that includes your Unity app. Verify that the Unity app resumes its activity and the app's layout in the split-screen window is correct with all UI elements accessible.",
+    "links": [
+      {
+        "text": "Multi-Window_Functionality",
+        "href": "#Multi-Window_Functionality"
+      },
+      {
+        "text": "multi-window mode",
+        "href": "/develop/ui/compose/layouts/adaptive/support-multi-window-mode#split-screen_mode_activation"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.Back_Gesture_Nav": {
+    "official_id": "Back_Gesture_Nav",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Back_Gesture_Nav",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Back_Gesture_Nav T-Back_Nav App supports gesture navigation for going back and going to the home screen.",
+    "links": [
+      {
+        "text": "T-Back_Nav",
+        "href": "#T-Back_Nav"
+      },
+      {
+        "text": "gesture navigation",
+        "href": "/training/gestures/gesturenav"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.T-Back_Nav": {
+    "official_id": "T-Back_Nav",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-Back_Nav",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-Back_Nav Back_Button_Nav , Back_Gesture_Nav Navigate to all parts of the app—all screens, dialogs, settings, and all user flows. From each app screen, press the Back button or use the back swipe gesture. The app should navigate to the previous or home screen.",
+    "links": [
+      {
+        "text": "Back_Button_Nav",
+        "href": "#Back_Button_Nav"
+      },
+      {
+        "text": "Back_Gesture_Nav",
+        "href": "#Back_Gesture_Nav"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S03.Config_Combinations": {
+    "official_id": "Config_Combinations",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#Config_Combinations",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "Config_Combinations T-Config_Combinations App handles combinations of configuration changes, such as window resizing followed by device rotation, or rotation followed by device folding or unfolding.",
+    "links": [
+      {
+        "text": "T-Config_Combinations",
+        "href": "#T-Config_Combinations"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S03.T-Config_State": {
+    "official_id": "T-Config_State",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#T-Config_State",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "T-Config_State Config_Changes From each app screen that has scrollable content, continuous playback content, or text entry fields, do the following: Scrollable content: Scroll the content Playback content: Begin playback Text entry fields: Enter text in multiple fields Rotate the device between landscape and portrait orientations, fold and unfold the device (if applicable), and resize the app window in multi-window mode. Minimize and restore the app window on desktop devices; maximize and restore the app window. Verify the following: Scrollable content: The scroll position remains the same Playback content: Playback resumes where it left off when the configuration change was initiated Text entry fields: Previously entered text is retained in input fields",
+    "links": [
+      {
+        "text": "Config_Changes",
+        "href": "#Config_Changes"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S03.T-Config_Combinations": {
+    "official_id": "T-Config_Combinations",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#T-Config_Combinations",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "T-Config_Combinations Config_Combinations From each app screen, perform combinations of rotating the device between landscape and portrait orientations, folding and unfolding the device (if applicable), and resizing the app window in multi-window mode.",
+    "links": [
+      {
+        "text": "Config_Combinations",
+        "href": "#Config_Combinations"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.Display_State_Parity": {
+    "official_id": "Display_State_Parity",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Display_State_Parity",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Display_State_Parity T-Orientation_Transitions Display orientations and fold states expose essentially the same features and actions and preserve functional parity.",
+    "links": [
+      {
+        "text": "T-Orientation_Transitions",
+        "href": "#T-Orientation_Transitions"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.Orientation_Transitions": {
+    "official_id": "Orientation_Transitions",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Orientation_Transitions",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Orientation_Transitions T-Orientation_Transitions App handles rapid transitions between display orientations and device folding and unfolding with no display rendering problems and without losing state.",
+    "links": [
+      {
+        "text": "T-Orientation_Transitions",
+        "href": "#T-Orientation_Transitions"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.State_Preservation": {
+    "official_id": "State_Preservation",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#State_Preservation",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "State_Preservation T-State_Preservation , T-Back_Nav The app preserves user or app state when leaving the foreground and prevents accidental data loss due to back navigation and other state changes. When returning to the foreground, the app restores the preserved state and any pending stateful transactions. Examples include changes to editable fields, game progress, menus, videos, and other sections of the app. When the app is resumed from the Recents app switcher, the app returns the user to the exact state in which the app was last used. When the app is resumed after the device wakes from the sleep (locked) state, the app returns the user to the exact state in which the app was last used. When the app is relaunched from Home or All Apps , it should do one of the following, depending on how much time has passed since the app was last used: If the app was last used a short time ago (minutes), restore the app state as closely as possible to its previous state. If more time has passed since the app was last used, try to restore the app as closely as possible to its previous state or start the app from its home screen or some other default state.",
+    "links": [
+      {
+        "text": "T-State_Preservation",
+        "href": "#T-State_Preservation"
+      },
+      {
+        "text": "T-Back_Nav",
+        "href": "#T-Back_Nav"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.T-Orientation_Transitions": {
+    "official_id": "T-Orientation_Transitions",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-Orientation_Transitions",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-Orientation_Transitions Display_State_Parity , Fullscreen_Display , Orientation_Transitions From each app screen, rotate the device between landscape and portrait orientations and folded and unfolded states at least three times. Verify the app does the following: Provides function parity in all display orientations and fold states Fills the app window in all display orientations and fold states and is not letterboxed Maintains state and has no rendering problems during rapid transitions between orientations and device folding and unfolding",
+    "links": [
+      {
+        "text": "Display_State_Parity",
+        "href": "#Display_State_Parity"
+      },
+      {
+        "text": "Fullscreen_Display",
+        "href": "#Fullscreen_Display"
+      },
+      {
+        "text": "Orientation_Transitions",
+        "href": "#Orientation_Transitions"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S03.Multi-Resume": {
+    "official_id": "Multi-Resume",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#Multi-Resume",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "Multi-Resume T-Multi-Window_Focus , T-Multi-Window_Resources App fully supports multi-resume . App updates its UI (continues playing media, incorporates new messages, updates download progress, etc.) when the app is not the top focused app. In addition, the app handles the loss of exclusive resources such as cameras and microphones in multi-window scenarios. See Activity lifecycle in multi-window mode .",
+    "links": [
+      {
+        "text": "T-Multi-Window_Focus",
+        "href": "#T-Multi-Window_Focus"
+      },
+      {
+        "text": "T-Multi-Window_Resources",
+        "href": "#T-Multi-Window_Resources"
+      },
+      {
+        "text": "multi-resume",
+        "href": "/develop/ui/compose/layouts/adaptive/support-multi-window-mode#multi-resume"
+      },
+      {
+        "text": "Activity lifecycle in multi-window mode",
+        "href": "/develop/ui/compose/layouts/adaptive/support-multi-window-mode#lifecycle"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S03.T-Multi-Window_Focus": {
+    "official_id": "T-Multi-Window_Focus",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#T-Multi-Window_Focus",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "T-Multi-Window_Focus Multi-Resume Open the app and initiate a process, such as playing a video, that continuously updates the app. Open another app and make the new app the top focused app. Verify that the non-focused app continues to update its content (for example, a video continues to play).",
+    "links": [
+      {
+        "text": "Multi-Resume",
+        "href": "#Multi-Resume"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S03.T-Multi-Window_Resources": {
+    "official_id": "T-Multi-Window_Resources",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#T-Multi-Window_Resources",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "T-Multi-Window_Resources Multi-Resume In the app, open the camera or use the microphone. Open another app, and make the new app the top focused app. Verify that the non-focused app has relinquished the camera or mic. Make the original app the top focused app. Verify that the app has regained access to the camera or mic.",
+    "links": [
+      {
+        "text": "Multi-Resume",
+        "href": "#Multi-Resume"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S03.Camera_Preview": {
+    "official_id": "Camera_Preview",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#Camera_Preview",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "Camera_Preview T-Camera_Preview App provides camera preview in landscape and portrait orientations, folded and unfolded device states, and multi-window mode. Preview is properly proportioned and in the correct orientation.",
+    "links": [
+      {
+        "text": "T-Camera_Preview",
+        "href": "#T-Camera_Preview"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S03.T-Camera_Preview": {
+    "official_id": "T-Camera_Preview",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#T-Camera_Preview",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "T-Camera_Preview Camera_Preview Open the app full screen and in multi-window mode. Start the camera from within the app. Rotate the device between landscape and portrait orientations. For foldable devices, fold and unfold the device in each orientation. In multi-window mode, resize the app window. Verify that the camera preview is in the proper orientation and proportions in all device states and window sizes.",
+    "links": [
+      {
+        "text": "Camera_Preview",
+        "href": "#Camera_Preview"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S03.Media_Projection": {
+    "official_id": "Media_Projection",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#Media_Projection",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "Media_Projection T-Media_Projection App supports media projection in landscape and portrait orientations, folded and unfolded device states, and multi-window mode. Projection is properly proportioned and in the correct orientation.",
+    "links": [
+      {
+        "text": "T-Media_Projection",
+        "href": "#T-Media_Projection"
+      },
+      {
+        "text": "media projection",
+        "href": "/media/grow/media-projection"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S03.T-Media_Projection": {
+    "official_id": "T-Media_Projection",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#T-Media_Projection",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "T-Media_Projection Media_Projection Open the app full screen and in multi-window mode. Start a media projection. Rotate the device between landscape and portrait orientations. For foldable devices, fold and unfold the device in each orientation. In multi-window mode, resize the app window. Verify that the media projection is in the proper orientation and proportions in all device states and window sizes.",
+    "links": [
+      {
+        "text": "Media_Projection",
+        "href": "#Media_Projection"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S03.Keyboard_Input": {
+    "official_id": "Keyboard_Input",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#Keyboard_Input",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "Keyboard_Input T-Keyboard_Input App supports text input using external keyboard and switches between physical and virtual keyboards without relaunching the app when an external keyboard is connected or disconnected.",
+    "links": [
+      {
+        "text": "T-Keyboard_Input",
+        "href": "#T-Keyboard_Input"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S03.T-Keyboard_Input": {
+    "official_id": "T-Keyboard_Input",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#T-Keyboard_Input",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "T-Keyboard_Input Keyboard_Input For each app screen that has text entry fields, connect an external keyboard to the device and enter text with the external keyboard and the virtual keyboard. Disconnect the external keyboard and enter text with the virtual keyboard.",
+    "links": [
+      {
+        "text": "Keyboard_Input",
+        "href": "#Keyboard_Input"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S03.Mouse_Trackpad_Basic": {
+    "official_id": "Mouse_Trackpad_Basic",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#Mouse_Trackpad_Basic",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "Mouse_Trackpad_Basic T-Mouse_Trackpad_Basic App supports basic mouse or trackpad interactions: Click: Any clickable element, including buttons, drop‑down menus, text entry fields, and navigation icons Select: Any selectable element, including radio buttons, checkboxes, and text (by swiping or double clicking) Scroll: Any scrollable element, such as lists and pickers, scrollable both vertically and horizontally",
+    "links": [
+      {
+        "text": "T-Mouse_Trackpad_Basic",
+        "href": "#T-Mouse_Trackpad_Basic"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S03.T-Mouse_Trackpad_Basic": {
+    "official_id": "T-Mouse_Trackpad_Basic",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#T-Mouse_Trackpad_Basic",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "T-Mouse_Trackpad_Basic Mouse_Trackpad_Basic For each app screen, connect a mouse and trackpad to the device. Perform basic mouse and trackpad interactions: Click all clickable elements such as buttons, drop‑down menus, and text entry fields. Select radio buttons and checkboxes. Select text by swiping and double clicking. Scroll vertically and horizontally (if applicable) through lists, pickers, and other scrollable UI elements.",
+    "links": [
+      {
+        "text": "Mouse_Trackpad_Basic",
+        "href": "#Mouse_Trackpad_Basic"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S03.Stylus_Basic": {
+    "official_id": "Stylus_Basic",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#Stylus_Basic",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "Stylus_Basic T-Stylus_Basic App provides basic support for stylus‑equipped tablets, foldables, and desktop devices. The stylus can be used to select and manipulate UI elements, including scrolling through lists, pickers, and other scrollable content. See Stylus in Input compatibility on large screens . Note: Basic stylus input is the same as touch input, which is fully supported by Android. Basic stylus input is automatically enabled for all apps with no special development required.",
+    "links": [
+      {
+        "text": "T-Stylus_Basic",
+        "href": "#T-Stylus_Basic"
+      },
+      {
+        "text": "Stylus",
+        "href": "/guide/topics/large-screens/input-compatibility-large-screens#stylus"
+      },
+      {
+        "text": "Input compatibility on large screens",
+        "href": "/guide/topics/large-screens/input-compatibility-large-screens"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S03.Stylus_Text_Input": {
+    "official_id": "Stylus_Text_Input",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#Stylus_Text_Input",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "Stylus_Text_Input T-Stylus_Text_Input On Android 14 (API level 34) and higher, users can write and edit text in text input fields using a stylus. On Googlebook and ChromeOS M114 and higher, a stylus can be used to write and edit text in text input fields in WebView components. Note: On Android 14 and higher, EditText components support input using a stylus by default; no special development is required. On Googlebook and ChromeOS M114 and higher, WebView supports stylus input in text fields by default.",
+    "links": [
+      {
+        "text": "T-Stylus_Text_Input",
+        "href": "#T-Stylus_Text_Input"
+      },
+      {
+        "text": "WebView",
+        "href": "/reference/kotlin/android/webkit/WebView"
+      },
+      {
+        "text": "EditText",
+        "href": "/reference/kotlin/android/widget/EditText"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S03.T-Stylus_Basic": {
+    "official_id": "T-Stylus_Basic",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#T-Stylus_Basic",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "T-Stylus_Basic Stylus_Basic Using a stylus, navigate through the app, select UI elements, scroll through lists and pickers, and generally interact with the app.",
+    "links": [
+      {
+        "text": "Stylus_Basic",
+        "href": "#Stylus_Basic"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S03.T-Stylus_Text_Input": {
+    "official_id": "T-Stylus_Text_Input",
+    "source_id": "S03",
+    "url": "https://developer.android.com/docs/quality-guidelines/adaptive-app-quality/tier-3#T-Stylus_Text_Input",
+    "snapshot_sha256": "bdf68ed6cb5a65da2c3e3669abf705259cfe2ea873976fd148c9da67d44d084b",
+    "quote": "T-Stylus_Text_Input Stylus_Text_Input On Android 14 (API level 34) and higher, enter and edit text in text input fields using a stylus. The software keyboard shouldn't appear. On Googlebook and ChromeOS M114 or higher, enter and edit text in text input fields in a WebView .",
+    "links": [
+      {
+        "text": "Stylus_Text_Input",
+        "href": "#Stylus_Text_Input"
+      },
+      {
+        "text": "WebView",
+        "href": "/reference/kotlin/android/webkit/WebView"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.Back_Button_Nav": {
+    "official_id": "Back_Button_Nav",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Back_Button_Nav",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Back_Button_Nav T-Back_Nav App supports standard back button navigation and does not make use of any custom, onscreen back button prompts.",
+    "links": [
+      {
+        "text": "T-Back_Nav",
+        "href": "#T-Back_Nav"
+      },
+      {
+        "text": "back button navigation",
+        "href": "/design/patterns/navigation"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.App_Switcher": {
+    "official_id": "App_Switcher",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#App_Switcher",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "App_Switcher T-App_Switcher , T-SD_Card App goes into the background when focus switches to another app. App returns to the foreground when reactivated from the Recents app switcher.",
+    "links": [
+      {
+        "text": "T-App_Switcher",
+        "href": "#T-App_Switcher"
+      },
+      {
+        "text": "T-SD_Card",
+        "href": "#T-SD_Card"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.Sleep_Resume": {
+    "official_id": "Sleep_Resume",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Sleep_Resume",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Sleep_Resume T-Sleep_Resume , T-SD_Card When the app is the foreground app, it pauses when the device goes to sleep and resumes when the device wakes up.",
+    "links": [
+      {
+        "text": "T-Sleep_Resume",
+        "href": "#T-Sleep_Resume"
+      },
+      {
+        "text": "T-SD_Card",
+        "href": "#T-SD_Card"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.Lock_Resume": {
+    "official_id": "Lock_Resume",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Lock_Resume",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Lock_Resume T-Lock_Resume , T-SD_Card When the app is the foreground app, it pauses when the device is locked and resumes when the device is unlocked.",
+    "links": [
+      {
+        "text": "T-Lock_Resume",
+        "href": "#T-Lock_Resume"
+      },
+      {
+        "text": "T-SD_Card",
+        "href": "#T-SD_Card"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.T-State_Preservation": {
+    "official_id": "T-State_Preservation",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-State_Preservation",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-State_Preservation State_Preservation From each app screen, press the device's Home key or swipe up in gesture navigation, then relaunch the app from the All Apps screen.",
+    "links": [
+      {
+        "text": "State_Preservation",
+        "href": "#State_Preservation"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.Theme_Support": {
+    "official_id": "Theme_Support",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Theme_Support",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Theme_Support T-Theme_Support The app's content, and all web content accessed by the app, support both light and dark themes .",
+    "links": [
+      {
+        "text": "T-Theme_Support",
+        "href": "#T-Theme_Support"
+      },
+      {
+        "text": "dark themes",
+        "href": "/guide/topics/ui/look-and-feel/darktheme"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.Visual_Contrast": {
+    "official_id": "Visual_Contrast",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Visual_Contrast",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Visual_Contrast T-Visual_Contrast App text and foreground content maintain the following contrast ratios with the app background: 3:1 for large text and graphics 4.5:1 for small text (less than 18 pt or less than 14 pt if text is bold) Learn more about color and contrast .",
+    "links": [
+      {
+        "text": "T-Visual_Contrast",
+        "href": "#T-Visual_Contrast"
+      },
+      {
+        "text": "color and contrast",
+        "href": "https://m3.material.io/foundations/designing/color-contrast"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.Content_Description": {
+    "official_id": "Content_Description",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Content_Description",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Content_Description T-Content_Description Describe each UI element ,\n         except for TextView , using contentDescription .",
+    "links": [
+      {
+        "text": "T-Content_Description",
+        "href": "#T-Content_Description"
+      },
+      {
+        "text": "Describe each UI element",
+        "href": "/guide/topics/ui/accessibility/apps#describe-ui-element"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.T-Theme_Support": {
+    "official_id": "T-Theme_Support",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-Theme_Support",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-Theme_Support Theme_Support Verify that all text is readable in light and dark themes. Verify that all visuals are clearly discernible and aesthetic in light and dark themes.",
+    "links": [
+      {
+        "text": "Theme_Support",
+        "href": "#Theme_Support"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.T-Visual_Contrast": {
+    "official_id": "T-Visual_Contrast",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-Visual_Contrast",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-Visual_Contrast Visual_Contrast Verify the contrast of all visual elements.",
+    "links": [
+      {
+        "text": "Visual_Contrast",
+        "href": "#Visual_Contrast"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.T-Content_Description": {
+    "official_id": "T-Content_Description",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-Content_Description",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-Content_Description Content_Description Verify that all UI elements other than TextView have content descriptions.",
+    "links": [
+      {
+        "text": "Content_Description",
+        "href": "#Content_Description"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.Audio_Focus_Change": {
+    "official_id": "Audio_Focus_Change",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Audio_Focus_Change",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Audio_Focus_Change T-Audio_Focus_Change App should handle other apps' requests for audio focus . For example, an app might reduce playback volume when another app plays speech.",
+    "links": [
+      {
+        "text": "T-Audio_Focus_Change",
+        "href": "#T-Audio_Focus_Change"
+      },
+      {
+        "text": "handle other apps' requests for audio focus",
+        "href": "/guide/topics/media-apps/audio-focus#audio-focus-change"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.Audio_Playback_Background": {
+    "official_id": "Audio_Playback_Background",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Audio_Playback_Background",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Audio_Playback_Background T-Audio_Playback_Background App should support background playback . App must use a foreground service to prevent the system from killing the app process once the app is no longer visible. The app must also display a persistent, non‑dismissible notification in the status bar or on the lock screen to inform the user that the app is running. Users should be able to control playback using the notification or lock screen controls or the controls on a connected accessory.",
+    "links": [
+      {
+        "text": "T-Audio_Playback_Background",
+        "href": "#T-Audio_Playback_Background"
+      },
+      {
+        "text": "background playback",
+        "href": "/media/platform/mediaplayer/background"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.Video_PiP": {
+    "official_id": "Video_PiP",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Video_PiP",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Video_PiP T-Video_PiP If the app plays video, app should support picture-in-picture playback.",
+    "links": [
+      {
+        "text": "T-Video_PiP",
+        "href": "#T-Video_PiP"
+      },
+      {
+        "text": "picture-in-picture",
+        "href": "/guide/topics/ui/picture-in-picture"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.Video_Playback_Background": {
+    "official_id": "Video_Playback_Background",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#Video_Playback_Background",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "Video_Playback_Background T-Video_Playback_Background App supports background playback of video when the app is not the topmost app, including when the app window is: Minimized Behind other windows or system UI (for example, notification shade or home/lock screen) Off the visible desktop screen",
+    "links": [
+      {
+        "text": "T-Video_Playback_Background",
+        "href": "#T-Video_Playback_Background"
+      }
+    ],
+    "role": "minimum_requirement"
+  },
+  "S04.T-Audio_Focus_Change": {
+    "official_id": "T-Audio_Focus_Change",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-Audio_Focus_Change",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-Audio_Focus_Change Audio_Focus_Change Initiate audio playback. Initiate audio playback in another app. Your app should respond to the change in audio focus and stop audio playback or reduce playback volume.",
+    "links": [
+      {
+        "text": "Audio_Focus_Change",
+        "href": "#Audio_Focus_Change"
+      },
+      {
+        "text": "change in audio focus",
+        "href": "/media/optimize/audio-focus#audio-focus-change"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.T-Audio_Playback_Background": {
+    "official_id": "T-Audio_Playback_Background",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-Audio_Playback_Background",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-Audio_Playback_Background Audio_Playback_Background Initiate audio playback. Interact with another non-audio app as the foreground app. The app should continue playing audio in the background and should display a notification in the status bar. Verify that you can manage playback using controls displayed in the notification. Lock the device screen. The app should continue playing audio in the background and should display a notification on the lock screen. Verify that you can manage playback using controls displayed in the notification.",
+    "links": [
+      {
+        "text": "Audio_Playback_Background",
+        "href": "#Audio_Playback_Background"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.T-Video_PiP": {
+    "official_id": "T-Video_PiP",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-Video_PiP",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-Video_PiP Video_PiP Activate app video playback in picture-in-picture mode .",
+    "links": [
+      {
+        "text": "Video_PiP",
+        "href": "#Video_PiP"
+      },
+      {
+        "text": "video playback in picture-in-picture mode",
+        "href": "/guide/topics/ui/picture-in-picture#pip_button"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.T-Video_Playback_Background": {
+    "official_id": "T-Video_Playback_Background",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-Video_Playback_Background",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-Video_Playback_Background Video_Playback_Background Start video playback. Minimize the app window, open another app to move the app window to the background. On desktop‑capable devices, move the app window off the visible desktop. Verify that video playback continues without interruption in all cases.",
+    "links": [
+      {
+        "text": "Video_Playback_Background",
+        "href": "#Video_Playback_Background"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.T-App_Switcher": {
+    "official_id": "T-App_Switcher",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-App_Switcher",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-App_Switcher App_Switcher From each app screen, switch to another running app, and then return to the app under test using the Recents app switcher.",
+    "links": [
+      {
+        "text": "App_Switcher",
+        "href": "#App_Switcher"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.T-Sleep_Resume": {
+    "official_id": "T-Sleep_Resume",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-Sleep_Resume",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-Sleep_Resume Sleep_Resume Press the power button to put the device to sleep, then press the power button again to wake the screen.",
+    "links": [
+      {
+        "text": "Sleep_Resume",
+        "href": "#Sleep_Resume"
+      }
+    ],
+    "role": "official_test"
+  },
+  "S04.T-Lock_Resume": {
+    "official_id": "T-Lock_Resume",
+    "source_id": "S04",
+    "url": "https://developer.android.com/docs/quality-guidelines/core-app-quality#T-Lock_Resume",
+    "snapshot_sha256": "2d6a4f5442e67a0341260bac1829cfc1275f16799b9f37ea1a026f45bbacc064",
+    "quote": "T-Lock_Resume Lock_Resume Set up a screen lock on the device. Press the power button to put the device to sleep (which locks the device). Then, press the power button again to wake the screen and unlock the device.",
+    "links": [
+      {
+        "text": "Lock_Resume",
+        "href": "#Lock_Resume"
+      }
+    ],
+    "role": "official_test"
+  }
+}

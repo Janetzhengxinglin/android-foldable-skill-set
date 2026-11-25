@@ -1,0 +1,286 @@
+{
+  "verified_at": "2026-11-23",
+  "purpose": "官方设计参考参与条件判断与排除误报；问题成立仍引用基础质量要求。",
+  "guides": [
+    {
+      "source_id": "S46",
+      "url": "https://developer.android.com/develop/adaptive-apps",
+      "reading": "full_body_read"
+    },
+    {
+      "source_id": "S48",
+      "url": "https://developer.android.com/design/ui/gallery",
+      "reading": "full_body_read"
+    },
+    {
+      "source_id": "S16",
+      "url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/adapt-layout",
+      "reading": "full_body_read"
+    },
+    {
+      "source_id": "S17",
+      "url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/postures-and-orientation",
+      "reading": "full_body_read"
+    },
+    {
+      "source_id": "S64",
+      "url": "https://developer.android.com/design/ui/mobile/guides/foundations/translate-designs",
+      "reading": "full_body_read"
+    },
+    {
+      "source_id": "S65",
+      "url": "https://developer.android.com/design/ui/mobile/guides/foundations/accessibility",
+      "reading": "full_body_read"
+    },
+    {
+      "source_id": "S66",
+      "url": "https://developer.android.com/design/ui/mobile/guides/foundations/system-bars",
+      "reading": "full_body_read"
+    },
+    {
+      "source_id": "S67",
+      "url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/app-anatomy",
+      "reading": "full_body_read"
+    },
+    {
+      "source_id": "S68",
+      "url": "https://developer.android.com/design/ui/mobile/guides/layout-and-content/grids-and-units",
+      "reading": "full_body_read"
+    },
+    {
+      "source_id": "S69",
+      "url": "https://developer.android.com/design/ui/mobile/guides/styles/color",
+      "reading": "full_body_read"
+    }
+  ],
+  "gallery_cases": [
+    {
+      "source_id": "G01",
+      "url": "https://developer.android.com/design/ui/gallery/social/pawparazzi",
+      "sha256": "81a033c0f641f9bcdf85e91514ae024c83452106b94f1b2b64c150c697b935d6",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G02",
+      "url": "https://developer.android.com/design/ui/gallery/reading/multi-task",
+      "sha256": "a065a0aced239505a76ae2ccba7eb1e9f08d4953ea94638fba4012289292cb6a",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G03",
+      "url": "https://developer.android.com/design/ui/gallery/media/discovery",
+      "sha256": "c9452f308d56df6d54b107005a24e3994aaa9dbded5fbdc2a50c861856cbbac9",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G04",
+      "url": "https://developer.android.com/design/ui/gallery/social/conversations",
+      "sha256": "72c2bfa0730f6e2739e36340881b7835a9fd669dc20007488e67c26a549dc3f6",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G05",
+      "url": "https://developer.android.com/design/ui/gallery/shopping/multi-task",
+      "sha256": "61910c271c558c9592db4ad1f54ae3791173f983729b4f5da3543f1ea5112950",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G06",
+      "url": "https://developer.android.com/design/ui/gallery/media/spotify",
+      "sha256": "cabe91abf4047b979266e7dddd868eeffa4d50a3a63a0360187da66683897244",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G07",
+      "url": "https://developer.android.com/design/ui/gallery/social/drag-and-drop",
+      "sha256": "256c159f31ab516cded2460e222d430c16c707fedf3f46781e3cc235676db5e8",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G08",
+      "url": "https://developer.android.com/design/ui/gallery/social/multi-tasking",
+      "sha256": "d8802c7f23baa15c876e164d506a18ae96d1354a6a6263b603aeebbc6c12c347",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G09",
+      "url": "https://developer.android.com/design/ui/gallery/productivity/multitask",
+      "sha256": "1c228d86dd5154d03d60106782a54b68353faa383d2a4c7a84d55e4e53430d5f",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G10",
+      "url": "https://developer.android.com/design/ui/gallery/shopping/ebay",
+      "sha256": "5b3c5154e1a7c16fbc5e12d92f5f0cee6265ff910b6e6573a7b0df377678a137",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G11",
+      "url": "https://developer.android.com/design/ui/gallery/social/tools",
+      "sha256": "825421d85d80bcf1b56f610642843a34f0356ac0475fceeab689c815beca9894",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G12",
+      "url": "https://developer.android.com/design/ui/gallery/social/comments",
+      "sha256": "51bc919a4d922a271467e9fd0c20bd4bdac8d54b49153214ccb163dae48e3ff2",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G13",
+      "url": "https://developer.android.com/design/ui/gallery/social/posts",
+      "sha256": "05027693d85e608c8ab0b64c93b1b0cdf5d66fc50d2f1e38a8890cc670d6869d",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G14",
+      "url": "https://developer.android.com/design/ui/gallery/creativity/configurable",
+      "sha256": "f5c2c3e06b3922b1e05bbb9613393be9738caa632779053377d750f532f0e4d6",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G15",
+      "url": "https://developer.android.com/design/ui/gallery/social/video-browsing",
+      "sha256": "6b93019ca3ec393454240aaa6dddbcfc1dc296b69eefd672fd119f47486e0730",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G16",
+      "url": "https://developer.android.com/design/ui/gallery/creativity/utility",
+      "sha256": "67585fa3680b7a9fa59cfa0630029d0d5ad0aa83c242146d56fe2bc7eadaa1a9",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G17",
+      "url": "https://developer.android.com/design/ui/gallery/shopping/product-filter",
+      "sha256": "c1bb9a78059d3082a48d30c03e2f8e17e3b84937620cb27439e5941b3f0bb6ef",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G18",
+      "url": "https://developer.android.com/design/ui/gallery/social/dual-screen",
+      "sha256": "1688dd2a786311ab2b6ba667ba6fa9b1310b69620db598f5a3962c353cfbe63c",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G19",
+      "url": "https://developer.android.com/design/ui/gallery/social/duo",
+      "sha256": "ce5efdb2f711a8c700b466e1336ae171b67e55694f0fc36f439e2a331dd5fb90",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G20",
+      "url": "https://developer.android.com/design/ui/gallery/creativity/multi-task",
+      "sha256": "4521e5bde922d6c6488377852abe24f1f2a55cb92aad5c912d3de0e85001a143",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G21",
+      "url": "https://developer.android.com/design/ui/gallery/shopping/catalogs",
+      "sha256": "01f6714e83f879f48f18c8632f57b4fee544a5b45f34bf0d1cb294db022f06d5",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G22",
+      "url": "https://developer.android.com/design/ui/gallery/reading/complementary",
+      "sha256": "8baa279f2a2be23daab72913337329bd5feff93110c9a96c27a891617ac7a387",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G23",
+      "url": "https://developer.android.com/design/ui/gallery/productivity/tools",
+      "sha256": "8e08e3ef0454fb31d19c9b267e475cb585e8743e75216e313231c97d175cef3b",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G24",
+      "url": "https://developer.android.com/design/ui/gallery/games/continuity",
+      "sha256": "e09c7e0c1165c315a8e8a33a32d9a526227f905ec562ded1c5dfe35f067249ed",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G25",
+      "url": "https://developer.android.com/design/ui/gallery/media/multitask",
+      "sha256": "cc609e6443be94b2e7f804f7650c27ea03a64955a9f6a3c1d5554cdd481c1997",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G26",
+      "url": "https://developer.android.com/design/ui/gallery/creativity/stylus",
+      "sha256": "83ae3325de93f84b70c164fc9eaafbcf31bd9a8926400763bbcfc66b905a32a0",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G27",
+      "url": "https://developer.android.com/design/ui/gallery/productivity/wps",
+      "sha256": "30a4448ba60fb8e3b228c91c8afb9375d43b8716e1df0f44d3cee6f11cc7ec18",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G28",
+      "url": "https://developer.android.com/design/ui/gallery/reading/readera",
+      "sha256": "deb54accd325a5c4639e7e7ee867d4df237299f49e7a792731a7a2479f2136b6",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G29",
+      "url": "https://developer.android.com/design/ui/gallery/shopping/product-details",
+      "sha256": "d1abe724792f2e4ef9ba6a1fb6d572902740aa5a924eadddf9cc41f8026804ad",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    },
+    {
+      "source_id": "G30",
+      "url": "https://developer.android.com/design/ui/gallery/media/detail",
+      "sha256": "738620a1d7e70ca95ffaac6952e511fb358368550d96e708dbb2062aa939e65a",
+      "reading": "full_body_read",
+      "images": "not_all_individually_checked"
+    }
+  ],
+  "templates": [
+    {
+      "source_id": "S49",
+      "reading": "内部 Guide 正文已读；Keyboards、Permissions、Camera 定义和相关图示已读，相关页面结构已核对。所有内部组件变体未逐项核对。"
+    },
+    {
+      "source_id": "S50",
+      "reading": "窗口尺寸、布局组成、移动及桌面组件行为、分组与容器说明、练习介绍和列表详情练习步骤已读；Completed 页五组完成图已查看。其他练习步骤和内部组件变体未全部核对。"
+    },
+    {
+      "source_id": "S51",
+      "reading": "内部介绍、五类业务页面结构及全部五类 Examples 图已核对；Reading 示例选择与辅助面板说明已读。全部内部组件变体未逐项核对。"
+    }
+  ],
+  "template_limit": "已通过浏览器补读相关正文和完成图；未逐项核对全部练习步骤与组件变体，未读内容不作为判断依据。",
+  "other_profile_resources": "Android Design 主页当前 14 项资源已核对名称。Wear OS / Car / XR 不属于本次折叠屏 App 审查；桌面 Widget、通知、启动图标、Onboarding 和 Now in Android 样例不新增为本次必检功能。",
+  "material_links": "原文的 Material 布局、组件和 motion 延伸链接已保留在源快照；本轮未完整阅读这些下级页面，不从其未读内容建立新增规则。",
+  "template_reading_evidence": "2026-11-23 浏览器补读记录；使用官方社区文件的个人副本，不改变设计内容。"
+}

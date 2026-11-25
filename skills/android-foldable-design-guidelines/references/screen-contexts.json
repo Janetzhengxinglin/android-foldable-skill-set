@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "official_test": {
+    "min_api": 31,
+    "large_screen_sw_dp_at_least": 600,
+    "emulator_inner_ratios": [
+      "1:1",
+      "4:3"
+    ],
+    "basis_ids": [
+      "S03.T-Config_Orientation"
+    ]
+  },
+  "project_capture_states": [
+    {
+      "device_family": "square-inner",
+      "display": "outer",
+      "rotation": 0
+    },
+    {
+      "device_family": "square-inner",
+      "display": "outer",
+      "rotation": 90
+    },
+    {
+      "device_family": "square-inner",
+      "display": "inner",
+      "rotation": 0
+    },
+    {
+      "device_family": "square-inner",
+      "display": "inner",
+      "rotation": 90
+    },
+    {
+      "device_family": "wide-inner",
+      "display": "outer",
+      "rotation": 0
+    },
+    {
+      "device_family": "wide-inner",
+      "display": "outer",
+      "rotation": 90
+    },
+    {
+      "device_family": "wide-inner",
+      "display": "inner",
+      "rotation": 0
+    },
+    {
+      "device_family": "wide-inner",
+      "display": "inner",
+      "rotation": 90
+    }
+  ],
+  "project_states_note": "8 个采集状态是本项目的执行约定，不是 Google 要求的截图数量。正方形内屏两个方向不得按宽高比合并。",
+  "unknown_note": "设备、dp、API、target SDK、折叠区域未知时为空；不由截图比例猜测。",
+  "handwriting_platform_condition": "Android API>=34 且支持笔；ChromeOS M114+/Googlebook 的 WebView 单独核对。"
+}

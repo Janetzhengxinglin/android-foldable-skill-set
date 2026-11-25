@@ -1,0 +1,3 @@
+interface:
+  display_name: "安卓折叠屏适配审查"
+  short_description: "联动录屏整理和 Google 基础规范审查，完整汇总带标号问题并生成三段式报告"
