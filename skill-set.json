@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "skill_set": "android-foldable",
-  "set_version": "0.2.10",
+  "set_version": "0.2.11",
   "skills": {
-    "android-foldable-adaptation-review": "0.2.14",
-    "android-foldable-page-capture": "0.2.9",
+    "android-foldable-adaptation-review": "0.2.15",
+    "android-foldable-page-capture": "0.2.10",
     "android-foldable-design-guidelines": "0.2.6"
   },
   "entry_skill": "android-foldable-adaptation-review",
@@ -15,14 +15,14 @@
     "ffprobe"
   ],
   "file_sha256": {
-    "android-foldable-adaptation-review/SKILL.md": "91e16f7f77338ee49927ec4ab5306569837b54ae1e1e2a6cf39b9381f614e814",
+    "android-foldable-adaptation-review/SKILL.md": "92fe919e6ad4f20fcc680735e3018417e6d8e33919b1c1790f1511992e32d4f8",
     "android-foldable-adaptation-review/agents/openai.yaml": "26669841d8ecc47c9b8bcf3a5ea5d7a68fa6464dae09d36ed2959407885f3ddc",
     "android-foldable-adaptation-review/assets/official/letterbox_states.png": "9cf84e3c161d3621422855e5d2fecd88453071bc053cf8a378bf9513edf8f84e",
     "android-foldable-adaptation-review/assets/official/letterbox_states.webp": "6e556afae895e19bcd5998b66fbae3bbc154ccef2b6a865388fb04a18582dbb1",
     "android-foldable-adaptation-review/assets/official-examples.json": "b2cb02e1488dd78c4afb7b2d4e4f2d42d8d9bd6eac58e6a73474f620614ec4e4",
     "android-foldable-adaptation-review/assets/report-style.json": "4e6eedc1833bf43abea79dd175f5df77fb7da39107de1ee21449af57b5f4a9fa",
     "android-foldable-adaptation-review/references/agent-coordination.md": "6f81822038f082b108dd71543930c1907625be6dded7409763905334683ea2cd",
-    "android-foldable-adaptation-review/references/batch-execution.md": "8a75d21059c18a8d6f9a0a4eb2ecd2e2d85bcee9ef0d095b3264ce74bd459e32",
+    "android-foldable-adaptation-review/references/batch-execution.md": "f147953ef16cfa173b3669621ae693b56f8f86284364e566c67260805947ec64",
     "android-foldable-adaptation-review/references/figma-output.md": "7c3763fa022d48768604d9836126d36a82892621249a6adf54eefb2117e43ab3",
     "android-foldable-adaptation-review/references/handoff.json": "5e4bbb40875511da31ee93eb3223a3e6a6ff8cf9e3954bf110180f9da4408b25",
     "android-foldable-adaptation-review/references/official-examples.md": "539669976ca777852677429ede8da0c0158b552edaef466170911710c1be6d99",
@@ -129,13 +129,13 @@
     "android-foldable-design-guidelines/scripts/seed_review.py": "502aac8c3a05fcaebdfcda0bb733bcf8dba58bbb38422b7b6efdbc1bf0b6d534",
     "android-foldable-design-guidelines/scripts/validate_review.py": "7d023d9790d0738d240c74528d8b198ff350d8435cc188b3ced6361bb9d42714",
     "android-foldable-design-guidelines/scripts/validate_rules.py": "3d79814fce207333c1644bd9fd784d77da0e838290b885f2e5bf919635dba1e2",
-    "android-foldable-page-capture/SKILL.md": "5dce58dfada6f7d3febd68e9b2c0cc3e92841051bec5065eedaa02aa91646b9f",
+    "android-foldable-page-capture/SKILL.md": "e9276cd9ff34bd8f298387f833bf766bed6a428a6e466122251007bb47490219",
     "android-foldable-page-capture/agents/openai.yaml": "de902924e582aa971c80140c6f5326d5e4e5f9d040258af6f63f20d34aae1c15",
     "android-foldable-page-capture/references/capture-contract.md": "59b39bd73b5f8d4b861a45b87a6af8e5e07be96233855335cd5a7050e6216e46",
     "android-foldable-page-capture/references/handoff.json": "21516f1c00bb1ca397e07bc8ea374181fb1a1f3d0f4232deb2e23ec3d49afa14",
-    "android-foldable-page-capture/references/image-processing.md": "f05e7d1910538affa5459253f4488ead2067bbd32ea75c6ebaa74e795744ab20",
+    "android-foldable-page-capture/references/image-processing.md": "b2d78b9a403ca93a716b1dabcfed6399690d29578e16c1665d181a89e7f774cc",
     "android-foldable-page-capture/scripts/capture.py": "04910b6f5ca667a41d2605e38560645f09ad83dabf8a1ec0230430afc3e96cfa",
-    "android-foldable-page-capture/scripts/image_batches.py": "ce5cc1e2f34bf1171f5441f980ad99b9c12334cb386a9f1245980df7aa7a4fa0",
+    "android-foldable-page-capture/scripts/image_batches.py": "fe1494e32d26dc824da1bc3db01999b795c808273445ca73ba4f4b3ea7b37a14",
     "android-foldable-page-capture/scripts/review_sheets.py": "88d3acbf39c86de54f8eebb18b1cae0acc98a357ba1d785e9b57cfba3095fc02",
     "android-foldable-page-capture/scripts/sequential_frames.py": "cf6326fb2ba0e15d39c82dd7d1532519049bf8d244d018e2b241c9532d65570a"
   }

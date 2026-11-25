@@ -126,24 +126,32 @@ def violations(items, call_limit, max_pixels, max_edge, max_bytes):
 def check(path, session, images, call_limit=2, session_limit=30,
           max_pixels=4000000, max_edge=2560, max_bytes=8388608):
     items = [detail(p) for p in images]
-    prior = [e for e in read_ledger(path)['events'] if e['session'] == session]
+    ledger = read_ledger(path)
+    # Imported checkpoints are history references, never synthetic image reads.
+    actual = [e for e in ledger['events']
+              if e.get('status', 'returned') in ('returned', 'failed')]
+    prior = [e for e in actual if e['session'] == session]
     failed = [e for e in prior if e.get('status') == 'failed']
     effective_call = min(call_limit, 1) if failed else call_limit
     effective_pixels = max_pixels // 2 if failed else max_pixels
     reasons = violations(items, effective_call, effective_pixels, max_edge, max_bytes)
-    attempted = sum(len(e['images']) for e in prior)
+    history = ledger.get('context_history', {}).get(session, {})
+    attempted = history.get('attempted_inputs', 0) + sum(len(e['images']) for e in prior)
+    warnings = []
     if attempted + len(items) > session_limit or attempted >= session_limit:
-        reasons.append('context_budget')
+        warnings.append('context_checkpoint_reminder')
     if len(failed) >= 2:
         reasons.append('repeated_failures_use_new_context')
     signature = sorted(i['sha256'] for i in items)
     if any(signature == sorted(i['sha256'] for i in e['images']) for e in failed):
         reasons.append('unchanged_failed_batch')
-    return {'ready': not reasons, 'reasons': reasons, 'images': items,
+    return {'ready': not reasons, 'reasons': reasons, 'warnings': warnings, 'images': items,
             'attempted_context_inputs': attempted, 'failure_count': len(failed),
+            'historical_reference_inputs': sum(len(e.get('images', [])) for e in ledger['events']
+                if e not in prior),
             'effective_call_limit': effective_call, 'effective_max_pixels': effective_pixels,
             'checkpoint_due': attempted + len(items) >= session_limit,
-            'note': 'Local guard only; tool history and actual platform limits are not controlled.'}
+            'note': 'Local per-call guard; cumulative count is a checkpoint reminder, not a platform limit. Context identity must be verified by the caller.'}
 
 
 def record(path, session, stage, images, call_limit=2, session_limit=30,
@@ -151,7 +159,8 @@ def record(path, session, stage, images, call_limit=2, session_limit=30,
     # Log actual returns/failures even if a caller bypassed the guard.
     result = check(path, session, images, call_limit, session_limit, max_pixels, max_edge, max_bytes)
     data = read_ledger(path)
-    prior = [e for e in data['events'] if e['session'] == session]
+    prior = [e for e in data['events'] if e['session'] == session
+             and e.get('status', 'returned') in ('returned', 'failed')]
     known = {i['sha256'] for e in prior for i in e['images']}
     repeats = 0
     for item in result['images']:
@@ -165,6 +174,7 @@ def record(path, session, stage, images, call_limit=2, session_limit=30,
     write_json(path, data)
     total = result['attempted_context_inputs'] + len(images)
     return {'recorded_inputs': len(images), 'session_inputs': total, 'status': status,
+            'warnings': result['warnings'],
             'repeated_inputs': repeats, 'call_budget_exceeded': bool(result['reasons']),
             'guard_reasons': result['reasons'],
             'checkpoint_due': total >= session_limit or
@@ -196,12 +206,13 @@ def main():
         log.add_argument('--image', action='append', required=True)
     for p in [plan, gate, sub.choices['record'], sub.choices['fail']]:
         p.add_argument('--call-limit', type=int, default=2)
-        p.add_argument('--session-limit', type=int, default=30)
+        p.add_argument('--session-limit', type=int, default=30, help='Cumulative checkpoint reminder, not a hard read limit')
         p.add_argument('--max-pixels', type=int, default=4000000)
         p.add_argument('--max-edge', type=int, default=2560)
         p.add_argument('--max-bytes', type=int, default=8388608)
         if p is not plan:
-            p.add_argument('--session', required=True, help='Actual context ID; renaming does not reset history')
+            p.add_argument('--session', '--context-id', dest='session', required=True,
+                           help='Verified conversation/agent context ID; not Figma session, task, or imported ledger ID')
             p.add_argument('--stage', required=True)
     args = parser.parse_args()
     limits = budgets(args)
