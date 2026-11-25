@@ -3,7 +3,7 @@ import argparse,hashlib,json,math,shutil,struct,subprocess,sys
 from pathlib import Path
 from image_batches import candidate_plan
 
-VERSION='0.2.7'
+VERSION='0.2.8'
 
 def read(p):return json.loads(Path(p).read_text(encoding='utf-8'))
 def write(p,d):Path(p).write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n', encoding='utf-8')
@@ -49,13 +49,13 @@ def sample(video,out,interval,keep_all=False):
         require(header.startswith(b'\x89PNG\r\n\x1a\n'), '候选不是 PNG')
         w,h=struct.unpack('>II',header[16:24])
         items.append({'id':'sample-%05d'%i,'time_s':t,'path':str(path.relative_to(out)),'sha256':sha(path),'visual_sha256':sha(path),'width_px':w,'height_px':h})
-    plan,representatives=candidate_plan(items,20,keep_all)
+    plan,representatives=candidate_plan(items,30,keep_all)
     write(out/'candidate-groups.json',plan)
     sheet_input=out/'sheet-input';sheet_input.mkdir()
     for i,item in enumerate(representatives):
         shutil.copyfile(out/item['path'],sheet_input/('frame-%05d.png'%i))
     run(['ffmpeg','-v','error','-i',str(sheet_input/'frame-%05d.png'),
-         '-vf','scale=180:-1,tile=5x4:padding=8:margin=8','-vsync','0',str(out/'contact-sheet-%03d.png')])
+         '-vf','scale=200:300:force_original_aspect_ratio=decrease,pad=200:300:(ow-iw)/2:(oh-ih)/2,tile=5x6:padding=8:margin=8','-vsync','0',str(out/'contact-sheet-%03d.png')])
     write(out/'sample.json',{'schema_version':1,'capture_version':VERSION,'video':str(source.relative_to(out)),
           'video_sha256':sha(source),'metadata':meta,'interval_s':interval,'candidates':items,'candidate_groups':'candidate-groups.json'})
     print('候选帧',len(items),'张；拼图代表帧',len(representatives),'张；须展开分组分类全部候选并补查时间间隔，尚未确认页面。')
@@ -108,7 +108,7 @@ def finalize(out,selection):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);s=p.add_subparsers(dest='command',required=True)
-    a=s.add_parser('sample');a.add_argument('video');a.add_argument('run_dir');a.add_argument('--interval',type=float,default=2);a.add_argument('--keep-all-candidates',action='store_true')
+    a=s.add_parser('sample');a.add_argument('video');a.add_argument('run_dir');a.add_argument('--interval',type=float,default=1);a.add_argument('--keep-all-candidates',action='store_true')
     a=s.add_parser('frame');a.add_argument('video');a.add_argument('seconds',type=float);a.add_argument('output')
     a=s.add_parser('finalize');a.add_argument('run_dir');a.add_argument('selection')
     args=p.parse_args()
