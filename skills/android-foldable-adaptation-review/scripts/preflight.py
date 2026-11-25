@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[2]
 REQUIRED={
  'android-foldable-page-capture':['SKILL.md','scripts/capture.py','scripts/image_batches.py','references/image-processing.md','references/handoff.json'],
  'android-foldable-design-guidelines':['SKILL.md','scripts/seed_review.py','scripts/validate_rules.py','scripts/validate_review.py','references/rules.json'],
- 'android-foldable-adaptation-review':['SKILL.md','scripts/workflow.py','scripts/build_report.py','references/handoff.json']}
+ 'android-foldable-adaptation-review':['SKILL.md','scripts/workflow.py','scripts/build_report.py','scripts/validate_handoffs.py','references/agent-coordination.md','references/handoff.json']}
 
 def main():
  errors=[]

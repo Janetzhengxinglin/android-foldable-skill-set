@@ -18,7 +18,7 @@
 <details>
 <summary>手动下载安装</summary>
 
-1. [下载整套 ZIP](https://github.com/Janetzhengxinglin/android-foldable-skill-set/releases/download/v0.2.4/android-foldable-skill-set-v0.2.4.zip)，解压到任意工作目录；也可点击 **Code → Download ZIP**。
+1. [下载默认分支最新 ZIP](https://github.com/Janetzhengxinglin/android-foldable-skill-set/archive/refs/heads/codex/main.zip)，解压到任意工作目录；也可点击 **Code → Download ZIP**。
 2. 在解压目录运行：
 
    ```bash
@@ -53,6 +53,8 @@ Figma：https://www.figma.com/design/YOUR_FILE_KEY
 ```
 
 设备比例、内外屏或方向不知道时可说明未知；不要推测技术参数。提供多个录屏时，全部采集完成后统一审查。
+
+Codex 会根据素材关联性和工作量选择执行方式：简单或连续流程由主智能体处理；可独立处理且有明确收益时使用子智能体按阶段分工，复杂审查可增加独立复查。各任务使用固定证据和独立结果目录，最终由主智能体核对完整覆盖并发布。环境不支持子智能体时按相同覆盖要求继续执行。
 
 三个 skill 安装在同一层级，入口按顺序联动：
 
