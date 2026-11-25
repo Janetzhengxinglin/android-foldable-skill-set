@@ -15,9 +15,12 @@ def build(run_dir,output):
  _,rules,bases=bundle();issues=review['findings'];output=Path(output).resolve()
  require(not output.exists(),'报告目录已存在；修订请新建版本目录')
  output.mkdir(parents=True)
+ def display_wording(rule):
+  value=rule.get('requirement_wording','')
+  return rule['title'].rstrip('。')+'。' if value=='official_basic_requirement' else value
  used=sorted({c['rule_id'] for c in review['checks'] if c['status'] in ['issue','no_issue_observed']})
  standards=[{'rule_id':rid,'title':rules[rid]['title'],'applicability':rules[rid]['applies_when'],
-             'requirement_wording':rules[rid]['requirement_wording'],
+             'requirement_wording':display_wording(rules[rid]),
              'official_references':[{'url':bases[x]['url'],'quote':bases[x]['quote']} for x in rules[rid]['basis_ids'] if bases[x]['role']=='minimum_requirement']} for rid in used]
  def asset(pid):
   p=pages[pid];e=evidence[p['image_evidence_id']];path=Path(e['path'])
@@ -56,7 +59,7 @@ def build(run_dir,output):
   for first in representatives.values():
    examples.setdefault(first,{**asset(first),'annotations':[],'explanations':[]})
    examples[first]['explanations'].append({'number':issue['id'],'problem':issue['problem'],'impact':issue['impact'],
-                                       'requirement_wording':issue['requirement_wording'],
+                                       'requirement_wording':display_wording(rules[by_check[issue['check_ids'][0]]['rule_id']]) if issue['requirement_wording']=='official_basic_requirement' else issue['requirement_wording'],
                                        'official_urls':list(dict.fromkeys(bases[x]['url'] for x in issue['basis_ids']))})
   for loc in issue['locations']:
    pid=loc['page_id'];ann={'number':issue['id'],**loc}
