@@ -5,7 +5,7 @@ description: 编排安卓折叠屏 App 录屏审查，联动稳定页面整理�
 
 # 安卓折叠屏适配审查
 
-安卓 skill set 总入口，版本 0.2.8、交接格式 1。用户提交录屏并发起审查即可启动。默认只检查截图可确认的 Google 基础适配显示要求，不提供 Tier 2／1 优化或设计建议。规则仅维护在设计规范 skill，不复制到本入口。
+安卓 skill set 总入口，版本 0.2.9、交接格式 1。用户提交录屏并发起审查即可启动。默认只检查截图可确认的 Google 基础适配显示要求，不提供 Tier 2／1 优化或设计建议。规则仅维护在设计规范 skill，不复制到本入口。
 
 ## 执行方式与子智能体
 
@@ -39,6 +39,8 @@ python3 scripts/build_report.py RUN_DIR REPORT_DIR
 脚本不识别页面或判断问题，也不自动发布。补图或更改证据时保留旧轮次，生成修订输入并重新核对受影响结论，不能静默沿用旧 hash。
 
 ## 输出
+
+审核策略与交付样式分别维护：batch／two-pass 只改变审核执行，不改变用户已认可的 Duo 展示模板。交付前按 [交付样式](references/output-presentation.md) 和 [Figma 三段式输出](references/figma-output.md) 对照实际成品；本地 report.md／JSON 是后台记录，不能直接作为最终文档交付。
 
 发布前必须读取 [视觉呈现与验收](references/output-presentation.md)，落实简短说明、抽象对应图解、统一对齐、就近图外标号、适中参考尺寸和底部全量去重映射；该文件优先约束展示方式，不改变平台判定规则。
 
