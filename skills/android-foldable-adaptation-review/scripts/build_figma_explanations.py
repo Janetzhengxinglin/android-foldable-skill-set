@@ -16,7 +16,8 @@ def generate(report_dir,context_id,panel_id):
  explanations={}
  for page in section['pages']+section['pending_observations']:
   for item in page.get('explanations',[]):explanations.setdefault(item['number'],item)
- payload={'panel_id':panel_id,'style':style,'items':list(explanations.values())}
+ items=sorted(explanations.values(),key=lambda item:(0,int(item['number'])) if str(item['number']).isdigit() else (1,str(item['number'])))
+ payload={'panel_id':panel_id,'style':style,'items':items}
  return 'const payload='+json.dumps(payload,ensure_ascii=False)+';'+chr(10)+r'''
 const panel=await figma.getNodeByIdAsync(payload.panel_id);
 if(!panel || panel.type!=='FRAME')throw new Error('说明区节点不是 Frame');

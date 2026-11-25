@@ -5,7 +5,7 @@ description: 依据 Google 官方基础适配规范逐页审查安卓折叠屏 A
 
 # 安卓折叠屏设计规范
 
-版本 0.2.5；官方资料核查日期 2026-11-23；窗口判定修订 2026-11-25。本次以截图适配审查为目的，只报告截图可确认且有官方依据的不符合项。
+版本 0.2.6；官方主条款核查及判断修订 2026-11-25。本次以截图适配审查为目的，只报告截图可确认且有官方依据的不符合项。
 
 属于安卓 skill set 的判断环节：接收同级 android-foldable-page-capture 整理的稳定截图，向 android-foldable-adaptation-review 交付 review.json。原始录屏用于选帧和核对来源，不自动变成动态功能测试。不负责 Figma／飞书排版和发布。
 
@@ -13,7 +13,7 @@ description: 依据 Google 官方基础适配规范逐页审查安卓折叠屏 A
 
 批量读 [集中批量审查](../android-foldable-adaptation-review/references/batch-execution.md)。按流程连续查看清晰整页拼图，疑点读原图，集中记录页面／组件观察并批量生成正式检查项；重点复查问题及报告后统一校验。常规引用已核查的当前 profile 与来源，按疑点查相关原文及例外。
 
-读取 [审查范围](references/audit-policy.md)、[判断方法](references/decision-protocol.md) 和 [官方设计参考](references/design-reference.md)。设计参考参与每页条件判断与排除误报，不限于报告配图。默认 profile 为 screenshot-only，见 [范围配置](references/audit-profiles.json)。
+读取 [审查范围](references/audit-policy.md)、[判断方法](references/decision-protocol.md)、[可见对象检查](references/component-inspection.md) 和 [来源路由与层级](references/official-source-routing.md)。按 [官方设计参考](references/design-reference.md) 核对适用条件与例外，不限于报告配图。默认 profile 为 screenshot-only，见 [范围配置](references/audit-profiles.json)。
 
 1. 确认截图的显示区、方向和窗口，识别全部组件实例。
 2. 先记录可见疑点，再核对对应规则和例外，不能批量预填通过或用一个例外排除整页。每页先查窗口是否铺满、越界、遮挡、明显变形和文字截断；整页留白按 design-reference 区分根容器与局部限宽；再查已展示的输入／键盘、菜单、弹层、媒体和主题可读性。
@@ -33,7 +33,7 @@ python3 scripts/seed_review.py /path/to/review-input.json /path/to/review.json
 
 截图不证明状态保持、真实点击／滚动／关闭、外接设备操作、后台播放、TalkBack 语义、真实热区或接收端输出。本次不执行这些测试，不把它们记成缺陷或逐页“待验证”。未提交的静态屏幕和页面状态在范围说明中集中列出。
 
-图片或相机预览的拉伸需要已知原比例、正常画面或可确认几何参照。等比缩放、正常裁切和留边不直接报错；没有参照时不写“比例错误”。明显模糊、像素化与当前图标不可辨独立检查；不以缺少源素材或数值测量笼统排除。相机启用、生效铰链或系统区域等条件不明确时，只判断已确认的可见遮挡，不猜测硬件区域。
+图片或相机预览的拉伸需要已知原比例、正常画面或可确认几何参照。等比缩放、正常构图裁切和留边不直接报错；这个例外不排除图片内截字或必要信息缺失，按可见对象检查分别判断。明显模糊、像素化与当前图标不可辨独立检查；不以缺少源素材或数值测量笼统排除。相机启用、生效铰链或系统区域等条件不明确时，只判断已确认的可见遮挡，不猜测硬件区域。
 
 ## 官方依据和扩展资料
 

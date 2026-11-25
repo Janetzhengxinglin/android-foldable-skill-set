@@ -120,8 +120,13 @@ def build(run_dir,output):
   require(note.get('id') and note['id'] not in pending_numbers,'待核实项 ID 重复或缺失')
   require(note.get('phenomenon') and note.get('judgment'),'待核实项须有现象和判断依据缺口')
   locations,groups=retained_groups(note)
-  while str(next_number) in used_numbers:next_number+=1
-  number=str(next_number).zfill(2);reserved.add(number);used_numbers.add(str(next_number));next_number+=1
+  if note.get("number") is not None:
+   number=str(note["number"]);require(number.isdigit() and int(number)>0,"待核实编号须为正整数")
+   require(number_key(number) not in used_numbers,"问题显示编号重复")
+  else:
+   while str(next_number) in used_numbers:next_number+=1
+   number=str(next_number).zfill(2);next_number+=1
+  reserved.add(number);used_numbers.add(number_key(number))
   pending_numbers[note['id']]=number
   problem_evidence.append({'number':number,'classification':'not_verified','locations':locations,'presentation_groups':groups})
   for group in groups:
@@ -153,7 +158,11 @@ def build(run_dir,output):
   numbers=list(dict.fromkeys(a['number'] for p in gallery for a in p['annotations'] if a.get('status')!='not_verified'))
   relevant={c['rule_id'] for c in review['checks'] if set(c['page_ids'])&set(pids) and c['status']=='issue'}
   relevant.update(rid for item in reported if any(loc['page_id'] in pids for loc in item['_locations']) for rid in item.get('related_rule_ids',[]))
-  pending=[note for note in pending_entries if note['page_id'] in pids]
+  # Section 2 illustrates each item once; section 3 retains every necessary group.
+  pending_by_number={}
+  for note in pending_entries:
+   if note['page_id'] in pids:pending_by_number.setdefault(note['number'],note)
+  pending=list(pending_by_number.values())
   # Generic unknown checks never become retained report items.
   if pending:relevant.add('window.fit')
   selected=[s for s in standards if s['rule_id'] in relevant]

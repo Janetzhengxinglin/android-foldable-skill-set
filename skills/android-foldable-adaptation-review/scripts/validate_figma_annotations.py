@@ -24,6 +24,20 @@ from pathlib import Path
 def require(ok,message):
  if not ok:raise ValueError(message)
 
+def annotation_box(mapping, semantic):
+ """Keep evidence exact while allowing bounded presentation clearance."""
+ box=mapping.get('annotation_bbox_px',semantic)
+ require(isinstance(box,list) and len(box)==4 and all(isinstance(v,(int,float)) for v in box),
+         '显示框坐标无效')
+ x,y,w,h=semantic;ax,ay,aw,ah=box
+ require(aw>0 and ah>0 and ax<=x and ay<=y and ax+aw>=x+w and ay+ah>=y+h,
+         '显示框未包含真实问题位置')
+ if box!=semantic:
+  require(mapping.get('annotation_reason'),'扩大显示框缺少理由')
+  require(max(x-ax,y-ay,ax+aw-x-w,ay+ah-y-h)<=64,
+          '显示框离真实位置过远')
+ return box
+
 def validate(root):
  root=Path(root);report=json.loads((root/'report.json').read_text(encoding='utf-8'))
  style=json.loads((Path(__file__).resolve().parents[1]/'assets/report-style.json').read_text(encoding='utf-8'));cfg=style['figma']
@@ -74,7 +88,7 @@ def validate(root):
   require(cohort not in image_origins or abs(image_origins[cohort]-origin)<=.5,
           '同列图框原点不一致；不能因标号换侧单独平移截图：'+str(key))
   image_origins[cohort]=origin
-  x,y,w,h=ann['bbox_px'];wanted=[ix+(x-cx)*iw/cw,iy+(y-cy)*ih/ch,w*iw/cw,h*ih/ch]
+  x,y,w,h=annotation_box(m,ann['bbox_px']);wanted=[ix+(x-cx)*iw/cw,iy+(y-cy)*ih/ch,w*iw/cw,h*ih/ch]
   require(all(abs(a-b)<=3 for a,b in zip(target['absolute'],wanted)),'位置框与原图坐标不匹配：'+str(key))
   if m['section']==2:
    title=node('explanation_title_node').get('text','')
