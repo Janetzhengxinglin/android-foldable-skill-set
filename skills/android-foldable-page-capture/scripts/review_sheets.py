@@ -18,11 +18,13 @@ def main():
     evidence = {e['id']: e for e in data['evidence']}
     rows = []
     for page in data['pages']:
-        e = evidence[page['image_evidence_id']]; path = Path(e['path'])
+        eid = page.get('image_evidence_id') or page['evidence_ids'][0]
+        e = evidence[eid]; path = Path(e.get('path') or e['image'])
+        digest = e.get('sha256') or e['image_sha256']
         if not path.is_absolute(): path = source.parent / path
         path = path.resolve()
-        if hashlib.sha256(path.read_bytes()).hexdigest() != e['sha256']: p.error('证据改变: '+page['id'])
-        rows.append({'page_id': page['id'], 'path': str(path), 'sha256': e['sha256']})
+        if hashlib.sha256(path.read_bytes()).hexdigest() != digest: p.error('证据改变: '+page['id'])
+        rows.append({'page_id': page['id'], 'path': str(path), 'sha256': digest, 'evidence_id': eid})
     if not rows or len({r['page_id'] for r in rows}) != len(rows): p.error('页面清单为空或 ID 重复')
     out.mkdir(parents=True)
     sheets = []
