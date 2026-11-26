@@ -79,7 +79,8 @@ def validate(root):
   ix,iy,iw,ih=image['absolute'];bx,by,bw,bh=badge['absolute']
   require(bx+bw<=ix or bx>=ix+iw or by+bh<=iy or by>=iy+ih,'编号覆盖截图：'+str(key))
   lx,ly,lw,lh=label['absolute']
-  require(bx<=lx and by<=ly and lx+lw<=bx+bw+.5 and ly+lh<=by+bh+.5,'数字未放在圆形编号内')
+  # Match the existing 0.5 px readback tolerance on all four edges.
+  require(bx-.5<=lx and by-.5<=ly and lx+lw<=bx+bw+.5 and ly+lh<=by+bh+.5,'数字未放在圆形编号内')
   crop=m.get('image_crop_px',[0,0,page['width_px'],page['height_px']]);cx,cy,cw,ch=crop
   require(abs(iw/ih-cw/ch)<.01,'截图显示比例与原图不一致：'+str(key))
   # Same-context figures of the same size must not move when a badge changes side.

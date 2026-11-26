@@ -15,6 +15,8 @@
 | 屏幕配置 | 官方指南也提到方形外屏。项目中的 1:1、4:3 内屏与对应外屏共 8 个状态是本次采集配置，不代表所有折叠屏只有这些比例。收到其他外屏或窗口截图时，仍按实际窗口检查并在报告中写明覆盖范围。 | Postures and orientation；[Google Play 截图采集](https://developer.android.com/google/play/requirements/screenshots-android-cli) |
 | 文字、主题与导航 | 自有设计系统、品牌字体、静态配色可以使用。区分文字可辨性与对比度数值、图标尺寸与实际触控热区；区分 Android 的 Up、Back、Close，但不能只凭截图认定返回行为错误。 | [Translate your designs](https://developer.android.com/design/ui/mobile/guides/foundations/translate-designs)、[Accessibility](https://developer.android.com/design/ui/mobile/guides/foundations/accessibility)、[Color](https://developer.android.com/design/ui/mobile/guides/styles/color) |
 
+对齐与间距也在首次巡检中观察：同级对象核对边线、基线和间距，先识别共同容器及正常例外。Grids and units 是设计指导；只有可确认的基础显示异常才按 [Core T-Line_Length](https://developer.android.com/docs/quality-guidelines/core-app-quality#T-Line_Length) 等已有条款判错。无正常参照的轮播吸附／边距问题保留观察，不因是轮播就排除；具体边界见 [可见对象检查](component-inspection.md)。
+
 ## 图库和模板的用途
 
 - [Adaptive App UI Design Gallery](https://developer.android.com/design/ui/gallery)：已读 30 个案例正文。用来理解内容分组、容器伸缩、网格重排、单页与列表详情、底部与侧面辅助内容等适配方式。业务案例的推荐布局不能作为所有 App 的必选布局。
