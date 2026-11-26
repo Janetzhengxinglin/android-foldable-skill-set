@@ -5,7 +5,7 @@ description: 编排安卓折叠屏 App 录屏审查，联动稳定页面整理�
 
 # 安卓折叠屏适配审查
 
-安卓 skill set 总入口，版本 0.2.16、交接格式 1。用户提交录屏并发起审查即可启动。默认只检查截图可确认的 Google 基础适配显示要求，不提供 Tier 2／1 优化或设计建议。规则仅维护在设计规范 skill，不复制到本入口。
+安卓 skill set 总入口，版本 0.2.17、交接格式 1。用户提交录屏并发起审查即可启动。默认检查截图可确认的 Google 基础适配显示要求及明确的整体留白、对齐布局异常，不提供 Tier 2／1 优化或设计建议。规则仅维护在设计规范 skill，不复制到本入口。
 
 ## 执行方式与子智能体
 
@@ -25,7 +25,7 @@ description: 编排安卓折叠屏 App 录屏审查，联动稳定页面整理�
 
 1. 读取同级 android-foldable-page-capture/SKILL.md，批量抽帧，集中分类全部候选并确认清晰代表图。每份 recording 各有完整 capture.json；统一交接后按流程连续看图，不能只挑问题页面。
 2. 建立 review-input.json 工作副本，读取同级 android-foldable-design-guidelines/SKILL.md，逐页识别全部组件，再建立 review.json 并判断。默认使用 screenshot-only，仅检查截图可见显示；动态变化、外设操作、测量和接收输出不进入本次检查集合，不因收到录屏自动启用扩展测试。先集中保存真实页面／组件观察，再批量填入正式记录；默认清晰拼图全页巡检、疑点读原图；回查已确认问题和报告映射后统一运行 validate_review.py。严格双轮仅使用 two-pass。
-3. 按 [同页证据去重](references/report-deduplication.md) 区分业务页面、受审状态和报告代表图。同页同组件同一异常的滚动／重复进入状态只展示必要代表图，后台保留全部发生位置，运行 build_report.py，核对编号和全量问题页面，然后按用户指定目标发布、回读。
+3. 按 [同页证据去重](references/report-deduplication.md) 区分业务页面、受审状态和报告代表图。同页同组件同一异常的滚动／重复进入状态只展示必要代表图，后台保留全部发生位置，运行 build_report.py，核对编号和全量问题页面，然后按用户指定目标发布、回读。明确留白与对齐布局问题从 review.json.reported_issues 进入同一报告，不只读取 findings，也不等待用户指出问题。
 
 ~~~bash
 python3 scripts/workflow.py merge RUN_DIR CAPTURE_A.json CAPTURE_B.json
