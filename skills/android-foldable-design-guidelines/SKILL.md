@@ -5,7 +5,7 @@ description: 依据 Google 官方基础适配规范逐页审查安卓折叠屏 A
 
 # 安卓折叠屏设计规范
 
-版本 0.2.6；官方主条款核查及判断修订 2026-11-25。本次以截图适配审查为目的，只报告截图可确认且有官方依据的不符合项。
+版本 0.2.7；对齐观察与执行修订 2026-11-26。本次以截图适配审查为目的，只报告截图可确认且有官方依据的不符合项。
 
 属于安卓 skill set 的判断环节：接收同级 android-foldable-page-capture 整理的稳定截图，向 android-foldable-adaptation-review 交付 review.json。原始录屏用于选帧和核对来源，不自动变成动态功能测试。不负责 Figma／飞书排版和发布。
 
@@ -16,7 +16,7 @@ description: 依据 Google 官方基础适配规范逐页审查安卓折叠屏 A
 读取 [审查范围](references/audit-policy.md)、[判断方法](references/decision-protocol.md)、[可见对象检查](references/component-inspection.md) 和 [来源路由与层级](references/official-source-routing.md)。按 [官方设计参考](references/design-reference.md) 核对适用条件与例外，不限于报告配图。默认 profile 为 screenshot-only，见 [范围配置](references/audit-profiles.json)。
 
 1. 确认截图的显示区、方向和窗口，识别全部组件实例。
-2. 先记录可见疑点，再核对对应规则和例外，不能批量预填通过或用一个例外排除整页。每页先查窗口是否铺满、越界、遮挡、明显变形和文字截断；整页留白按 design-reference 区分根容器与局部限宽；再查已展示的输入／键盘、菜单、弹层、媒体和主题可读性。
+2. 先记录可见疑点，再核对对应规则和例外，不能批量预填通过或用一个例外排除整页。每页先查窗口是否铺满、越界、遮挡、明显变形和文字截断；同时观察同级元素边线、基线和间距，按 component-inspection 区分基础显示问题、设计一致性观察与正常例外；整页留白按 design-reference 区分根容器与局部限宽；再查已展示的输入／键盘、菜单、弹层、媒体和主题可读性。
 3. 同一页面涉及多个内容状态时，分别套用适用的显示要求，不能只按“场景类别”跳过通用检查。
 4. 全页巡检后，回查疑点、已确认问题和报告映射，再汇总全部位置；two-pass 模式才全量重读原图。
 
