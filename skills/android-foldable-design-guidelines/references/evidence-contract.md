@@ -60,7 +60,7 @@ findings 只保存 issue。每项含 id（问题编号）、check_ids、problem�
 
 locations 每项有 page_id，以及原图 bbox_px=[x,y,width,height] 或 scenario_description；有组件定位时带 component_id。不同屏幕状态是不同页面，不通过图片宽高比去重。汇总 skill 后续用统一编号生成标准、问题示例说明、全部问题页面三段式 Figma 输出。
 
-inventory_review.page_ids_verified 记录已核对库存的全部受审页面，notes 说明库存检查。默认 review_strategy="batch"：visual_review.page_ids_reviewed 和 notes 记录全页清晰巡检；self_review.finding_ids_rechecked 和 notes 记录实际问题回查。review_strategy="two-pass" 或旧记录未声明策略时，self_review.all_pages_rechecked、all_components_rechecked 及 notes 记录第二轮全量复查。校验脚本不代替真实复查。
+inventory_review.page_ids_verified 记录已核对库存的全部受审页面，notes 说明库存检查。默认 review_strategy="batch"：visual_review.page_ids_reviewed 和 notes 记录全页清晰巡检；self_review.finding_ids_rechecked 只记录实际重新查看证据的问题 ID，是 findings 的子集，可为空；notes 说明复核原因及结果，或首次证据充分而无需复核。全部问题映射仍由报告链路核对，不用此列表证明报告覆盖。review_strategy="two-pass" 或旧记录未声明策略时，self_review.all_pages_rechecked、all_components_rechecked 及 notes 记录第二轮全量复查。校验脚本不代替真实复查。
 
 ## 脚本边界
 

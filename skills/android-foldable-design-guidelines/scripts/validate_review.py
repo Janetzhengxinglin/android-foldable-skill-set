@@ -16,8 +16,8 @@ def validate_completion(review, page_ids, finding_ids):
         require(isinstance(seen, list) and len(seen) == len(set(seen)) and set(seen) == set(page_ids)
                 and visual.get('notes'), '未完成全部页面的清晰视觉巡检')
         checked = sr.get('finding_ids_rechecked', [])
-        require(isinstance(checked, list) and len(checked) == len(set(checked)) and set(checked) == set(finding_ids)
-                and sr.get('notes'), '未核对全部已确认问题及报告映射')
+        require(isinstance(checked, list) and len(checked) == len(set(checked)) and set(checked).issubset(set(finding_ids))
+                and sr.get('notes'), '实际复核问题 ID 重复、未知，或缺少复核说明')
     else:
         require(sr.get('all_pages_rechecked') is True and sr.get('all_components_rechecked') is True
                 and sr.get('notes'), '未完成全量第二轮复查')
